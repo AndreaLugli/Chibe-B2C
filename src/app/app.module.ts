@@ -3,10 +3,13 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegistrazionePage } from '../pages/registrazione/registrazione';
+import { AuthService } from '../providers/auth-service/auth-service';
+import { URLVars } from '../providers/urls-var';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,8 @@ import { RegistrazionePage } from '../pages/registrazione/registrazione';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -27,7 +31,9 @@ import { RegistrazionePage } from '../pages/registrazione/registrazione';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService,
+    URLVars
   ]
 })
 export class AppModule {}

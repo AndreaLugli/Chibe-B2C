@@ -7,21 +7,21 @@
 
 <ion-content padding>
   <img src="http://via.placeholder.com/500x200">
-
-  <ion-list margin-top>
-    <ion-item>
-      <ion-input type="text" placeholder="Email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="password" placeholder="Password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="password" placeholder="Conferma la password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" placeholder="Username"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <button ion-button block>Continua</button>
+  <form (ngSubmit)="register()" #registerForm="ngForm">
+    <ion-list margin-top>
+      <ion-item>
+        <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Password" name="password_1" [(ngModel)]="registerCredentials.password_1" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Conferma la password" name="password_2" [(ngModel)]="registerCredentials.password_2" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Username" name="username" [(ngModel)]="registerCredentials.username" required></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Register</button>
+  </form>
 </ion-content>

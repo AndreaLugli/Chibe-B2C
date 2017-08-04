@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
+import { AuthService } from '../../providers/auth-service/auth-service';
 
 @Component({
   selector: 'page-registrazione',
@@ -7,10 +8,38 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 
 export class RegistrazionePage {
+  loading: Loading;
+  registerCredentials = { email: '', password_1: '', password_2: '', username: ''};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService, private alertCtrl: AlertController, public loadingCtrl:LoadingController) { }
+
+  public register() {
+    this.loading = this.loadingCtrl.create({
+      content: "Registrazione in corso...",
+      dismissOnPageChange: true
+    });
+
+    this.loading.present();
+
+    this.auth.register(this.registerCredentials).subscribe(
+      success => {
+        this.loading.dismiss();
+        alert("Account creato!");
+      },
+      error => {
+        this.loading.dismiss();
+        this.showPopup("Attenzione", error);
+      }
+    );
   }
 
-  ionViewDidLoad() { }
+  showPopup(title, text) {
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: text,
+      buttons: ['OK']
+    });
+    alert.present(prompt);
+  }
 
 }
