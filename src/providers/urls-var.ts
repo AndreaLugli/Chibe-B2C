@@ -13,4 +13,19 @@ export class URLVars {
     return this.getBaseURL() + "/utente/register/";
   }
 
+  utenteStep1URL() {
+    return this.getBaseURL() + "/utente/step1/";
+  }
+
+  utenteStep2URL() {
+    return this.getBaseURL() + "/utente/step2/";
+  }
+
+  utenteStep3URL() {
+    return this.getBaseURL() + "/utente/step3";
+  }
+
+  provinceURL() {
+    return this.getBaseURL() + "/utente/province";
+  }
 }

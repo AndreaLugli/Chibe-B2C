@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Benvenuto in Chibe</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <img src="http://via.placeholder.com/500x200">
+  <form (ngSubmit)="stepUno()" #stepUnoForm="ngForm">
+    <ion-list margin-top>
+      <ion-item>
+        <ion-input type="text" placeholder="Nome" name="nome" [(ngModel)]="stepUnoData.nome" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Cognome" name="cognome" [(ngModel)]="stepUnoData.cognome" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Numero di cellulare" name="cellulare" [(ngModel)]="stepUnoData.cellulare" required></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button class="submit-btn" full type="submit" [disabled]="!stepUnoForm.form.valid">Register</button>
+  </form>
+</ion-content>

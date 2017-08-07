@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
 
+import { DatipersonaliPage } from '../datipersonali/datipersonali';
+
 @Component({
   selector: 'page-registrazione',
   templateUrl: 'registrazione.html',
@@ -24,11 +26,11 @@ export class RegistrazionePage {
     this.auth.register(this.registerCredentials).subscribe(
       success => {
         this.loading.dismiss();
-        alert("Account creato!");
+        this.navCtrl.setRoot(DatipersonaliPage);
       },
       error => {
         this.loading.dismiss();
-        this.showPopup("Attenzione", error);
+        this.showPopup("Attenzione", error._body);
       }
     );
   }

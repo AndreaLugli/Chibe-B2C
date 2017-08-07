@@ -8,6 +8,10 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegistrazionePage } from '../pages/registrazione/registrazione';
+import { DatipersonaliPage } from '../pages/datipersonali/datipersonali';
+import { AvatarPage } from '../pages/avatar/avatar';
+import { ProvinciaPage } from '../pages/provincia/provincia';
+
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
 
@@ -15,7 +19,10 @@ import { URLVars } from '../providers/urls-var';
   declarations: [
     MyApp,
     HomePage,
-    RegistrazionePage
+    RegistrazionePage,
+    DatipersonaliPage,
+    AvatarPage,
+    ProvinciaPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,10 @@ import { URLVars } from '../providers/urls-var';
   entryComponents: [
     MyApp,
     HomePage,
-    RegistrazionePage
+    RegistrazionePage,
+    DatipersonaliPage,
+    AvatarPage,
+    ProvinciaPage
   ],
   providers: [
     StatusBar,
