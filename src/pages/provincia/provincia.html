@@ -6,12 +6,33 @@
 
 <ion-content padding>
   <img src="http://via.placeholder.com/500x200">
-  <ion-list margin-top>
-    <ion-item>
-      <ion-label>Provincia</ion-label>
-      <ion-select>
-        <ion-option *ngFor="let provincia of province" value="{{provincia.pk}}">{{provincia.fields.nome}}</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+  <form (ngSubmit)="register()" #StepTreForm="ngForm">
+    <ion-list margin-top>
+      <ion-item>
+        <ion-label>Provincia</ion-label>
+        <ion-select (ionChange)="onSelectChange($event)">
+          <ion-option *ngFor="let provincia of province" value="{{provincia.pk}}">{{provincia.fields.nome}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Scuola</ion-label>
+        <ion-select disabled="{{isEnabledScuola}}" (ionChange)="onSelectScuolaChange($event)">
+          <ion-option *ngFor="let scuola of scuole" value="{{scuola.pk}}">{{scuola.fields.nome}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Classe</ion-label>
+        <ion-input type="text" placeholder="Inserisci la classe" name="classe" disabled="{{isEnabledScuola}}" [value]="classe" [(ngModel)]="classe"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Privacy policy e TOS</ion-label>
+        <ion-checkbox [(ngModel)]="privacy" name="privacy"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Newsletter</ion-label>
+        <ion-checkbox [(ngModel)]="newsletter" name="newsletter"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <button ion-button class="submit-btn" full type="button" (click)="completaStepTre()">Completa</button>
+  </form>
 </ion-content>

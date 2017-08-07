@@ -22,10 +22,14 @@ export class URLVars {
   }
 
   utenteStep3URL() {
-    return this.getBaseURL() + "/utente/step3";
+    return this.getBaseURL() + "/utente/step3/";
   }
 
   provinceURL() {
     return this.getBaseURL() + "/utente/province";
+  }
+
+  provinciaIDURL(id) {
+    return this.provinceURL() + "/" + id + "/";
   }
 }
