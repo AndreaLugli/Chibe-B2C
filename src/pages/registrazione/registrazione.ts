@@ -30,7 +30,14 @@ export class RegistrazionePage {
       },
       error => {
         this.loading.dismiss();
-        this.showPopup("Attenzione", error._body);
+        let error_body;
+        if(error._body) {
+          error_body = error._body;
+        }
+        else {
+          error_body = error;
+        }
+        this.showPopup("Attenzione", error_body);
       }
     );
   }

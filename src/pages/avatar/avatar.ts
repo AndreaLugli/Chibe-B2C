@@ -5,6 +5,10 @@ import { URLVars } from '../../providers/urls-var';
 
 import { ProvinciaPage } from '../provincia/provincia';
 
+import { Platform } from 'ionic-angular';
+import { Camera } from '@ionic-native/camera';
+import { Crop } from '@ionic-native/crop';
+
 @Component({
   selector: 'page-avatar',
   templateUrl: 'avatar.html',
@@ -12,9 +16,11 @@ import { ProvinciaPage } from '../provincia/provincia';
 
 export class AvatarPage {
   loading: Loading;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) { }
+  path: any;
 
-  public avatar() {
+  constructor(public platform: Platform, public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http, private camera: Camera, private crop: Crop) { }
+
+  public salvaAvatar() {
     this.loading = this.loadingCtrl.create({
       content: "Invio avatar...",
       dismissOnPageChange: true
@@ -48,6 +54,30 @@ export class AvatarPage {
       buttons: ['OK']
     });
     alert.present(prompt);
+  }
+
+  public options: any = {
+    allowEdit: true,
+    sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+    mediaType: this.camera.MediaType.ALLMEDIA,
+    destinationType: this.camera.DestinationType.FILE_URI
+  }
+
+  public caricaAvatar() {
+    this.camera.getPicture(this.options).then((fileUri) => {
+      if (this.platform.is('ios')) {
+        return fileUri
+      } else if (this.platform.is('android')) {
+        fileUri = 'file://' + fileUri;
+        return this.crop.crop(fileUri, { quality: 100 });
+      }
+    }).then((path) => {
+      //return path;
+      this.path = path;
+      alert(path);
+    });
+
+
   }
 
 }

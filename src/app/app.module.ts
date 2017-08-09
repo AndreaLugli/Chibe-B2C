@@ -11,18 +11,25 @@ import { RegistrazionePage } from '../pages/registrazione/registrazione';
 import { DatipersonaliPage } from '../pages/datipersonali/datipersonali';
 import { AvatarPage } from '../pages/avatar/avatar';
 import { ProvinciaPage } from '../pages/provincia/provincia';
+import { LoginPage } from '../pages/login/login';
+import { IndexPage } from '../pages/index/index';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
+
+import { Camera } from '@ionic-native/camera';
+import { Crop } from '@ionic-native/crop';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     RegistrazionePage,
+    LoginPage,
     DatipersonaliPage,
     AvatarPage,
-    ProvinciaPage
+    ProvinciaPage,
+    IndexPage
   ],
   imports: [
     BrowserModule,
@@ -34,16 +41,20 @@ import { URLVars } from '../providers/urls-var';
     MyApp,
     HomePage,
     RegistrazionePage,
+    LoginPage,
     DatipersonaliPage,
     AvatarPage,
-    ProvinciaPage
+    ProvinciaPage,
+    IndexPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
-    URLVars
+    URLVars,
+    Camera,
+    Crop
   ]
 })
 export class AppModule {}

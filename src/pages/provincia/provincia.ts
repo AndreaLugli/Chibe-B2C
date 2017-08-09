@@ -4,6 +4,8 @@ import { Http, URLSearchParams } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
+import { IndexPage } from '../index/index';
+
 @Component({
   selector: 'page-provincia',
   templateUrl: 'provincia.html',
@@ -75,6 +77,14 @@ export class ProvinciaPage {
   completaStepTre() {
 
     if(this.provincia && this.scuola && this.privacy) {
+
+      this.loading = this.loadingCtrl.create({
+        content: "Caricamento...",
+        dismissOnPageChange: true
+      });
+
+      this.loading.present();
+
       let headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
@@ -92,7 +102,7 @@ export class ProvinciaPage {
       this.http.post(utenteStep3URL, body).subscribe(
         success => {
           this.loading.dismiss();
-          alert("YEAH")
+          this.navCtrl.setRoot(IndexPage);
         },
         error => {
           this.loading.dismiss();
