@@ -23,22 +23,24 @@ export class ProvinciaPage {
   newsletter: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+    /*
     this.loading = this.loadingCtrl.create({
       content: "Caricamento..."
     });
 
     this.loading.present();
+    */
 
     let provinceURL = this.URLVars.provinceURL();
 
     this.http.get(provinceURL).map(res => res.json()).subscribe(
       data => {
-        this.loading.dismiss();
+        //this.loading.dismiss();
         this.province = data;
       },
       error => {
-        this.loading.dismiss();
-        this.showPopup("Attenzione", error._body);
+        //this.loading.dismiss();
+        this.showPopup("Attenzione", error);
       }
     );
   }
