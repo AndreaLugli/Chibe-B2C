@@ -41,5 +41,9 @@ export class URLVars {
     return this.provinceURL() + id + "/";
   }
 
+  uploadPicURL() {
+    return this.getBaseURL() + "/utente/upload_picture/";
+  }
+
 
 }

@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
 import { Http, URLSearchParams } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
+import 'rxjs/add/operator/map';
 
 import { ProvinciaPage } from '../provincia/provincia';
-
 import { Platform } from 'ionic-angular';
 import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 
 @Component({
   selector: 'page-avatar',
@@ -17,8 +18,12 @@ import { Crop } from '@ionic-native/crop';
 export class AvatarPage {
   loading: Loading;
   path: any;
+  avatarPath: any;
+  fileTransfer: FileTransferObject = this.transfer.create();
 
-  constructor(public platform: Platform, public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http, private camera: Camera, private crop: Crop) { }
+  constructor(public platform: Platform, public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http, private camera: Camera, private crop: Crop, private transfer: FileTransfer) {
+    this.path = "http://via.placeholder.com/500x500";
+  }
 
   public salvaAvatar() {
     this.loading = this.loadingCtrl.create({
@@ -28,12 +33,35 @@ export class AvatarPage {
 
     this.loading.present();
 
+    if(this.path != "http://via.placeholder.com/500x500") {
+      let uploadPicURL = this.URLVars.uploadPicURL();
+
+      let options: FileUploadOptions = {
+         fileKey: 'file',
+         fileName: 'name.jpg',
+         headers: {}
+      }
+
+      this.fileTransfer.upload(this.path, uploadPicURL, options).then((data) => {
+         this.avatarPath = data.response;
+         this.step2Function();
+       }, (err) => {
+         this.loading.dismiss();
+         this.showPopup("Ops!", "Qualcosa è andato storto, riprova!");
+       })
+    }
+    else {
+      this.step2Function();
+    }
+  }
+
+  step2Function () {
     let utenteStep2URL = this.URLVars.utenteStep2URL();
     let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
     let body = new URLSearchParams();
-    body.append('avatar', 'avatar');
+    body.append('avatar', this.avatarPath);
 
     this.http.post(utenteStep2URL, body).subscribe(
       success => {
@@ -72,9 +100,8 @@ export class AvatarPage {
         return this.crop.crop(fileUri, { quality: 100 });
       }
     }).then((path) => {
-      //return path;
       this.path = path;
-      alert(path);
+      return path;
     });
 
 

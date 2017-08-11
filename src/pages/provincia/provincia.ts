@@ -24,8 +24,7 @@ export class ProvinciaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.loading = this.loadingCtrl.create({
-      content: "Caricamento...",
-      dismissOnPageChange: true
+      content: "Caricamento..."
     });
 
     this.loading.present();

@@ -12,7 +12,7 @@ import { AvatarPage } from '../pages/avatar/avatar';
 })
 
 export class MyApp {
-  rootPage:any = AvatarPage;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

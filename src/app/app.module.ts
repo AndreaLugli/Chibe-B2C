@@ -19,6 +19,7 @@ import { URLVars } from '../providers/urls-var';
 
 import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
+import { FileTransfer } from '@ionic-native/file-transfer';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { Crop } from '@ionic-native/crop';
     AuthService,
     URLVars,
     Camera,
-    Crop
+    Crop,
+    FileTransfer
   ]
 })
 export class AppModule {}
