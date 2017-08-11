@@ -20,6 +20,7 @@ import { URLVars } from '../providers/urls-var';
 import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
 import { FileTransfer } from '@ionic-native/file-transfer';
+import { QRCodeModule } from 'angular2-qrcode';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FileTransfer } from '@ionic-native/file-transfer';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    QRCodeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
