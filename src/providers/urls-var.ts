@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class URLVars {
-  public baseURL = "http://127.0.0.1:8000";
-  //public baseURL = "http://app.chibeapp.com";
+  //public baseURL = "http://127.0.0.1:8000";
+  public baseURL = "http://app.chibeapp.com";
 
   getBaseURL() {
     return this.baseURL;
@@ -45,5 +45,8 @@ export class URLVars {
     return this.getBaseURL() + "/utente/upload_picture/";
   }
 
+  getCodeURL() {
+    return this.getBaseURL() + "/utente/get_code";
+  }
 
 }

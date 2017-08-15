@@ -13,6 +13,11 @@ import { AvatarPage } from '../pages/avatar/avatar';
 import { ProvinciaPage } from '../pages/provincia/provincia';
 import { LoginPage } from '../pages/login/login';
 import { IndexPage } from '../pages/index/index';
+import { TalismanoPage } from '../pages/talismano/talismano';
+import { AcchiappasogniPage } from '../pages/acchiappasogni/acchiappasogni';
+import { ConquistaPage } from '../pages/conquista/conquista';
+import { ProfiloPage } from '../pages/profilo/profilo';
+import { AmiciPage } from '../pages/amici/amici';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -31,7 +36,12 @@ import { QRCodeModule } from 'angular2-qrcode';
     DatipersonaliPage,
     AvatarPage,
     ProvinciaPage,
-    IndexPage
+    IndexPage,
+    TalismanoPage,
+    AcchiappasogniPage,
+    ConquistaPage,
+    ProfiloPage,
+    AmiciPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +58,12 @@ import { QRCodeModule } from 'angular2-qrcode';
     DatipersonaliPage,
     AvatarPage,
     ProvinciaPage,
-    IndexPage
+    IndexPage,
+    TalismanoPage,
+    AcchiappasogniPage,
+    ConquistaPage,
+    ProfiloPage,
+    AmiciPage
   ],
   providers: [
     StatusBar,

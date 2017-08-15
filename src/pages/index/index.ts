@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-
+import { TalismanoPage } from '../talismano/talismano';
+import { AcchiappasogniPage } from '../acchiappasogni/acchiappasogni';
+import { ConquistaPage } from '../conquista/conquista';
+import { ProfiloPage } from '../profilo/profilo';
+import { AmiciPage } from '../amici/amici';
 
 @Component({
   selector: 'page-index',
@@ -9,6 +13,10 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 
 export class IndexPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-  
+  tab1Root = AcchiappasogniPage;
+  tab2Root = ConquistaPage;
+  tab3Root = TalismanoPage;
+  tab4Root = ProfiloPage;
+  tab5Root = AmiciPage;
+  constructor() {}
 }
