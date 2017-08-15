@@ -12,7 +12,7 @@ import { IndexPage } from '../pages/index/index';
 })
 
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = IndexPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

@@ -26,6 +26,7 @@ import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { QRCodeModule } from 'angular2-qrcode';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { QRCodeModule } from 'angular2-qrcode';
     URLVars,
     Camera,
     Crop,
-    FileTransfer
+    FileTransfer,
+    Geolocation
   ]
 })
 export class AppModule {}
