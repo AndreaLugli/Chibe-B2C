@@ -5,6 +5,13 @@
 </ion-header>
 
 <ion-content padding>
-  {{latitude}}<br>
-  {{longitude}}
+  <div *ngFor="let partner of partners">
+    <ion-card (click)="info_parner(partner.id)">
+      <img src="{{partner.foto}}"/>
+      <ion-card-content>
+        <ion-card-title>{{partner.ragione_sociale}}</ion-card-title>
+        <p>{{partner.descrizione}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

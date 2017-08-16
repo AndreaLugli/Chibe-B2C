@@ -18,6 +18,7 @@ import { AcchiappasogniPage } from '../pages/acchiappasogni/acchiappasogni';
 import { ConquistaPage } from '../pages/conquista/conquista';
 import { ProfiloPage } from '../pages/profilo/profilo';
 import { AmiciPage } from '../pages/amici/amici';
+import { PartnerPage } from '../pages/partner/partner';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -42,7 +43,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     AcchiappasogniPage,
     ConquistaPage,
     ProfiloPage,
-    AmiciPage
+    AmiciPage,
+    PartnerPage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     AcchiappasogniPage,
     ConquistaPage,
     ProfiloPage,
-    AmiciPage
+    AmiciPage,
+    PartnerPage
   ],
   providers: [
     StatusBar,
