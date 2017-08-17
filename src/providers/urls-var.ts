@@ -57,4 +57,8 @@ export class URLVars {
     return this.getBaseURL() + "/azienda/" + id + "/";
   }
 
+  searchAmicoURL() {
+    return this.getBaseURL() + "/utente/search_amico"
+  }
+
 }

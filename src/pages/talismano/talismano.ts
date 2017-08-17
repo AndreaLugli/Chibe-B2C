@@ -12,8 +12,13 @@ import 'rxjs/add/operator/map';
 export class TalismanoPage {
   loading: Loading;
   codice: any;
+  background: any;
+  foreground: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+    this.background = "white";
+    this.foreground = "black";
+
     this.loading = this.loadingCtrl.create();
     this.loading.present();
 

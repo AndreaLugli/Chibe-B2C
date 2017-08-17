@@ -1,24 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the AmiciPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { AggiungiAmicoPage } from '../aggiungi-amico/aggiungi-amico';
 
 @Component({
   selector: 'page-amici',
   templateUrl: 'amici.html',
 })
+
 export class AmiciPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AmiciPage');
+  go_cerca() {
+    this.navCtrl.push(AggiungiAmicoPage);
   }
 
 }

@@ -19,6 +19,7 @@ import { ConquistaPage } from '../pages/conquista/conquista';
 import { ProfiloPage } from '../pages/profilo/profilo';
 import { AmiciPage } from '../pages/amici/amici';
 import { PartnerPage } from '../pages/partner/partner';
+import { AggiungiAmicoPage } from '../pages/aggiungi-amico/aggiungi-amico';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -44,7 +45,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     ConquistaPage,
     ProfiloPage,
     AmiciPage,
-    PartnerPage
+    PartnerPage,
+    AggiungiAmicoPage
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     ConquistaPage,
     ProfiloPage,
     AmiciPage,
-    PartnerPage
+    PartnerPage,
+    AggiungiAmicoPage
   ],
   providers: [
     StatusBar,

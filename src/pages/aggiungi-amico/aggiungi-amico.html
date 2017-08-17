@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cerca utenti</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  Inserisci il nickname, email Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non nibh consequat, ultrices ligula in, aliquet urna. Proin ullamcorper egestas ante
+
+  <ion-item margin-top>
+    <ion-label><ion-icon name="search"></ion-icon></ion-label>
+    <ion-input type="text" (change)="searchAmico($event.target.value)"></ion-input>
+  </ion-item>
+  <ion-list>
+  <ion-item *ngFor="let amico of amici">
+    <h1>{{amico.username}}</h1>
+    {{amico.first_name}} {{amico.last_name}}
+    <ion-icon name="add" item-end (click)="addAmico(amico.id)"></ion-icon>
+  </ion-item>
+</ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons text-center>
+      <button ion-button icon-right color="royal">
+        Invita un amico
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
