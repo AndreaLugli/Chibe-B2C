@@ -41,8 +41,19 @@ export class AggiungiAmicoPage {
     );
   }
 
-  addAmico(amico_id) {
-    alert(amico_id)
+  addAmico(e, amico_id) {
+
+    let aggiungiAmicoURL = this.URLVars.aggiungiAmicoURL();
+    let body = new URLSearchParams();
+    body.append('id_amico', amico_id);
+
+    this.http.post(aggiungiAmicoURL, body).subscribe(
+      success => {
+        e.is_amico = true;
+      }
+    );
+
+
   }
 
   showPopup(title, text) {

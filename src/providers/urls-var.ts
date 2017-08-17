@@ -61,4 +61,16 @@ export class URLVars {
     return this.getBaseURL() + "/utente/search_amico"
   }
 
+  getAmiciURL() {
+    return this.getBaseURL() + "/utente/amici/";
+  }
+
+  aggiungiAmicoURL() {
+    return this.getBaseURL() + "/utente/amico/add/"
+  }
+
+  cancellaAmicoURL() {
+    return this.getBaseURL() + "/utente/amico/delete/"
+  }
+
 }
