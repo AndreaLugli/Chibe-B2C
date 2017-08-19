@@ -4,6 +4,29 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  Profilo
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <img class="avatar" [src]="avatar ? 'avatar' :'http://via.placeholder.com/150x150'">
+      </ion-col>
+      <ion-col col-8>
+        <h4>{{username}}</h4>
+        <span *ngIf="tribu">Tribu {{tribu}} - </span>{{pp}} punti piuma
+        <br>
+        <small>{{descrizione}}</small>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="!tribu" margin-top>
+      <ion-col col-12>
+        <h1 text-center>Di quale tribù fai parte?</h1>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacinia suscipit molestie. Ut mattis ultrices magna id finibus. Nullam facilisis aliquam massa, pellentesque ultricies purus auctor ac
+        <br>
+        <button ion-button block margin-top (click)="scegliTribu()">Scegli la tua tribù</button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 </ion-content>

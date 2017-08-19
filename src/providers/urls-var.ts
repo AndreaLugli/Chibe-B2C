@@ -73,4 +73,8 @@ export class URLVars {
     return this.getBaseURL() + "/utente/amico/delete/"
   }
 
+  utenteInfoURL() {
+    return this.getBaseURL() + "/utente/info/";
+  }
+
 }

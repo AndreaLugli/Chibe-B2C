@@ -20,6 +20,12 @@ import { ProfiloPage } from '../pages/profilo/profilo';
 import { AmiciPage } from '../pages/amici/amici';
 import { PartnerPage } from '../pages/partner/partner';
 import { AggiungiAmicoPage } from '../pages/aggiungi-amico/aggiungi-amico';
+import { TribuSceltaPage } from '../pages/tribuscelta/tribuscelta';
+import { AquilePage } from '../pages/aquile/aquile';
+import { PumaPage } from '../pages/puma/puma';
+import { VolpiPage } from '../pages/volpi/volpi';
+import { OrsiPage } from '../pages/orsi/orsi';
+import { LupiPage } from '../pages/lupi/lupi';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -46,7 +52,13 @@ import { Geolocation } from '@ionic-native/geolocation';
     ProfiloPage,
     AmiciPage,
     PartnerPage,
-    AggiungiAmicoPage
+    AggiungiAmicoPage,
+    TribuSceltaPage,
+    AquilePage,
+    PumaPage,
+    VolpiPage,
+    OrsiPage,
+    LupiPage
   ],
   imports: [
     BrowserModule,
@@ -70,7 +82,13 @@ import { Geolocation } from '@ionic-native/geolocation';
     ProfiloPage,
     AmiciPage,
     PartnerPage,
-    AggiungiAmicoPage
+    AggiungiAmicoPage,
+    TribuSceltaPage,
+    AquilePage,
+    PumaPage,
+    VolpiPage,
+    OrsiPage,
+    LupiPage
   ],
   providers: [
     StatusBar,
