@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the OrsiPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { ConfermaTribuPage } from '../confermatribu/confermatribu';
 
 @Component({
   selector: 'page-orsi',
@@ -17,8 +12,9 @@ export class OrsiPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OrsiPage');
+  scegliTribu() {
+    let tribu = "orsi";
+    this.navCtrl.push(ConfermaTribuPage, {tribu: tribu});
   }
 
 }

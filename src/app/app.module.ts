@@ -26,6 +26,7 @@ import { PumaPage } from '../pages/puma/puma';
 import { VolpiPage } from '../pages/volpi/volpi';
 import { OrsiPage } from '../pages/orsi/orsi';
 import { LupiPage } from '../pages/lupi/lupi';
+import { ConfermaTribuPage } from '../pages/confermatribu/confermatribu';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -58,7 +59,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     PumaPage,
     VolpiPage,
     OrsiPage,
-    LupiPage
+    LupiPage,
+    ConfermaTribuPage
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     PumaPage,
     VolpiPage,
     OrsiPage,
-    LupiPage
+    LupiPage,
+    ConfermaTribuPage
   ],
   providers: [
     StatusBar,

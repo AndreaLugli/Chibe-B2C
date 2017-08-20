@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { ConfermaTribuPage } from '../confermatribu/confermatribu';
 
 @Component({
   selector: 'page-aquile',
   templateUrl: 'aquile.html',
 })
+
 export class AquilePage {
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AquilePage');
+  scegliTribu() {
+    let tribu = "aquile";
+    this.navCtrl.push(ConfermaTribuPage, {tribu: tribu});
   }
 
 }

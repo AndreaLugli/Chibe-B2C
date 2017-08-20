@@ -77,4 +77,8 @@ export class URLVars {
     return this.getBaseURL() + "/utente/info/";
   }
 
+  sceltaTribuURL() {
+    return this.getBaseURL() + "/utente/tribu/";
+  }
+
 }
