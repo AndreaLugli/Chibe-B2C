@@ -1,6 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Profilo</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="modificaProfilo()">
+        <ion-icon name="create"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -27,6 +32,25 @@
       </ion-col>
     </ion-row>
 
+    <ion-row *ngIf="modifica_tribu" margin-top>
+      <ion-col col-12>
+        <h1 text-center>Vuoi modificare la tribù?</h1>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacinia suscipit molestie. Ut mattis ultrices magna id finibus. Nullam facilisis aliquam massa, pellentesque ultricies purus auctor ac
+        <br>
+        <button ion-button block margin-top (click)="scegliTribu()">Cambia la tua tribù</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row text-center margin-top>
+      <ion-col col-12>
+        <h3>Lista dei desideri</h3>
+        Controlla la lista dei desideri seguiti
+        <button ion-button round margin-top (click)="listaDesideri()">Vedi la lista</button>
+      </ion-col>
+    </ion-row>
+
   </ion-grid>
+
+
 
 </ion-content>

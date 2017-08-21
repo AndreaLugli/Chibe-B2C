@@ -4,16 +4,14 @@ import { Http, URLSearchParams } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
-import { DesiderioPage } from '../desiderio/desiderio'
-
 @Component({
-  selector: 'page-acchiappasogni',
-  templateUrl: 'acchiappasogni.html',
+  selector: 'page-desideri',
+  templateUrl: 'desideri.html',
 })
 
-export class AcchiappasogniPage {
+export class DesideriPage {
   loading: Loading;
-  desideri: any;
+  gruppi: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.loading = this.loadingCtrl.create({
@@ -22,23 +20,19 @@ export class AcchiappasogniPage {
 
     this.loading.present();
 
-    let desideriURL = this.URLVars.desideriURL();
+    let desideriPersonaliURL = this.URLVars.desideriPersonaliURL();
 
-    this.http.get(desideriURL).map(res => res.json()).subscribe(
+    this.http.get(desideriPersonaliURL).map(res => res.json()).subscribe(
       data => {
         this.loading.dismiss();
-        this.desideri = data;
-        console.log(data)
+        console.log(data);
+        this.gruppi = data;
       },
       error => {
         this.loading.dismiss();
         this.showPopup("Attenzione", error);
       }
     );
-  }
-
-  openDesiderio(id_desiderio) {
-    this.navCtrl.push(DesiderioPage, {id_desiderio:id_desiderio});
   }
 
   showPopup(title, text) {
@@ -49,5 +43,4 @@ export class AcchiappasogniPage {
     });
     alert.present(prompt);
   }
-
 }

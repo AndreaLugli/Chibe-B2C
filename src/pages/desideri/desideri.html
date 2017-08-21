@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Lista dei desideri</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 *ngIf="gruppi!=0" text-center>Desideri seguiti</h2>
+  <ion-list>
+    <ion-item *ngFor="let gruppo of gruppi">
+      <h1>{{gruppo.desiderio__nome}}</h1>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="gruppi==0" text-center>
+    <h3>Nessun desiderio seguito</h3>
+  </div>
+</ion-content>

@@ -27,6 +27,9 @@ import { VolpiPage } from '../pages/volpi/volpi';
 import { OrsiPage } from '../pages/orsi/orsi';
 import { LupiPage } from '../pages/lupi/lupi';
 import { ConfermaTribuPage } from '../pages/confermatribu/confermatribu';
+import { ModificaProfiloPage } from '../pages/modificaprofilo/modificaprofilo'
+import { DesideriPage } from '../pages/desideri/desideri'
+import { DesiderioPage } from '../pages/desiderio/desiderio'
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -60,7 +63,10 @@ import { Geolocation } from '@ionic-native/geolocation';
     VolpiPage,
     OrsiPage,
     LupiPage,
-    ConfermaTribuPage
+    ConfermaTribuPage,
+    ModificaProfiloPage,
+    DesideriPage,
+    DesiderioPage
   ],
   imports: [
     BrowserModule,
@@ -91,7 +97,10 @@ import { Geolocation } from '@ionic-native/geolocation';
     VolpiPage,
     OrsiPage,
     LupiPage,
-    ConfermaTribuPage
+    ConfermaTribuPage,
+    ModificaProfiloPage,
+    DesideriPage,
+    DesiderioPage
   ],
   providers: [
     StatusBar,

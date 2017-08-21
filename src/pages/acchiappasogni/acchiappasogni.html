@@ -4,6 +4,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  Acchiappasogni
+<ion-content>
+  <ion-card *ngFor="let desiderio of desideri" (click)="openDesiderio(desiderio.id)">
+    <ion-card-header>{{desiderio.nome}}</ion-card-header>
+    <ion-card-content>
+      {{desiderio.descrizione_breve}}
+      <p>Numero minimo di persone per riscattare il premio: {{desiderio.num_gruppo}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -81,4 +81,20 @@ export class URLVars {
     return this.getBaseURL() + "/utente/tribu/";
   }
 
+  modificaURL() {
+    return this.getBaseURL() + "/utente/modifica/";
+  }
+
+  desideriPersonaliURL() {
+    return this.getBaseURL() + "/utente/desideri/";
+  }
+
+  desideriURL() {
+    return this.getBaseURL() + "/desideri/";
+  }
+
+  getDesiderioURL(id) {
+    return this.desideriURL() + id + "/";
+  }
+
 }

@@ -5,6 +5,8 @@ import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
 import { TribuSceltaPage } from '../tribuscelta/tribuscelta';
+import { ModificaProfiloPage } from '../modificaprofilo/modificaprofilo'
+import { DesideriPage } from '../desideri/desideri'
 
 @Component({
   selector: 'page-profilo',
@@ -18,6 +20,8 @@ export class ProfiloPage {
   username: any;
   tribu: any;
   pp: any;
+  utente: any;
+  modifica_tribu: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.loading = this.loadingCtrl.create({
@@ -30,13 +34,15 @@ export class ProfiloPage {
 
     this.http.get(utenteInfoURL).map(res => res.json()).subscribe(
       data => {
+        console.log(data)
         this.loading.dismiss();
         this.descrizione = data.descrizione;
         this.username = data.username;
         this.avatar = data.avatar;
         this.tribu = data.tribu;
         this.pp = data.punti;
-
+        this.utente = data;
+        this.modifica_tribu = data.modifica_tribu;
       },
       error => {
         this.loading.dismiss();
@@ -47,6 +53,14 @@ export class ProfiloPage {
 
   scegliTribu() {
     this.navCtrl.push(TribuSceltaPage);
+  }
+
+  modificaProfilo() {
+    this.navCtrl.push(ModificaProfiloPage, {utente : this.utente});
+  }
+
+  listaDesideri() {
+    this.navCtrl.push(DesideriPage);
   }
 
   showPopup(title, text) {

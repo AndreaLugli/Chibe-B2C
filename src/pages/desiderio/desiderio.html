@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{desiderio.nome}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center>
+<p>{{desiderio.descrizione_lunga}}</p>
+Num. persone richieste: {{desiderio.num_gruppo}}<br>
+<button ion-button round margin-top (click)="seguiDesiderio()">Segui il desiderio</button>
+</ion-content>
