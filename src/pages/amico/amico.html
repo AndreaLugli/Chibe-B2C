@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{amico.username}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="confirm_delete()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{amico.username}}</h1>
+  <p>{{amico.first_name}} {{amico.last_name}}</p>
+  <hr>
+  <h5>Regala i tuoi punti piuma</h5>
+  <p>Invia punti piuma al tuo amico {{amico.username}}. Hai a disposizione <strong>{{punti_personali}}</strong> punti</p>
+  <ion-item>
+    <ion-input type="number" placeholder="Punti piuma" [value]="punti_piuma" [(ngModel)]="punti_piuma"></ion-input>
+  </ion-item>
+  <p text-center>
+    <button ion-button block (click)="invia_punti()">Invia punti</button>
+  </p>
+
+</ion-content>

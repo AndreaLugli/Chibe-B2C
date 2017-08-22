@@ -5,7 +5,8 @@
 </ion-header>
 
 <ion-content padding text-center>
-<p>{{desiderio.descrizione_lunga}}</p>
-Num. persone richieste: {{desiderio.num_gruppo}}<br>
-<button ion-button round margin-top (click)="seguiDesiderio()">Segui il desiderio</button>
+  <p>{{desiderio.descrizione_lunga}}</p>
+  Num. persone richieste: {{desiderio.num_gruppo}}<br>
+  Valore: {{desiderio.costo_riscatto / 0.01}} punti piuma<br>
+  <button ion-button round margin-top (click)="seguiDesiderio()">Segui il desiderio</button>
 </ion-content>

@@ -9,15 +9,16 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <h1 *ngIf="lista_amici!=0" text-center>I tuoi amici</h1>
-  <ion-list>
-    <ion-item *ngFor="let amico of lista_amici">
-      <h1>{{amico.username}}</h1>
-      {{amico.first_name}} {{amico.last_name}}
-      <ion-icon name="checkmark" item-end (click)="removeAmico(amico, amico.id)"></ion-icon>
-    </ion-item>
+
+  <ion-list margin-top>
+    <button ion-item *ngFor="let amico of lista_amici" (click)="amicoSelected(amico)">
+      <h2>{{amico.username}}</h2>
+      <p>{{amico.first_name}} {{amico.last_name}}</p>
+    </button>
   </ion-list>
+
   <div *ngIf="lista_amici==0" text-center>
     <p>Non hai ancora aggiunto utenti preferiti</p>
     <button ion-button (click)="go_cerca()">Aggiungi amico</button>

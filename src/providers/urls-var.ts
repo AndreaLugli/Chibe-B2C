@@ -97,4 +97,12 @@ export class URLVars {
     return this.desideriURL() + id + "/";
   }
 
+  getPuntiURL() {
+    return this.getBaseURL() + "/utente/punti/";
+  }
+
+  invitaPuntiURL() {
+    return this.getBaseURL() + "/utente/invia-punti/";
+  }
+
 }
