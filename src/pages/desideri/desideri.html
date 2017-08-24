@@ -6,10 +6,12 @@
 
 <ion-content padding>
   <h2 *ngIf="gruppi!=0" text-center>Desideri seguiti</h2>
-  <ion-list>
-    <ion-item *ngFor="let gruppo of gruppi">
-      <h1>{{gruppo.desiderio__nome}}</h1>
-    </ion-item>
+  <ion-list margin-top>
+    <button ion-item *ngFor="let gruppo of gruppi" (click)="getGruppo(gruppo)">
+      <h2>{{gruppo.nome}}</h2>
+      <p>Punti piuma raccolti: {{gruppo.punti}} / {{gruppo.punti_necessari / 0.01}}</p>
+      <p>Componenti gruppo: {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}</p>
+    </button>
   </ion-list>
   <div *ngIf="gruppi==0" text-center>
     <h3>Nessun desiderio seguito</h3>

@@ -4,6 +4,8 @@ import { Http, URLSearchParams } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
+import { GruppoPage } from '../gruppo/gruppo';
+
 @Component({
   selector: 'page-desideri',
   templateUrl: 'desideri.html',
@@ -25,7 +27,6 @@ export class DesideriPage {
     this.http.get(desideriPersonaliURL).map(res => res.json()).subscribe(
       data => {
         this.loading.dismiss();
-        console.log(data);
         this.gruppi = data;
       },
       error => {
@@ -33,6 +34,10 @@ export class DesideriPage {
         this.showPopup("Attenzione", error);
       }
     );
+  }
+
+  getGruppo(gruppo) {
+    this.navCtrl.push(GruppoPage, {gruppo: gruppo, gruppo_id : gruppo.id});
   }
 
   showPopup(title, text) {

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Desiderio: {{gruppo.nome}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h1>{{gruppo.nome}}</h1>
+  <p>Punti piuma raccolti: {{gruppo.punti}} / {{gruppo.punti_necessari / 0.01}}</p>
+  <p>Componenti gruppo: {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}</p>
+
+
+  <div *ngIf="gruppo.utenti.length<gruppo.num_gruppo" text-center>
+    <h3>Attenzione!</h3>
+    Per poter inviare punti devi raggiungere il numero minimo ({{gruppo.num_gruppo}}) di membri nel gruppo.
+
+    <div *ngIf="gruppo.admin" padding-top>
+      <button ion-button block (click)="aggiungiMembro()">Aggiungi membro</button>
+    </div>
+
+    <div *ngIf="!gruppo.admin">
+      Chiedi all'amministratore del gruppo di aggiungere i membri mancanti
+    </div>
+  </div>
+
+  <div *ngIf="gruppo.utenti.length>=gruppo.num_gruppo" text-center>
+      <h3>Aggiungi punti al premio</h3>
+      <p>Hai a disposizione {{miei_punti}} punti piuma</p>
+      <ion-item>
+        <ion-input type="number" placeholder="Punti piuma" [value]="punti_piuma" [(ngModel)]="punti_piuma"></ion-input>
+      </ion-item>
+      <p text-center>
+        <button ion-button block (click)="invia_punti()">Invia punti</button>
+      </p>    
+  </div>
+
+</ion-content>

@@ -105,4 +105,12 @@ export class URLVars {
     return this.getBaseURL() + "/utente/invia-punti/";
   }
 
+  getGruppoURL(id) {
+    return this.getBaseURL() + "/utente/gruppo/" + id + "/";
+  }
+
+  getUtentiGruppoURL(id) {
+    return this.getGruppoURL(id) + "utenti/";
+  }
+
 }

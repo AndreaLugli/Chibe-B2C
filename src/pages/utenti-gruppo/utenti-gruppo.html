@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Utenti per il gruppo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Utenti nel gruppo</h2>
+  <ion-list>
+    <ion-item *ngFor="let utente of utenti_gruppo">
+      <h2>{{utente.username}} <span *ngIf="utente.id==io">(tu)</span></h2>
+      <p>{{utente.first_name}} {{utente.last_name}}</p>
+    </ion-item>
+  </ion-list>
+
+  <h2>Amici NON nel gruppo</h2>
+  <ion-list>
+    <ion-item *ngFor="let amico of amici">
+      <h2>{{amico.username}}</h2>
+      <p>{{amico.first_name}} {{amico.last_name}}</p>
+      <ion-icon item-end name="add" (click)="addAmicoGruppo(amico)"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

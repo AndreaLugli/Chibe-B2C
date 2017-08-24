@@ -31,6 +31,8 @@ import { ModificaProfiloPage } from '../pages/modificaprofilo/modificaprofilo'
 import { DesideriPage } from '../pages/desideri/desideri';
 import { DesiderioPage } from '../pages/desiderio/desiderio';
 import { AmicoPage } from '../pages/amico/amico';
+import { GruppoPage } from '../pages/gruppo/gruppo';
+import { UtentiGruppoPage } from '../pages/utenti-gruppo/utenti-gruppo';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -68,7 +70,9 @@ import { Geolocation } from '@ionic-native/geolocation';
     ModificaProfiloPage,
     DesideriPage,
     DesiderioPage,
-    AmicoPage
+    AmicoPage,
+    GruppoPage,
+    UtentiGruppoPage
   ],
   imports: [
     BrowserModule,
@@ -103,7 +107,9 @@ import { Geolocation } from '@ionic-native/geolocation';
     ModificaProfiloPage,
     DesideriPage,
     DesiderioPage,
-    AmicoPage
+    AmicoPage,
+    GruppoPage,
+    UtentiGruppoPage
   ],
   providers: [
     StatusBar,
