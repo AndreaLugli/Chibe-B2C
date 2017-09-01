@@ -120,7 +120,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     Camera,
     Crop,
     FileTransfer,
-    Geolocation
+    Geolocation,
   ]
 })
 export class AppModule {}

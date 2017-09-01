@@ -16,8 +16,18 @@ import { IndexPage } from '../index/index';
 })
 
 export class HomePage {
+  loading: Loading;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) {
+
+    /*
+    this.loading = this.loadingCtrl.create({
+      dismissOnPageChange: true
+    });
+
+    this.loading.present();
+    */
+
     let checkConnectedURL = this.URLVars.checkConnectedURL();
 
     this.http.get(checkConnectedURL).map(res => res.json()).subscribe(
@@ -36,7 +46,8 @@ export class HomePage {
         }
       },
       error => {
-        console.log("Nope")
+        console.log("Nope");
+        //this.loading.dismiss();
       }
     );
   }
