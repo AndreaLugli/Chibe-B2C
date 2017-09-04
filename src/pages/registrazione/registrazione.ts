@@ -12,10 +12,16 @@ import { DatipersonaliPage } from '../datipersonali/datipersonali';
 export class RegistrazionePage {
   loading: Loading;
   registerCredentials = { email: '', password_1: '', password_2: '', username: ''};
+  error_text: any;
+  isHidden: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService, private alertCtrl: AlertController, public loadingCtrl:LoadingController) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService, private alertCtrl: AlertController, public loadingCtrl:LoadingController) {
+    this.isHidden = true;
+  }
 
   public register() {
+    this.isHidden = true;
+    
     this.loading = this.loadingCtrl.create({
       content: "Registrazione in corso...",
       dismissOnPageChange: true
@@ -37,7 +43,9 @@ export class RegistrazionePage {
         else {
           error_body = error;
         }
-        this.showPopup("Attenzione", error_body);
+        //this.showPopup("Attenzione", error_body);
+        this.isHidden = false;
+        this.error_text = error_body;
       }
     );
   }
