@@ -16,7 +16,8 @@
         <ion-input type="text" placeholder="Cognome" name="cognome" [(ngModel)]="stepUnoData.cognome" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="text" placeholder="Numero di cellulare" name="cellulare" [(ngModel)]="stepUnoData.cellulare" required></ion-input>
+        <ion-label>+39</ion-label>
+        <ion-input type="tel" placeholder="Numero di cellulare" name="cellulare" [(ngModel)]="stepUnoData.cellulare" required></ion-input>
       </ion-item>
     </ion-list>
     <button ion-button class="submit-btn" full type="submit" [disabled]="!stepUnoForm.form.valid">Continua</button>

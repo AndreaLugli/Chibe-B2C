@@ -5,14 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { IndexPage } from '../pages/index/index';
-import { AvatarPage } from '../pages/avatar/avatar';
+import { DatipersonaliPage } from '../pages/datipersonali/datipersonali';
 
 @Component({
   templateUrl: 'app.html'
 })
 
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = DatipersonaliPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
