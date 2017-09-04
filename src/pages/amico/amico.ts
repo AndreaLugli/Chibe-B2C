@@ -33,25 +33,30 @@ export class AmicoPage {
   }
 
   invia_punti() {
-    if(this.punti_piuma > this.punti_personali) {
-      alert("Non hai abbastanza punti");
+    if(this.punti_piuma) {
+      if(this.punti_piuma > this.punti_personali) {
+        alert("Non hai abbastanza punti");
+      }
+      else {
+        this.loading = this.loadingCtrl.create();
+        this.loading.present();
+        let invitaPuntiURL = this.URLVars.invitaPuntiURL();
+
+        let body = new URLSearchParams();
+        body.append('punti', this.punti_piuma);
+        body.append('amico_id', this.amico.id);
+
+        this.http.post(invitaPuntiURL, body).subscribe(
+          data => {
+            this.loading.dismiss();
+            this.navCtrl.pop();
+          }
+        );
+
+      }
     }
     else {
-      this.loading = this.loadingCtrl.create();
-      this.loading.present();
-      let invitaPuntiURL = this.URLVars.invitaPuntiURL();
-
-      let body = new URLSearchParams();
-      body.append('punti', this.punti_piuma);
-      body.append('amico_id', this.amico.id);
-
-      this.http.post(invitaPuntiURL, body).subscribe(
-        data => {
-          this.loading.dismiss();
-          this.navCtrl.pop();
-        }
-      );
-
+      alert("Inserisci un valore");
     }
   }
 
