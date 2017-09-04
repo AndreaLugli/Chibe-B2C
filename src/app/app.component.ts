@@ -12,7 +12,7 @@ import { DatipersonaliPage } from '../pages/datipersonali/datipersonali';
 })
 
 export class MyApp {
-  rootPage:any = DatipersonaliPage;
+  rootPage:any = IndexPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

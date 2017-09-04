@@ -79,12 +79,14 @@ export class ProvinciaPage {
 
     if(this.provincia && this.scuola && this.privacy) {
 
+      /*
       this.loading = this.loadingCtrl.create({
         content: "Caricamento...",
         dismissOnPageChange: true
       });
 
       this.loading.present();
+      */
 
       let headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -102,11 +104,11 @@ export class ProvinciaPage {
 
       this.http.post(utenteStep3URL, body).subscribe(
         success => {
-          this.loading.dismiss();
+          //this.loading.dismiss();
           this.navCtrl.setRoot(IndexPage);
         },
         error => {
-          this.loading.dismiss();
+          //this.loading.dismiss();
           this.showPopup("Attenzione", error._body);
         }
       );
