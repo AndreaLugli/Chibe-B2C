@@ -17,10 +17,16 @@ import { IndexPage } from '../index/index';
 export class LoginPage {
   loading: Loading;
   loginCredentials = { password: '', username: ''};
+  error_text: any;
+  isHidden: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) {
+    this.isHidden = true;
+  }
 
   public login() {
+    this.isHidden = true;
+
     this.loading = this.loadingCtrl.create({
       content: "Accesso in corso...",
       dismissOnPageChange: true
@@ -54,7 +60,9 @@ export class LoginPage {
       },
       error => {
         this.loading.dismiss();
-        this.showPopup("Attenzione", "Username o password errata");
+        //this.showPopup("Attenzione", "Username o password errata");
+        this.isHidden = false;
+        this.error_text = "Username o password errata";
       }
     );
   }
