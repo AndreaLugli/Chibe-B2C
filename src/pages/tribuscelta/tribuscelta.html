@@ -4,7 +4,7 @@
     <ion-title>Scegli la tua tribù</ion-title>
   </ion-navbar>
 </ion-header>
-
+<!--
 <ion-content padding>
   <ion-tabs>
     <ion-tab tabTitle="Aquile" [root]="Tribu1"></ion-tab>
@@ -12,6 +12,16 @@
     <ion-tab tabTitle="Volpi" [root]="Tribu3"></ion-tab>
     <ion-tab tabTitle="Orsi" [root]="Tribu4"></ion-tab>
     <ion-tab tabTitle="Lupi" [root]="Tribu5"></ion-tab>
-
   </ion-tabs>
+</ion-content>
+-->
+
+<ion-content>
+  <super-tabs>
+    <super-tab title="Aquile" [root]="Tribu1"></super-tab>
+    <super-tab title="Puma" [root]="Tribu2"></super-tab>
+    <super-tab title="Volpi" [root]="Tribu3"></super-tab>
+    <super-tab title="Orsi" [root]="Tribu4"></super-tab>
+    <super-tab title="Lupi" [root]="Tribu5"></super-tab>
+  </super-tabs>
 </ion-content>

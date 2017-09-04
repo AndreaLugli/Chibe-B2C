@@ -43,6 +43,9 @@ import { FileTransfer } from '@ionic-native/file-transfer';
 import { QRCodeModule } from 'angular2-qrcode';
 import { Geolocation } from '@ionic-native/geolocation';
 
+import { SuperTabsModule } from 'ionic2-super-tabs';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -78,7 +81,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    QRCodeModule
+    QRCodeModule,
+    SuperTabsModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

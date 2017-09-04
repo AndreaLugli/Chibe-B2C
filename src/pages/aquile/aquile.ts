@@ -16,4 +16,5 @@ export class AquilePage {
     this.navCtrl.push(ConfermaTribuPage, {tribu: tribu});
   }
 
+
 }
