@@ -19,17 +19,16 @@ export class AvatarPage {
   loading: Loading;
   path: any;
   avatarPath: any;
+  isDisabled: any;
   fileTransfer: FileTransferObject = this.transfer.create();
 
   constructor(public platform: Platform, public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http, private camera: Camera, private crop: Crop, private transfer: FileTransfer) {
     this.path = "http://via.placeholder.com/500x500";
+    this.isDisabled = true;
   }
 
   public salvaAvatar() {
-    this.loading = this.loadingCtrl.create({
-      content: "Invio avatar...",
-      dismissOnPageChange: true
-    });
+    this.loading = this.loadingCtrl.create();
 
     this.loading.present();
 
@@ -92,6 +91,7 @@ export class AvatarPage {
   }
 
   public caricaAvatar() {
+    this.isDisabled = false;
     this.camera.getPicture(this.options).then((fileUri) => {
       if (this.platform.is('ios')) {
         return fileUri
