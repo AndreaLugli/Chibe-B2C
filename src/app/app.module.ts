@@ -33,6 +33,7 @@ import { DesiderioPage } from '../pages/desiderio/desiderio';
 import { AmicoPage } from '../pages/amico/amico';
 import { GruppoPage } from '../pages/gruppo/gruppo';
 import { UtentiGruppoPage } from '../pages/utenti-gruppo/utenti-gruppo';
+import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -75,7 +76,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     DesiderioPage,
     AmicoPage,
     GruppoPage,
-    UtentiGruppoPage
+    UtentiGruppoPage,
+    ForgotPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -113,7 +115,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     DesiderioPage,
     AmicoPage,
     GruppoPage,
-    UtentiGruppoPage
+    UtentiGruppoPage,
+    ForgotPasswordPage
   ],
   providers: [
     StatusBar,

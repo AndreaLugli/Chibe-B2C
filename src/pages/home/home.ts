@@ -9,6 +9,7 @@ import { DatipersonaliPage } from '../datipersonali/datipersonali';
 import { AvatarPage } from '../avatar/avatar';
 import { ProvinciaPage } from '../provincia/provincia';
 import { IndexPage } from '../index/index';
+import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 
 @Component({
   selector: 'page-home',
@@ -52,13 +53,16 @@ export class HomePage {
     );
   }
 
-
   registrazione() {
-    this.navCtrl.setRoot(RegistrazionePage);
+    this.navCtrl.push(RegistrazionePage);
   }
 
   goLoginPage() {
     this.navCtrl.push(LoginPage);
+  }
+
+  goForgetPassword() {
+    this.navCtrl.push(ForgotPasswordPage);
   }
 
 }

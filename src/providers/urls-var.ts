@@ -117,4 +117,8 @@ export class URLVars {
     return this.getBaseURL() + "/utente/logout/";
   }
 
+  forgotPasswordURL() {
+    return this.getBaseURL() + "/utente/forgot-password/";
+  }
+
 }
