@@ -113,4 +113,8 @@ export class URLVars {
     return this.getGruppoURL(id) + "utenti/";
   }
 
+  logoutURL() {
+    return this.getBaseURL() + "/utente/logout/";
+  }
+
 }

@@ -14,10 +14,12 @@ export class TalismanoPage {
   codice: any;
   background: any;
   foreground: any;
+  title: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.background = "white";
     this.foreground = "black";
+    this.title = "Talismano";
 
     this.loading = this.loadingCtrl.create();
     this.loading.present();

@@ -1,6 +1,7 @@
+<!--
 <ion-header>
   <ion-navbar>
-    <ion-title>Profilo</ion-title>
+    <ion-title>{{title}}</ion-title>
     <ion-buttons end>
       <button ion-button icon-only color="royal" (click)="modificaProfilo()">
         <ion-icon name="create"></ion-icon>
@@ -8,6 +9,22 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+-->
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="modificaProfilo()">
+        <ion-icon name="create"></ion-icon>
+      </button>
+    </ion-buttons>    
+  </ion-navbar>
+</ion-header>
+
 
 <ion-content>
   <ion-grid>

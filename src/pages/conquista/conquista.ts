@@ -17,8 +17,11 @@ export class ConquistaPage {
   latitude: any;
   longitude: any;
   partners: any;
+  title: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+    this.title = "Conquista";
+
     this.loading = this.loadingCtrl.create({
       content: "Caricamento..."
     });

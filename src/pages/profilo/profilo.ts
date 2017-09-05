@@ -22,8 +22,11 @@ export class ProfiloPage {
   pp: any;
   utente: any;
   modifica_tribu: any;
+  title: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+    this.title = "Profilo";
+    
     this.loading = this.loadingCtrl.create({
       content: "Caricamento..."
     });

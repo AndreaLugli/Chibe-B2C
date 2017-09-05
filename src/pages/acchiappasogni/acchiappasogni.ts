@@ -14,8 +14,11 @@ import { DesiderioPage } from '../desiderio/desiderio'
 export class AcchiappasogniPage {
   loading: Loading;
   desideri: any;
+  title: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+    this.title = "Acchiappasogni";
+    
     this.loading = this.loadingCtrl.create({
       content: "Caricamento desideri..."
     });

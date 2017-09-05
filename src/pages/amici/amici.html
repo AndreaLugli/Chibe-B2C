@@ -1,6 +1,7 @@
+<!--
 <ion-header>
   <ion-navbar>
-    <ion-title>Lista utenti</ion-title>
+    <ion-title>{{title}}</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="go_cerca()">
         <ion-icon name="add"></ion-icon>
@@ -8,6 +9,22 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+-->
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="go_cerca()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>   
+  </ion-navbar>
+</ion-header>
+
 
 <ion-content>
   <h1 *ngIf="lista_amici!=0" text-center>I tuoi amici</h1>

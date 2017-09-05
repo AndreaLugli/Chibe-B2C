@@ -15,12 +15,15 @@ import { AmicoPage } from '../amico/amico';
 export class AmiciPage {
   loading: Loading;
   lista_amici: any;
+  title: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
 
   }
 
   ionViewWillEnter() {
+    this.title = "Chibers";
+    
     this.loading = this.loadingCtrl.create({
       content: "Caricamento..."
     });
