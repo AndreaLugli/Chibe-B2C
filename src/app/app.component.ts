@@ -14,7 +14,7 @@ import { IndexPage } from '../pages/index/index';
 })
 
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = IndexPage;
 
   constructor(public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http) {
     platform.ready().then(() => {

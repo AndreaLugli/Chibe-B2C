@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "551471137799",
+    "firebase_url": "https://chibe-62d6a.firebaseio.com",
+    "project_id": "chibe-62d6a",
+    "storage_bucket": "chibe-62d6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551471137799:android:04bd430a35a86e20",
+        "android_client_info": {
+          "package_name": "it.socialcities.chibeb2c"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551471137799-5va9hl0d71or695eh4315pvntlh8vufl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7ZfLMKuMquB7mwIz7C7NSPa5PVyFS7gE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

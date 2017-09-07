@@ -43,6 +43,7 @@ import { Crop } from '@ionic-native/crop';
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { QRCodeModule } from 'angular2-qrcode';
 import { Geolocation } from '@ionic-native/geolocation';
+import { Push } from '@ionic-native/push';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
@@ -128,6 +129,7 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     Crop,
     FileTransfer,
     Geolocation,
+    Push
   ]
 })
 export class AppModule {}
