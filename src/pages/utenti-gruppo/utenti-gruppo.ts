@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, Loading, LoadingController } from 'ionic-angular';
 import { Http, URLSearchParams } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
@@ -17,7 +17,7 @@ export class UtentiGruppoPage {
   amici: any;
   io: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController) {
     this.gruppo_id = navParams.get('id');
   }
 
@@ -39,7 +39,7 @@ export class UtentiGruppoPage {
   addAmicoGruppo(amico) {
     this.loading = this.loadingCtrl.create();
     this.loading.present();
-    
+
     let body = new URLSearchParams();
     body.append('amico_id', amico.id);
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
-import { Http, URLSearchParams } from '@angular/http';
+import { Http } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 

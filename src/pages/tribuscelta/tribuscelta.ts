@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 import { AquilePage } from '../aquile/aquile';
 import { PumaPage } from '../puma/puma';
 import { VolpiPage } from '../volpi/volpi';

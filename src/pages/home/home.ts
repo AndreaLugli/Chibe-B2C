@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
-import { Http, URLSearchParams } from '@angular/http';
+import { NavController, NavParams, Loading, LoadingController } from 'ionic-angular';
+import { Http } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 
 import { RegistrazionePage } from '../registrazione/registrazione';
@@ -19,7 +19,7 @@ import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 export class HomePage {
   loading: Loading;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) {
 
     /*
     this.loading = this.loadingCtrl.create({
