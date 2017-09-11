@@ -8,13 +8,14 @@ import { Http } from '@angular/http';
 
 import { HomePage } from '../pages/home/home';
 import { IndexPage } from '../pages/index/index';
+import { TutorialPage } from '../pages/tutorial/tutorial';
 
 @Component({
   templateUrl: 'app.html'
 })
 
 export class MyApp {
-  rootPage:any = IndexPage;
+  rootPage:any = TutorialPage;
 
   constructor(public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http) {
     platform.ready().then(() => {

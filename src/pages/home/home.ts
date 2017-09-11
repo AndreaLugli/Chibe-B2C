@@ -19,39 +19,7 @@ import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 export class HomePage {
   loading: Loading;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) {
-
-    /*
-    this.loading = this.loadingCtrl.create({
-      dismissOnPageChange: true
-    });
-
-    this.loading.present();
-    */
-
-    let checkConnectedURL = this.URLVars.checkConnectedURL();
-
-    this.http.get(checkConnectedURL).map(res => res.json()).subscribe(
-      success => {
-        if(success == 0) {
-          this.navCtrl.setRoot(IndexPage);
-        }
-        else if (success == 1) {
-          this.navCtrl.setRoot(DatipersonaliPage);
-        }
-        else if (success == 2) {
-          this.navCtrl.setRoot(AvatarPage);
-        }
-        else if (success == 3) {
-          this.navCtrl.setRoot(ProvinciaPage);
-        }
-      },
-      error => {
-        console.log("Nope");
-        //this.loading.dismiss();
-      }
-    );
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   registrazione() {
     this.navCtrl.push(RegistrazionePage);

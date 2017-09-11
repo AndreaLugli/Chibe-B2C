@@ -28,7 +28,7 @@ export class IndexPage {
   tab5Root = AmiciPage;
 
   constructor(private push: Push, public plt: Platform, public URLVars:URLVars, public http: Http) {
-
+    /*
     this.push.hasPermission()
       .then((res: any) => {
         if (res.isEnabled) {
@@ -38,7 +38,7 @@ export class IndexPage {
         }
       });
 
-      const options: PushOptions = {
+    const options: PushOptions = {
          android: {
              senderID: '551471137799'
          },
@@ -50,32 +50,30 @@ export class IndexPage {
          windows: {}
       };
 
-      const pushObject: PushObject = this.push.init(options);
+    const pushObject: PushObject = this.push.init(options);
 
-      pushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
-      pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
+    pushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
+    pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
 
-      pushObject.on('registration').subscribe(
-        (registration: any) => {
-          this.token = registration.registrationId;
+    pushObject.on('registration').subscribe(
+     (registration: any) => {
+      this.token = registration.registrationId;
 
-          if (this.plt.is('ios')) {
-            this.sistema_operativo = "iOS";
-          }
+      if (this.plt.is('ios')) {
+        this.sistema_operativo = "iOS";
+      }
 
-          if(this.plt.is('android')) {
-            this.sistema_operativo = "Android";
-          }
-          
-          let registraTokenURL = this.URLVars.registraTokenURL();
-          let body = new URLSearchParams();
-          body.append('token', this.token);
-          body.append('sistema_operativo', this.sistema_operativo);
+      if(this.plt.is('android')) {
+        this.sistema_operativo = "Android";
+      }
 
-          this.http.post(registraTokenURL, body).subscribe();
+      let registraTokenURL = this.URLVars.registraTokenURL();
+      let body = new URLSearchParams();
+      body.append('token', this.token);
+      body.append('sistema_operativo', this.sistema_operativo);
 
-        }
-      );
-
+      this.http.post(registraTokenURL, body).subscribe();
+    });
+    */  
   }
 }
