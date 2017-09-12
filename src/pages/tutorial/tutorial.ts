@@ -8,6 +8,7 @@ import { HomePage } from '../home/home';
 import { DatipersonaliPage } from '../datipersonali/datipersonali';
 import { AvatarPage } from '../avatar/avatar';
 import { ProvinciaPage } from '../provincia/provincia';
+import { DatiFbPage } from '../dati-fb/dati-fb';
 
 @Component({
   selector: 'tutorial',
@@ -22,17 +23,34 @@ constructor(public navCtrl: NavController, public navParams: NavParams, public U
 
   this.http.get(checkConnectedURL).map(res => res.json()).subscribe(
     success => {
-      if(success == 0) {
-        this.navCtrl.setRoot(IndexPage);
+
+      let output = success.output;
+      let tipo = success.tipo;
+
+      if (tipo == "regular") {
+        if(output == 0) {
+          this.navCtrl.setRoot(IndexPage);
+        }
+        else if (output == 1) {
+          this.navCtrl.setRoot(DatipersonaliPage);
+        }
+        else if (output == 2) {
+          this.navCtrl.setRoot(AvatarPage);
+        }
+        else if (output == 3) {
+          this.navCtrl.setRoot(ProvinciaPage);
+        }
       }
-      else if (success == 1) {
-        this.navCtrl.setRoot(DatipersonaliPage);
-      }
-      else if (success == 2) {
-        this.navCtrl.setRoot(AvatarPage);
-      }
-      else if (success == 3) {
-        this.navCtrl.setRoot(ProvinciaPage);
+      else {
+        if(output == 0) {
+          this.navCtrl.setRoot(IndexPage);
+        }
+        else if (output == 1) {
+          this.navCtrl.setRoot(DatiFbPage);
+        }
+        else if (output == 2) {
+          this.navCtrl.setRoot(ProvinciaPage);
+        }
       }
     },
     error => {

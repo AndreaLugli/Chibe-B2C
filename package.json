@@ -24,6 +24,7 @@
     "@ionic-native/camera": "^4.1.0",
     "@ionic-native/core": "3.12.1",
     "@ionic-native/crop": "^4.1.0",
+    "@ionic-native/facebook": "^4.2.1",
     "@ionic-native/file-transfer": "^4.1.0",
     "@ionic-native/geolocation": "^4.1.0",
     "@ionic-native/push": "^4.2.1",
@@ -33,6 +34,7 @@
     "angular2-qrcode": "^2.0.1",
     "cordova-plugin-camera": "^2.4.1",
     "cordova-plugin-crop": "^0.4.0",
+    "cordova-plugin-facebook4": "^1.9.1",
     "cordova-plugin-file-transfer": "^1.6.3",
     "cordova-plugin-geolocation": "^2.4.3",
     "cordova-plugin-splashscreen": "^4.0.3",
@@ -62,6 +64,10 @@
       "cordova-plugin-splashscreen": {},
       "phonegap-plugin-push": {
         "SENDER_ID": "551471137799"
+      },
+      "cordova-plugin-facebook4": {
+        "APP_ID": "123456789",
+        "APP_NAME": "myApplication"
       }
     }
   }

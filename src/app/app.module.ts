@@ -35,6 +35,7 @@ import { GruppoPage } from '../pages/gruppo/gruppo';
 import { UtentiGruppoPage } from '../pages/utenti-gruppo/utenti-gruppo';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { TutorialPage } from '../pages/tutorial/tutorial';
+import { DatiFbPage } from '../pages/dati-fb/dati-fb';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -45,6 +46,7 @@ import { FileTransfer } from '@ionic-native/file-transfer';
 import { QRCodeModule } from 'angular2-qrcode';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Push } from '@ionic-native/push';
+import { Facebook } from '@ionic-native/facebook';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
@@ -80,7 +82,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     GruppoPage,
     UtentiGruppoPage,
     ForgotPasswordPage,
-    TutorialPage
+    TutorialPage,
+    DatiFbPage
   ],
   imports: [
     BrowserModule,
@@ -120,7 +123,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     GruppoPage,
     UtentiGruppoPage,
     ForgotPasswordPage,
-    TutorialPage
+    TutorialPage,
+    DatiFbPage
   ],
   providers: [
     StatusBar,
@@ -132,7 +136,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     Crop,
     FileTransfer,
     Geolocation,
-    Push
+    Push,
+    Facebook
   ]
 })
 export class AppModule {}

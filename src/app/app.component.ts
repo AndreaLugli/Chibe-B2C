@@ -9,6 +9,7 @@ import { Http } from '@angular/http';
 import { HomePage } from '../pages/home/home';
 import { IndexPage } from '../pages/index/index';
 import { TutorialPage } from '../pages/tutorial/tutorial';
+import { DatiFbPage } from '../pages/dati-fb/dati-fb';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,6 +17,7 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 
 export class MyApp {
   rootPage:any = TutorialPage;
+  //rootPage:any = DatiFbPage;
 
   constructor(public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http) {
     platform.ready().then(() => {

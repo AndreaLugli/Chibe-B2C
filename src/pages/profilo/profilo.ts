@@ -41,7 +41,7 @@ export class ProfiloPage {
         this.loading.dismiss();
         this.descrizione = data.descrizione;
         this.username = data.username;
-        this.avatar = data.avatar;
+        this.avatar = "http://app.chibeapp.com" + data.avatar;
         this.tribu = data.tribu;
         this.pp = data.punti;
         this.utente = data;

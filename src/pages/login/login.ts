@@ -45,16 +45,19 @@ export class LoginPage {
     this.http.post(utenteLogineURL, body).map(res => res.json()).subscribe(
       success => {
         this.loading.dismiss();
-        if(success == 0) {
+
+        let output = success.output;
+
+        if(output == 0) {
           this.navCtrl.setRoot(IndexPage);
         }
-        else if (success == 1) {
+        else if (output == 1) {
           this.navCtrl.setRoot(DatipersonaliPage);
         }
-        else if (success == 2) {
+        else if (output == 2) {
           this.navCtrl.setRoot(AvatarPage);
         }
-        else if (success == 3) {
+        else if (output == 3) {
           this.navCtrl.setRoot(ProvinciaPage);
         }
       },

@@ -125,4 +125,12 @@ export class URLVars {
     return this.getBaseURL() + "/utente/register-push/";
   }
 
+  fbRegisterURL(token) {
+    return this.getBaseURL() + "/utente/register-by-token/facebook/?access_token=" + token;
+  }
+
+  utenteStep1FBURL() {
+    return this.getBaseURL() + "/utente/step1_fb/";
+  }
+
 }
