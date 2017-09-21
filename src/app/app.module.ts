@@ -47,6 +47,7 @@ import { QRCodeModule } from 'angular2-qrcode';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Push } from '@ionic-native/push';
 import { Facebook } from '@ionic-native/facebook';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
@@ -137,7 +138,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     FileTransfer,
     Geolocation,
     Push,
-    Facebook
+    Facebook,
+    GooglePlus
   ]
 })
 export class AppModule {}

@@ -11,6 +11,7 @@ import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 import { DatiFbPage } from '../dati-fb/dati-fb';
 
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 @Component({
   selector: 'page-home',
@@ -20,7 +21,7 @@ import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 export class HomePage {
   loading: Loading;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private fb: Facebook, public URLVars:URLVars, public http: Http) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private fb: Facebook, private googlePlus: GooglePlus, public URLVars:URLVars, public http: Http) {}
 
   registrazione() {
     this.navCtrl.push(RegistrazionePage);
@@ -32,6 +33,41 @@ export class HomePage {
 
   goForgetPassword() {
     this.navCtrl.push(ForgotPasswordPage);
+  }
+
+  GoogleLogin() {
+    this.googlePlus.login({
+      'webClientId' : '700637450112-on9jl395jvl3ann7oioj1ab488imob8h.apps.googleusercontent.com',
+      'offline': true
+    })
+      .then(res => {
+        let idToken = res.idToken;
+        let GoogleRegisterURL = this.URLVars.GoogleRegisterURL(idToken);
+        
+        this.http.get(GoogleRegisterURL).map(res => res.json()).subscribe(
+          data => {
+            let output = data.output;
+
+            if(output == 0) {
+              this.navCtrl.setRoot(IndexPage);
+            }
+            else if (output == 1) {
+              this.navCtrl.setRoot(DatiFbPage);
+            }
+            else if (output == 2) {
+              this.navCtrl.setRoot(ProvinciaPage);
+            }
+          },
+          error => {
+            alert("OH NO");
+          }
+        );
+
+      })
+      .catch(err => {
+        alert("Errore");
+        alert(err);
+      });
   }
 
   FacebookLogin() {
