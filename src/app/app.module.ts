@@ -36,6 +36,7 @@ import { UtentiGruppoPage } from '../pages/utenti-gruppo/utenti-gruppo';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { DatiFbPage } from '../pages/dati-fb/dati-fb';
+import { InvitaAmicoPage } from '../pages/invita-amico/invita-amico';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -48,9 +49,9 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Push } from '@ionic-native/push';
 import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
-
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     UtentiGruppoPage,
     ForgotPasswordPage,
     TutorialPage,
-    DatiFbPage
+    DatiFbPage,
+    InvitaAmicoPage
   ],
   imports: [
     BrowserModule,
@@ -125,7 +127,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     UtentiGruppoPage,
     ForgotPasswordPage,
     TutorialPage,
-    DatiFbPage
+    DatiFbPage,
+    InvitaAmicoPage
   ],
   providers: [
     StatusBar,
@@ -139,7 +142,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     Geolocation,
     Push,
     Facebook,
-    GooglePlus
+    GooglePlus,
+    SocialSharing
   ]
 })
 export class AppModule {}

@@ -4,6 +4,8 @@ import { Http, URLSearchParams } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
+import { InvitaAmicoPage } from '../invita-amico/invita-amico';
+
 @Component({
   selector: 'page-aggiungi-amico',
   templateUrl: 'aggiungi-amico.html',
@@ -63,6 +65,10 @@ export class AggiungiAmicoPage {
       buttons: ['OK']
     });
     alert.present(prompt);
+  }
+
+  invitaAmico() {
+      this.navCtrl.push(InvitaAmicoPage);
   }
 
 }

@@ -28,7 +28,7 @@ export class IndexPage {
   tab5Root = AmiciPage;
 
   constructor(private push: Push, public plt: Platform, public URLVars:URLVars, public http: Http) {
-    /*
+
     this.push.hasPermission()
       .then((res: any) => {
         if (res.isEnabled) {
@@ -74,6 +74,6 @@ export class IndexPage {
 
       this.http.post(registraTokenURL, body).subscribe();
     });
-    */  
+
   }
 }

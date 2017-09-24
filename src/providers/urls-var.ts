@@ -137,4 +137,12 @@ export class URLVars {
     return this.getBaseURL() + "/utente/step1_fb/";
   }
 
+  getInviteCodeURL() {
+    return this.getBaseURL() + "/utente/invite-code/";
+  }
+
+  urlInvite(code) {
+    return this.getBaseURL() + "/invito/" + code + "/";
+  }
+
 }
