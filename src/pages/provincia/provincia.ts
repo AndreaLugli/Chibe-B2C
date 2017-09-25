@@ -88,9 +88,6 @@ export class ProvinciaPage {
       this.loading.present();
       */
 
-      let headers = new Headers();
-      headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
       let body = new URLSearchParams();
       body.append('provincia_id', this.provincia);
       body.append('scuola_id', this.scuola);

@@ -56,8 +56,6 @@ export class AvatarPage {
 
   step2Function () {
     let utenteStep2URL = this.URLVars.utenteStep2URL();
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
     let body = new URLSearchParams();
     body.append('avatar', this.avatarPath);

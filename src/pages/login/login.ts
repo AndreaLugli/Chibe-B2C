@@ -35,8 +35,6 @@ export class LoginPage {
     this.loading.present();
 
     let utenteLogineURL = this.URLVars.utenteLogineURL();
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
     let body = new URLSearchParams();
     body.append('username', this.loginCredentials.username);

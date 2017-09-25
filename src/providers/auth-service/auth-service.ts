@@ -43,8 +43,6 @@ export class AuthService {
       }
 
       let utenteRegistrazioneURL = this.URLVars.utenteRegistrazioneURL();
-      let headers = new Headers();
-      headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
       let body = new URLSearchParams();
       body.append('email', credentials.email);

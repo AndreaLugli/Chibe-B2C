@@ -25,8 +25,6 @@ export class DatipersonaliPage {
     this.loading.present();
 
     let utenteStep1URL = this.URLVars.utenteStep1URL();
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
     let body = new URLSearchParams();
     body.append('nome', this.stepUnoData.nome);
