@@ -7,7 +7,7 @@ import { URLVars } from '../providers/urls-var';
 import { Http } from '@angular/http';
 
 import { HomePage } from '../pages/home/home';
-import { IndexPage } from '../pages/index/index';
+import { TalismanoPage } from '../pages/talismano/talismano';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 
 @Component({
@@ -16,7 +16,7 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 
 export class MyApp {
   rootPage:any = TutorialPage;
-  //rootPage:any = IndexPage;
+  //rootPage:any = TalismanoPage;
 
   constructor(public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http) {
     platform.ready().then(() => {

@@ -50,6 +50,7 @@ import { Push } from '@ionic-native/push';
 import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { Brightness } from '@ionic-native/brightness';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
@@ -143,7 +144,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     Push,
     Facebook,
     GooglePlus,
-    SocialSharing
+    SocialSharing,
+    Brightness
   ]
 })
 export class AppModule {}
