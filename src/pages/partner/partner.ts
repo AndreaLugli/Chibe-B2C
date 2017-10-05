@@ -18,10 +18,8 @@ export class PartnerPage {
   descrizione: any;
   telefono: any;
   indirizzo: any;
-  tribu_1: any;
-  tribu_2: any;
-  tribu_3: any;
-  tribu_4: any;
+  tribu: any;
+  percentuale: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.id_partner = navParams.get('id_partner');
@@ -34,8 +32,6 @@ export class PartnerPage {
 
     let getPartner = this.URLVars.getPartner(this.id_partner);
 
-    console.log(getPartner)
-
     this.http.get(getPartner).map(res => res.json()).subscribe(
       data => {
         this.ragione_sociale = data.ragione_sociale;
@@ -43,10 +39,8 @@ export class PartnerPage {
         this.descrizione = data.descrizione;
         this.telefono = data.telefono;
         this.indirizzo = data.indirizzo;
-        this.tribu_1 = data.tribu_1;
-        this.tribu_2 = data.tribu_2;
-        this.tribu_3 = data.tribu_3;
-        this.tribu_4 = data.tribu_4;
+        this.tribu = data.tribu;
+        this.percentuale = data.percentuale;
 
         this.loading.dismiss();
       },
