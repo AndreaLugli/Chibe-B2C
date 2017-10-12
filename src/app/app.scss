@@ -1,16 +1,86 @@
-// http://ionicframework.com/docs/theming/
+.BOTTONE-BIANCO-GIALLO {
+color: #211B4E;
+background-color: #ffffff;
+border-radius: 28px;
+box-shadow: 2px 2px 0px #fec730;
+font-weight: bold;
+min-width: 40%;
+}
 
+.BOTTONE-BIANCO-GIALLO:hover {
+color: #ffffff;
+background-color: #211B4E;
+border-radius: 28px;
+box-shadow: 2px 2px 0px #fec730;
+font-weight: bold;
+min-width: 40%;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.BOTTONE-AZZURRO-BLU {
+color: #ffffff;
+background-color: #6DD0DD;
+border-radius: 28px;
+box-shadow: 2px 2px 0px #211B4E;
+font-weight: bold;
+min-width: 40%;
+}
+.BOTTONE-AZZURRO-BLU:hover {
+color: #ffffff;
+background-color: #211B4E;
+border-radius: 28px;
+box-shadow: 2px 2px 0px #6DD0DD;
+font-weight: bold;
+min-width: 40%;
+}
+
+.toolbar-title {
+  color: #211B4E;
+}
+
+h5 {
+  color: #211B4E;
+  font-weight: bold;
+}
+
+ion-app, ion-app.md, ion-app.ios {
+    font-size: 1.2rem;
+}
+
+.text-input::-moz-placeholder {
+  color: #DFDBE8;
+}
+
+.text-input:-ms-input-placeholder {
+  color: #DFDBE8;
+}
+
+.text-input::-webkit-input-placeholder {
+  color: #DFDBE8;
+}
+
+.select-icon-inner {
+  color: #DFDBE8 !important;
+}
+.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+    color: #000;
+}
+
+.checkbox-checked {
+    border-color: #6DD0DD !important;
+    background-color: #6DD0DD !important;
+}
+
+.ion-ios-customicon-outline,
+.ion-ios-customicon,.ion-md-customicon,.ion-md-customicon-outline {
+  content: url('https://raw.github.com/driftyco/ionic-site/gh-pages/img/docs/mcfly.jpg');
+}
+
+.toolbar-background-md {
+    background: white;
+}
+
+.logo_tribu {
+  border: 5px solid #DFDBE8;
+  width: 100px;
+  border-radius: 50%; 
+}

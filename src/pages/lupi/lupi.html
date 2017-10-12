@@ -1,5 +1,13 @@
-<ion-content padding>
-  <h1>Lupi</h1>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis efficitur magna. Etiam vehicula eros in risus tincidunt imperdiet. Proin vel commodo nunc. Donec vitae luctus nisi.
-  <button ion-button full margin-top (click)="scegliTribu()">Scegli</button>
+<ion-content text-center>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 text-center>
+        <img class="logo_tribu" [src]="avatar ? 'avatar' :'http://via.placeholder.com/150x150'">
+        <h1>Lupo</h1>
+        <small>Elegante, selettivo, distinto / Dandy</small>
+        <p>Sei raffinato ed impeccabile, un perfezionista. Al tuo infallibile occhio non sfugge nessun dettaglio e, di sicuro, non sai accontentarti. Ti piace essere notato e apprezzato, sei fiero di te stesso e non lo nascondi. Sai distinguerti all’interno di un gruppo e saresti un buon leader, se solo non amassi così tanto la tua indipendenza. Proprio come un lupo.</p>
+        <button ion-button margin-top (click)="scegliTribu()" class="BOTTONE-AZZURRO-BLU">Scegli</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

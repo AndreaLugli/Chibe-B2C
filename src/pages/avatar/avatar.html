@@ -7,7 +7,7 @@
 <ion-content padding>
   <img src="{{path}}" (click) = "caricaAvatar()">
   <p text-center padding-top>
-    <button ion-button block (click)="salvaAvatar()" [attr.disabled]="isDisabled ? '' : null">Avanti</button>
+    <button ion-button (click)="salvaAvatar()" [attr.disabled]="isDisabled ? '' : null" class="BOTTONE-AZZURRO-BLU">Avanti</button>
   </p>
   <div text-center (click)=salvaAvatar()>Salta questo passaggio</div>
 </ion-content>

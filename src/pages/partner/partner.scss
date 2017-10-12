@@ -1,3 +1,53 @@
 page-partner {
+  .partner-card {
+    border-radius: 28px;
+  }
+  .partner-card img {
+    height: 100px;
+  }
+
+  .partner-card-item {
+    padding-left: 16px !important;
+    background-color: #DFDBE8;
+
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+  }
+
+  .partner-card-item h2 {
+    font-weight: bold;
+    color: #211B4E;
+    margin-top: 0 !important
+  }
+
+  .round-logo {
+    border: 1px solid #DFDBE8;
+    width: 65px !important;
+    height: 65px !important;
+    border-radius: 50%;
+  }
+
+  .round-logo-2 {
+    border-radius: 50%;
+    width: 30px !important;
+    height: 30px !important;    
+  }
+
+  .text-vert {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .text-vert strong {
+    font-size: 1.6rem;
+  }
+  .partner-card .card-content-md {
+    padding: 0;
+  }
+  .partner-card .grid {
+    padding: 0px;
+  }
 
 }

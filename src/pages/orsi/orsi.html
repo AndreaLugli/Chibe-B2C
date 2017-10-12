@@ -1,5 +1,16 @@
-<ion-content padding>
-  <h1>Orsi</h1>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis efficitur magna. Etiam vehicula eros in risus tincidunt imperdiet. Proin vel commodo nunc. Donec vitae luctus nisi.
-  <button ion-button full margin-top (click)="scegliTribu()">Scegli</button>
+<ion-content text-center>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 text-center>
+        <img class="logo_tribu" [src]="avatar ? 'avatar' :'http://via.placeholder.com/150x150'">
+        <h1>Orsi</h1>
+        <small>Instancabili, sognatori, eclettici / Gamer</small>
+        <p>
+Per te tutto ha una soluzione e non sai arrenderti davanti alle difficoltà, combatti per portare a termine la tua missione. Sei una persona determinata e perspicace, il tuo intuito sa sempre cosa consigliarti e difficilmente sbaglia.
+La tecnologia è la tua tana, un luogo sicuro dove perderti per ore, sei decisamente un orso
+</p>
+        <button ion-button margin-top (click)="scegliTribu()" class="BOTTONE-AZZURRO-BLU">Scegli</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

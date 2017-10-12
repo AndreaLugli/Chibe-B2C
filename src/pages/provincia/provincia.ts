@@ -21,6 +21,8 @@ export class ProvinciaPage {
   classe: any;
   privacy: boolean;
   newsletter: boolean;
+  compleanno: any;
+  sesso: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     /*
@@ -92,6 +94,8 @@ export class ProvinciaPage {
       body.append('provincia_id', this.provincia);
       body.append('scuola_id', this.scuola);
       body.append('classe', this.classe);
+      body.append('compleanno', this.compleanno);
+      body.append('sesso', this.sesso);
 
       if(this.newsletter) {
         body.append('newsletter', "True");
@@ -121,6 +125,9 @@ export class ProvinciaPage {
       }
       else if(!this.privacy) {
         this.showPopup("Attenzione", "Accettare la privacy policy e i termini di servizio per continuare");
+      }
+      else if(!this.compleanno) {
+        this.showPopup("Attenzione", "Inserire la data di nascita");
       }
     }
   }

@@ -1,11 +1,3 @@
-<!--
-<ion-header>
-  <ion-navbar>
-    <ion-title>{{title}}</ion-title>
-  </ion-navbar>
-</ion-header>
--->
-
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -15,14 +7,48 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <div *ngFor="let partner of partners">
-    <ion-card (click)="info_parner(partner.id)">
-      <img src="{{partner.foto}}"/>
-      <ion-card-content>
-        <ion-card-title>{{partner.ragione_sociale}}</ion-card-title>
-        <p>{{partner.descrizione}}</p>
-      </ion-card-content>
-    </ion-card>
-  </div>
+<ion-content>
+
+  <ion-grid>
+    <ion-row text-center>
+      <ion-col col-3 class="custom-tab custom-tab-selected">
+        I più vicini
+      </ion-col>
+      <ion-col col-3 class="custom-tab">
+        Le migliori promo
+      </ion-col>
+      <ion-col col-3 class="custom-tab">
+        Novità
+      </ion-col>
+      <ion-col col-3 class="custom-tab">
+        I più combattuti
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-select class="myCustomSelect" margin-bottom>
+    <ion-option value="" selected>Categorie</ion-option>
+    <ion-option value="r">Ristoranti</ion-option>
+    <ion-option value="a">Abbigliamento</ion-option>
+    <ion-option value="b">Bar</ion-option>
+    <ion-option value="s">Sport</ion-option>
+    <ion-option value="t">Tech</ion-option>
+  </ion-select>
+
+  <!--
+  <img class="logo_partner" [src]="partner.foto ? 'partner.foto' :'http://via.placeholder.com/150x150'">
+  -->
+
+  <ion-card *ngFor="let partner of partners" (click)="info_parner(partner.id)" class="custom-ion-card">
+    <ion-item class="ion-card-item">
+      <ion-avatar item-end>
+        <img src="http://via.placeholder.com/50x50">
+      </ion-avatar>
+      <h2>{{partner.ragione_sociale}}</h2>
+    </ion-item>
+    <ion-card-content class="ion-card-body">
+      {{partner.descrizione}}
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

@@ -1,32 +1,42 @@
-
-<ion-content padding>
+<ion-content>
   <ion-slides pager="true">
     <ion-slide>
-      <img src="http://via.placeholder.com/500x200">
-      <h2>Slide 1</h2>
-      <p>lorem ipsum dolor sit amet</p>
-      <button ion-button (click)="nextSlide()">Successivo</button>
+      <img src="http://via.placeholder.com/500x400">
+      <div padding>
+        <h5>Benvenuto!</h5>
+        Hai mai pensato a qualcosa di irraggiungibile?<br>
+        Quanti sono i tuoi <strong>desideri</strong>?
+      </div>
+      <button ion-button (click)="nextSlide()" class="BOTTONE-BIANCO-GIALLO">Successivo</button>
     </ion-slide>
 
     <ion-slide>
-      <img src="http://via.placeholder.com/500x200">
-      <h2>Slide 2</h2>
-      <p>lorem ipsum dolor sit amet</p>
-      <button ion-button (click)="nextSlide()">Successivo</button>
+      <img src="http://via.placeholder.com/500x400">
+      <div padding>
+        <h5>Nulla è irrangiungibile</h5>
+        Con Chibe è semplice: scegli un desiderio all’interno della sezione <strong>acchiappasogni</strong> e aggiungilo al tuo profilo?
+      </div>
+      <button ion-button (click)="nextSlide()" class="BOTTONE-BIANCO-GIALLO">Successivo</button>
     </ion-slide>
 
     <ion-slide>
-      <img src="http://via.placeholder.com/500x200">
-      <h2>Slide 3</h2>
-      <p>lorem ipsum dolor sit amet</p>
-      <button ion-button (click)="nextSlide()">Successivo</button>
+      <img src="http://via.placeholder.com/500x400">
+      <div padding>
+          <h5>La magia del talismano</h5>
+          Mostra il tuo talismano quando fai acquisti in un’attività partner di Chibe, guadagnerai istantaneamente dei punti piuma che ti aiuteranno a raggiungere velocemente i tuoi desideri.
+      </div>
+      <button ion-button (click)="nextSlide()" class="BOTTONE-BIANCO-GIALLO">Successivo</button>
     </ion-slide>
 
     <ion-slide>
-      <img src="http://via.placeholder.com/500x200">
-      <h2>Slide 4</h2>
-      <p>lorem ipsum dolor sit amet</p>
-      <button ion-button (click)="inizia()">Inizia</button>
+      <img src="http://via.placeholder.com/500x400">
+      <div padding>
+        <h5>Vivi il tuo desiderio!</h5>
+        Sul tuo profilo apparirà una barra, completala con i punti piuma necessari e sarai pronto a vivere il tuo desiderio!<br>
+        Pronto?
+      </div>
+      <button ion-button (click)="inizia()" class="BOTTONE-AZZURRO-BLU">INIZIA!</button>
     </ion-slide>
+
   </ion-slides>
 </ion-content>

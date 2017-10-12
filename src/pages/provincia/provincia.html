@@ -6,7 +6,7 @@
 
 <ion-content padding>
   <img src="http://via.placeholder.com/500x200">
-  <form (ngSubmit)="register()" #StepTreForm="ngForm">
+  <form (ngSubmit)="register()" #StepTreForm="ngForm" text-center>
     <ion-list margin-top>
       <ion-item>
         <ion-label>Provincia</ion-label>
@@ -25,14 +25,21 @@
         <ion-input type="text" placeholder="Inserisci la classe" name="classe" disabled="{{isEnabledScuola}}" [value]="classe" [(ngModel)]="classe"></ion-input>
       </ion-item>
       <ion-item>
+        <ion-label>Sesso</ion-label>
+        <ion-select [(ngModel)]="sesso" name="sesso">
+          <ion-option value="M">Maschio</ion-option>
+          <ion-option value="F">Femmina</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Data di nascita</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" name="compleanno" [(ngModel)]="compleanno"></ion-datetime>
+      </ion-item>
+      <ion-item>
         <ion-label>Privacy policy e TOS</ion-label>
         <ion-checkbox [(ngModel)]="privacy" name="privacy"></ion-checkbox>
       </ion-item>
-      <ion-item>
-        <ion-label>Newsletter</ion-label>
-        <ion-checkbox [(ngModel)]="newsletter" name="newsletter"></ion-checkbox>
-      </ion-item>
     </ion-list>
-    <button ion-button class="submit-btn" full type="button" (click)="completaStepTre()">Completa</button>
+    <button ion-button class="submit-btn BOTTONE-AZZURRO-BLU" type="button" (click)="completaStepTre()">Completa</button>
   </form>
 </ion-content>

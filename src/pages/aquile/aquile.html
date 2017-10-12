@@ -1,5 +1,16 @@
-<ion-content>
-  <h1>Aquile</h1>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis efficitur magna. Etiam vehicula eros in risus tincidunt imperdiet. Proin vel commodo nunc. Donec vitae luctus nisi.
-  <button ion-button full margin-top (click)="scegliTribu()">Scegli</button>
+<ion-content text-center>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 text-center>
+        <img class="logo_tribu" [src]="avatar ? 'avatar' :'http://via.placeholder.com/150x150'">
+        <h1>Aquile</h1>
+        <small>Libere, instancabili, spensierate / Partyharder</small>
+        <p>
+          Ogni momento è buono per fare festa!<br>
+          Sei una persona molto dinamica ed estroversa, ti piace condividere più momenti possibili con i tuoi amici e i locali della città ormai vi chiamano per nome. La tua colazione preferita è club culture, musica ad alto volume ed un pizzico di follia. Se hai visto più albe che tramonti, sei un’aquila.
+        </p>
+        <button ion-button margin-top (click)="scegliTribu()" class="BOTTONE-AZZURRO-BLU">Scegli</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

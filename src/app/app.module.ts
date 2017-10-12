@@ -91,7 +91,11 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,
+      {
+        mode: 'md'
+      }
+    ),
     HttpModule,
     QRCodeModule,
     SuperTabsModule.forRoot()

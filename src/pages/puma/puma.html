@@ -1,5 +1,15 @@
-<ion-content padding>
-  <h1>Puma</h1>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis efficitur magna. Etiam vehicula eros in risus tincidunt imperdiet. Proin vel commodo nunc. Donec vitae luctus nisi.
-  <button ion-button full margin-top (click)="scegliTribu()">Scegli</button>
+<ion-content text-center>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 text-center>
+        <img class="logo_tribu" [src]="avatar ? 'avatar' :'http://via.placeholder.com/150x150'">
+        <h1>Puma</h1>
+        <small>Attenti, energici, determinati / Sportivi</small>
+        <p>
+          Sei pieno di energie, vivi la tua vita al massimo e non vedi l’ora di allenarti. La palestra è il tuo habitat naturale ed è lì che dai il meglio di te. La tua giornata non può iniziare senza un’abbondante colazione e una corsa verso i tuoi obiettivi. Vorresti sempre fare di più e spingerti oltre i tuoi limiti, tenerti fermo è quasi impossibile: sei un puma.
+        </p>
+        <button ion-button margin-top (click)="scegliTribu()" class="BOTTONE-AZZURRO-BLU">Scegli</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -3,7 +3,26 @@
 }
 
 .avatar {
-
-  border: 2px solid rgba(0, 0, 0, 0.25);
+  border: 5px solid #DFDBE8;
   width: 100px;
+  border-radius: 50%;
+  margin-top: 40px;
+}
+
+.profilo-copertina {
+  background-color: #DFDBE8;
+  margin: -20px -20px 30px -20px;
+  height: 120px;
+}
+
+hr {
+  width: 150%;
+  margin-left: -100px;
+}
+
+.profilo-tribu-body {
+  background: #ffffff;
+  background: linear-gradient(to bottom, #ffffff 0%,#fec52e 100%);
+  margin: -20px -20px 30px -20px;
+  padding: 0px 10px 10px 10px; 
 }

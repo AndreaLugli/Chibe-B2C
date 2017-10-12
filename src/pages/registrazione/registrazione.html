@@ -10,7 +10,7 @@
 
   <p text-center style="color: red; font-weight:bold;" [attr.hidden]="isHidden ? '' : null">Attenzione: {{error_text}}</p>
 
-  <form (ngSubmit)="register()" #registerForm="ngForm">
+  <form (ngSubmit)="register()" #registerForm="ngForm" text-center>
     <ion-list margin-top>
       <ion-item>
         <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
@@ -25,6 +25,6 @@
         <ion-input type="text" placeholder="Username" name="username" [(ngModel)]="registerCredentials.username" required></ion-input>
       </ion-item>
     </ion-list>
-    <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Register</button>
+    <button ion-button class="submit-btn BOTTONE-AZZURRO-BLU" type="submit" [disabled]="!registerForm.form.valid">Registrati</button>
   </form>
 </ion-content>
