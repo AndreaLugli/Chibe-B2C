@@ -25,6 +25,7 @@ export class ProfiloPage {
   title: any;
   nome: any;
   cognome: any;
+  sesso: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.title = "Profilo";
@@ -39,7 +40,6 @@ export class ProfiloPage {
 
     this.http.get(utenteInfoURL).map(res => res.json()).subscribe(
       data => {
-        console.log(data);
         this.loading.dismiss();
         this.descrizione = data.descrizione;
         this.username = data.username;
@@ -49,6 +49,7 @@ export class ProfiloPage {
         this.modifica_tribu = data.modifica_tribu;
         this.nome = data.nome;
         this.cognome = data.cognome;
+        this.sesso = data.sesso;
 
         if(data.avatar) {
           this.avatar = "http://app.chibeapp.com" + data.avatar;
