@@ -14,17 +14,29 @@
 
 
 <ion-content>
-  <h1 *ngIf="lista_amici!=0" text-center>I tuoi amici</h1>
-
+  <h5 *ngIf="lista_amici!=0" text-center margin-top>I tuoi amici</h5>
+  <div text-center margin-bottom>Chibe è una grande tribù, più studenti ne fanno parte e più sarà facile esaudire i vostri desideri!</div>
+  <hr margin-top>
+  
   <ion-list margin-top>
     <button ion-item *ngFor="let amico of lista_amici" (click)="amicoSelected(amico)">
-      <h2>{{amico.username}}</h2>
-      <p>{{amico.first_name}} {{amico.last_name}}</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <img class="amico_avatar" [src]="amico.avatar ? 'amico.avatar' :'http://via.placeholder.com/150x150'">
+          </ion-col>
+          <ion-col col-10>
+            <h2><strong>{{amico.username}}</strong></h2>
+            <p>Punti piuma: {{amico.punti}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </button>
   </ion-list>
 
   <div *ngIf="lista_amici==0" text-center>
-    <p>Non hai ancora aggiunto utenti preferiti</p>
-    <button ion-button (click)="go_cerca()">Aggiungi amico</button>
+    <h5>La tribù si allarga</h5>
+    <p>Non hai ancora aggiunto i tuoi utenti preferiti</p>
+    <button ion-button class="" (click)="go_cerca()" class="BOTTONE-AZZURRO-BLU">Aggiungi amico</button>
   </div>
 </ion-content>

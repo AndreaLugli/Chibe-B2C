@@ -23,7 +23,7 @@ export class AmiciPage {
 
   ionViewWillEnter() {
     this.title = "Chibers";
-    
+
     this.loading = this.loadingCtrl.create({
       content: "Caricamento..."
     });
@@ -35,6 +35,7 @@ export class AmiciPage {
     this.http.get(getAmiciURL).map(res => res.json()).subscribe(
       data => {
         this.lista_amici = data;
+        console.log(data)
         this.loading.dismiss();
       },
       error => {
