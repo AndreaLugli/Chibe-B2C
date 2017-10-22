@@ -17,9 +17,22 @@ export class ConquistaPage {
   latitude: any;
   longitude: any;
   partners: any;
+  partners_original: any;
   title: any;
+  showAlert: any;
+
+  action: any;
+  page: any;
+
+  tribuSelected: any;
+  combattutiSelected: any;
+  newsSelected: any;
+  promoSelected: any;
+  viciniSelected: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+    this.setFalseClass();
+
     this.title = "Conquista";
 
     this.loading = this.loadingCtrl.create({
@@ -32,28 +45,45 @@ export class ConquistaPage {
       this.loading.dismiss();
       this.latitude = resp.coords.latitude;
       this.longitude = resp.coords.longitude;
-
-      let getPartners = this.URLVars.getPartners();
-
-      let params = {
-        latitude: this.latitude,
-        longitude: this.longitude
-      };
-
-      this.http.get(getPartners, { params: params }).map(res => res.json()).subscribe(
-        data => {
-          this.partners = data;
-        },
-        error => {
-          this.showPopup("Attenzione", error);
-        }
-      );
+      this.page = 1;
+      this.action = "vicini";
+      this.searchPartner(this.action, this.page);
+      this.viciniSelected = true;
 
     }).catch((error) => {
       console.log('Error getting location', error);
       this.loading.dismiss();
     });
 
+  }
+
+  searchPartner(filtro, page) {
+    let getPartners = this.URLVars.getPartners();
+
+    let params = {
+      latitude: this.latitude,
+      longitude: this.longitude,
+      order: filtro,
+      page: page
+    };
+
+    this.http.get(getPartners, { params: params }).map(res => res.json()).subscribe(
+      data => {
+        this.partners = data;
+        this.partners_original = data;
+
+        if(data.length) {
+          this.showAlert = false;
+        }
+        else {
+          this.showAlert = true;
+        }
+
+      },
+      error => {
+        this.showPopup("Attenzione", error);
+      }
+    );
   }
 
   info_parner(id_partner) {
@@ -69,4 +99,54 @@ export class ConquistaPage {
     alert.present(prompt);
   }
 
+  setFalseClass() {
+    this.tribuSelected = false;
+    this.combattutiSelected = false;
+    this.newsSelected = false;
+    this.promoSelected = false;
+    this.viciniSelected = false;
+  }
+
+  conquista_button(action) {
+    this.setFalseClass();
+
+    if(action == "tribu") {
+      this.tribuSelected = true;
+    }
+    else if(action == "combattuti") {
+      this.combattutiSelected = true;
+    }
+    else if(action == "news") {
+      this.newsSelected = true;
+    }
+    else if(action == "promo") {
+      this.promoSelected = true;
+    }
+    else if(action == "vicini") {
+      this.viciniSelected = true;
+
+    }
+    this.action = action;
+    this.searchPartner(this.action, this.page);
+  }
+
+  onSelectChange(selectedValue: any) {
+    if(selectedValue == "ZERO") {
+      this.partners = this.partners_original;
+    }
+    else {
+      this.partners = this.partners.filter((item) => {
+          return item.categoria_partner.indexOf(selectedValue) > -1;
+      });
+    }
+  }
+
+  carica_altro() {
+    this.page = this.page + 1;
+    this.searchPartner(this.action, this.page);
+  }
+  reinizia() {
+    this.page = 1;
+    this.searchPartner(this.action, this.page);
+  }
 }
