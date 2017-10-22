@@ -21,18 +21,17 @@
     <ion-card-content>
       {{desiderio.descrizione_breve}}
       <p>Num. persone richieste: {{desiderio.num_gruppo}}</p>
-      Valore: {{desiderio.costo_riscatto / 0.01}} punti piuma
+      Valore: {{desiderio.costo_riscatto}} punti piuma
     </ion-card-content>
   </ion-card>
-
-  <ion-footer>
-    <ion-toolbar>
-      <ion-buttons text-center>
-        <button ion-button icon-right color="royal" (click)="comunicaDesiderio()">
-          Non trovi il desiderio che vuoi?
-        </button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-footer>
-
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons text-center>
+      <button ion-button icon-right color="royal" (click)="comunicaDesiderio()">
+        Non trovi il desiderio che vuoi?
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

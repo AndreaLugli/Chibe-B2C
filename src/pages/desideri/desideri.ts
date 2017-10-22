@@ -15,12 +15,14 @@ export class DesideriPage {
   loading: Loading;
   gruppi: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {}
+
+  ionViewWillEnter() {
     this.loading = this.loadingCtrl.create({
       content: "Caricamento desideri..."
     });
 
-    this.loading.present();
+    this.loading.present()
 
     let desideriPersonaliURL = this.URLVars.desideriPersonaliURL();
 
