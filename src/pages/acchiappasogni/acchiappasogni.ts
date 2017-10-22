@@ -53,4 +53,8 @@ export class AcchiappasogniPage {
     alert.present(prompt);
   }
 
+  comunicaDesiderio() {
+    this.showPopup("Non trovi il desiderio?", "Stai cercando qualcosa in particolare? Comunicacelo a chibe@chibeapp.com");
+  }
+
 }
