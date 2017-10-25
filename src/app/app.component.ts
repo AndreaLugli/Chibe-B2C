@@ -41,6 +41,8 @@ export class MyApp {
         this.rootPage = HomePage;
       }
     );
+    this.menuCtrl.close();
+    this.rootPage = HomePage;
   }
 
 
