@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { TalismanoPage } from '../talismano/talismano';
 import { AcchiappasogniPage } from '../acchiappasogni/acchiappasogni';
@@ -6,7 +6,7 @@ import { ConquistaPage } from '../conquista/conquista';
 import { ProfiloPage } from '../profilo/profilo';
 import { AmiciPage } from '../amici/amici';
 
-import { Platform } from 'ionic-angular';
+import { Platform, NavParams } from 'ionic-angular';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
 import { Http, URLSearchParams } from '@angular/http';
@@ -27,7 +27,10 @@ export class IndexPage {
   tab4Root = ProfiloPage;
   tab5Root = AmiciPage;
 
-  constructor(private push: Push, public plt: Platform, public URLVars:URLVars, public http: Http) {
+  tabIndex: any;
+
+  constructor(public navParams: NavParams, private push: Push, public plt: Platform, public URLVars:URLVars, public http: Http) {
+    this.tabIndex = navParams.get('tabIndex');
 
     this.push.hasPermission()
       .then((res: any) => {
