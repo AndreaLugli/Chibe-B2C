@@ -70,10 +70,59 @@ ion-app, ion-app.md, ion-app.ios {
     background-color: #6DD0DD !important;
 }
 
-.ion-ios-customicon-outline,
-.ion-ios-customicon,.ion-md-customicon,.ion-md-customicon-outline {
-  content: url('https://raw.github.com/driftyco/ionic-site/gh-pages/img/docs/mcfly.jpg');
+/* Custom icons */
+
+.ion-md-tab1Icon[ng-reflect-is-active="true"],
+.ion-ios-tab1Icon[ng-reflect-is-active="true"]{
+  content: url('../assets/toolbar/acchiappa_t.png');
 }
+
+.ion-md-tab1Icon[ng-reflect-is-active="false"],
+.ion-ios-tab1Icon[ng-reflect-is-active="false"]{
+  content: url('../assets/toolbar/acchiappa_f.png');
+}
+
+.ion-md-tab2Icon[ng-reflect-is-active="true"],
+.ion-ios-tab2Icon[ng-reflect-is-active="true"]{
+  content: url('../assets/toolbar/conquista_t.png');
+}
+
+.ion-md-tab2Icon[ng-reflect-is-active="false"],
+.ion-ios-tab2Icon[ng-reflect-is-active="false"]{
+  content: url('../assets/toolbar/conquista_f.png');
+}
+
+.ion-md-tab3Icon[ng-reflect-is-active="true"],
+.ion-ios-tab3Icon[ng-reflect-is-active="true"]{
+  content: url('../assets/toolbar/talismano_t.png');
+}
+
+.ion-md-tab3Icon[ng-reflect-is-active="false"],
+.ion-ios-tab3Icon[ng-reflect-is-active="false"]{
+  content: url('../assets/toolbar/talismano_f.png');
+}
+
+.ion-md-tab4Icon[ng-reflect-is-active="true"],
+.ion-ios-tab4Icon[ng-reflect-is-active="true"]{
+  content: url('../assets/toolbar/profilo_t.png');
+}
+
+.ion-md-tab4Icon[ng-reflect-is-active="false"],
+.ion-ios-tab4Icon[ng-reflect-is-active="false"]{
+  content: url('../assets/toolbar/profilo_f.png');
+}
+
+.ion-md-tab5Icon[ng-reflect-is-active="true"],
+.ion-ios-tab5Icon[ng-reflect-is-active="true"]{
+  content: url('../assets/toolbar/chibers_t.png');
+}
+
+.ion-md-tab5Icon[ng-reflect-is-active="false"],
+.ion-ios-tab5Icon[ng-reflect-is-active="false"]{
+  content: url('../assets/toolbar/chibers_f.png');
+}
+
+/* End custom icons */
 
 .toolbar-background-md {
     background: white;
@@ -82,5 +131,5 @@ ion-app, ion-app.md, ion-app.ios {
 .logo_tribu {
   border: 5px solid #DFDBE8;
   width: 100px;
-  border-radius: 50%; 
+  border-radius: 50%;
 }
