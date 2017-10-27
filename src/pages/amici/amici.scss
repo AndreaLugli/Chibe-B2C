@@ -1,3 +1,16 @@
 .amico_avatar {
   border-radius: 50%;
+  border: 3px solid #DFDBE8;
+}
+
+.custom-amici-item{
+  padding: 0;
+}
+
+.custom-amici-item .label-md {
+  margin: 0;
+}
+
+.custom-amici-item .item-inner {
+  border-bottom: none !important;
 }

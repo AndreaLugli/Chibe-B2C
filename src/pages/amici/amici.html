@@ -14,12 +14,13 @@
 
 
 <ion-content>
-  <h5 *ngIf="lista_amici!=0" text-center margin-top>I tuoi amici</h5>
-  <div text-center margin-bottom>Chibe è una grande tribù, più studenti ne fanno parte e più sarà facile esaudire i vostri desideri!</div>
-  <hr margin-top>
-  
+
+  <h5 *ngIf="lista_amici!=0" text-center margin-top>Aggiungi i tuoi amici</h5>
+  <div text-center margin-bottom *ngIf="lista_amici!=0">Chibe è una grande tribù, più studenti ne fanno parte e più sarà facile esaudire i vostri desideri!</div>
+  <hr margin-top *ngIf="lista_amici!=0">
+
   <ion-list margin-top>
-    <button ion-item *ngFor="let amico of lista_amici" (click)="amicoSelected(amico)">
+    <button class="custom-amici-item" ion-item *ngFor="let amico of lista_amici" (click)="amicoSelected(amico)">
       <ion-grid>
         <ion-row>
           <ion-col col-2>
