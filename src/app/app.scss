@@ -37,6 +37,10 @@ min-width: 40%;
   color: #211B4E;
 }
 
+ion-navbar button {
+  color: #6DD0DD !important;
+}
+
 h5 {
   color: #211B4E;
   font-weight: bold;
@@ -61,7 +65,12 @@ ion-app, ion-app.md, ion-app.ios {
 .select-icon-inner {
   color: #DFDBE8 !important;
 }
-.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+.item-input .label-md,
+.item-select .label-md,
+.item-datetime .label-md,
+.item-input .label-ios,
+.item-select .label-ios,
+.item-datetime .label-ios {
     color: #000;
 }
 
@@ -124,7 +133,8 @@ ion-app, ion-app.md, ion-app.ios {
 
 /* End custom icons */
 
-.toolbar-background-md {
+.toolbar-background-md,
+.toolbar-background-ios {
     background: white;
 }
 
@@ -132,4 +142,14 @@ ion-app, ion-app.md, ion-app.ios {
   border: 5px solid #DFDBE8;
   width: 100px;
   border-radius: 50%;
+}
+
+.title.title-md {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 70%;
+    text-align: center;
 }

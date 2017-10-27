@@ -43,7 +43,7 @@ export class HomePage {
       .then(res => {
         let idToken = res.idToken;
         let GoogleRegisterURL = this.URLVars.GoogleRegisterURL(idToken);
-        
+
         this.http.get(GoogleRegisterURL).map(res => res.json()).subscribe(
           data => {
             let output = data.output;
@@ -65,8 +65,13 @@ export class HomePage {
 
       })
       .catch(err => {
-        alert("Errore");
-        alert(err);
+        if(err == 12501) {
+            console.log("Tasto indietro");
+        }
+        else {
+          alert("Errore");
+          alert(err);
+        }
       });
   }
 
