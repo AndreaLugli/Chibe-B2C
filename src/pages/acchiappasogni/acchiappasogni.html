@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content>
+  <!--
   <ion-card *ngFor="let desiderio of desideri" (click)="openDesiderio(desiderio.id)">
     <ion-card-header>{{desiderio.nome}}</ion-card-header>
     <ion-card-content>
@@ -16,6 +17,19 @@
       Valore: {{desiderio.costo_riscatto}} punti piuma
     </ion-card-content>
   </ion-card>
+-->
+
+  <ion-card *ngFor="let desiderio of desideri" (click)="openDesiderio(desiderio.id)" class="custom-ion-card">
+    <ion-item class="ion-card-item">
+      <h2>{{desiderio.nome}}</h2>
+    </ion-item>
+    <ion-card-content class="ion-card-body">
+      {{desiderio.descrizione_breve}}
+      <p>Num. persone richieste: {{desiderio.num_gruppo}}</p>
+      Valore: {{desiderio.costo_riscatto}} punti piuma
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
 
 <ion-footer>
