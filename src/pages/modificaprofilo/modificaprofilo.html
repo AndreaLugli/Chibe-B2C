@@ -5,13 +5,16 @@
 </ion-header>
 
 <ion-content padding text-center>
-  <h2>Modifica la tua biografia personale</h2>
+  <h2>Modifica la tua
+    <br>biografia personale
+  </h2>
+
   <form (ngSubmit)="salvaDescrizione()" #decsizioneForm="ngForm">
     <ion-list margin-top>
       <ion-item>
         <ion-textarea type="text" placeholder="Biografia" name="descrizione" [(ngModel)]="descrizione" required></ion-textarea>
       </ion-item>
     </ion-list>
-    <button ion-button class="submit-btn" full type="submit" [disabled]="!decsizioneForm.form.valid">Salva</button>
+    <button ion-button class="submit-btn BOTTONE-AZZURRO-BLU " type="submit" [disabled]="!decsizioneForm.form.valid">Salva</button>
   </form>
 </ion-content>

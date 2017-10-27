@@ -1,25 +1,32 @@
 page-tribuscelta {
-    /*
-  .toolbar-background-md {
-      background: white;
-      border: 1px solid #DFDBE8;
-      border-radius: 10px;
-  }
-  super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .indicator {
-    background-color: #211B4E;
-    width: 80px;
-    margin-left: 7px;
-    bottom: 10px;
-  }
-  */
   super-tabs:not([no-shadow]) > super-tabs-toolbar > ion-toolbar.toolbar::after {
+    /*
     background-color: #DFDBE8;
+    height: 1px !important;
+    border-radius: 20
+    */
+    background-color: transparent;
   }
   super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .indicator {
-    background-color: #211B4E;
+    /*background-color: #211B4E;*/
+    background-color: transparent;
   }
   super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button.title-only .title {
     color: #211B4E;
     font-weight: bold;
   }
+  super-tabs:not([no-shadow]) > super-tabs-toolbar > ion-toolbar.toolbar::after, super-tabs:not([no-shadow]) > super-tabs-toolbar > ion-toolbar.toolbar::before {
+    background-image: none !important;
+  }
+
+  super-tabs-toolbar {
+    border: 1px solid #dfdbe8;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  super-tab-button[ng-reflect-selected="true"] {
+    border-bottom: 2px solid #211B4E;
+  }
+
 }
