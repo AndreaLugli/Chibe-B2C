@@ -153,3 +153,17 @@ ion-app, ion-app.md, ion-app.ios {
     width: 70%;
     text-align: center;
 }
+
+.header-md::after {
+  background-image: none;
+  border-bottom: 1px solid #DFDBE8;
+}
+
+.tabs-md .tabbar {
+    background: #fff;
+}
+
+.footer-md::before {
+  background-image: none;
+  border-top: 1px solid #DFDBE8;  
+}
