@@ -1,4 +1,10 @@
 page-talismano {
+  qr-code img {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border: 5px solid #DFDBE8;
+    border-radius: 5px;
+  }
 
   .round-qr {
     border: 5px solid #DFDBE8;
@@ -6,6 +12,6 @@ page-talismano {
     height: 120px;
     width: 120px;
     text-align: center;
-    padding-top: 26px;
+    padding-top: 28px;
   }
 }
