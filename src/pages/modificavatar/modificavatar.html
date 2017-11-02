@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cambia il tuo avatar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center>
+  <img src="{{avatar}}" (click) = "caricaAvatar()">
+  <p text-center padding-top>
+    <button ion-button (click)="salvaAvatar()" [attr.disabled]="isDisabled ? '' : null" class="BOTTONE-AZZURRO-BLU">Salva</button>
+  </p>
+  <div text-center (click)=indietro()>Indietro</div>
+</ion-content>

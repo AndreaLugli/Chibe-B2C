@@ -5,8 +5,10 @@ import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
 import { TribuSceltaPage } from '../tribuscelta/tribuscelta';
-import { ModificaProfiloPage } from '../modificaprofilo/modificaprofilo'
-import { DesideriPage } from '../desideri/desideri'
+import { ModificaProfiloPage } from '../modificaprofilo/modificaprofilo';
+import { DesideriPage } from '../desideri/desideri';
+import { ModificavatarPage } from '../modificavatar/modificavatar';
+
 
 @Component({
   selector: 'page-profilo',
@@ -54,7 +56,9 @@ export class ProfiloPage {
         if(data.avatar) {
           this.avatar = "http://app.chibeapp.com" + data.avatar;
         }
-
+        else {
+          this.avatar = "http://via.placeholder.com/150x150";
+        }
       },
       error => {
         this.loading.dismiss();
@@ -69,6 +73,10 @@ export class ProfiloPage {
 
   modificaProfilo() {
     this.navCtrl.push(ModificaProfiloPage, {utente : this.utente});
+  }
+
+  modificaAvatar() {
+    this.navCtrl.push(ModificavatarPage, {avatar : this.avatar});
   }
 
   listaDesideri() {

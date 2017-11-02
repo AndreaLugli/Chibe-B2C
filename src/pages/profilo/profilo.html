@@ -16,7 +16,7 @@
   <ion-grid>
     <ion-row class="profilo-copertina">
       <ion-col col-12 text-center>
-        <img class="avatar" [src]="avatar ? 'avatar' :'http://via.placeholder.com/150x150'">
+        <img class="avatar" [src]="avatar" (click)="modificaAvatar()">
       </ion-col>
     </ion-row>
     <ion-row>
