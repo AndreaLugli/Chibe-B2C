@@ -5,6 +5,7 @@ import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
 import { IndexPage } from '../index/index';
+import { GruppoPage } from '../gruppo/gruppo';
 
 @Component({
   selector: 'page-desiderio',
@@ -48,10 +49,10 @@ export class DesiderioPage {
     let getDesiderioURL = this.URLVars.getDesiderioURL(this.id_desiderio);
     let body = new URLSearchParams();
 
-    this.http.post(getDesiderioURL, body).subscribe(
-      success => {
+    this.http.post(getDesiderioURL, body).map(res => res.json()).subscribe(
+      gruppo => {
         this.loading.dismiss();
-        this.showPopupConfirm("Grazie!", "Desiderio seguito correttamente");
+        this.navCtrl.push(GruppoPage, {gruppo: gruppo, gruppo_id : gruppo.id});
       },
       error => {
         this.loading.dismiss();
