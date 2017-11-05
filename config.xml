@@ -24,7 +24,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="0" />
-    <splash src="resources/splash.png" />
+
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/android.png" />
@@ -33,6 +33,7 @@
         <icon density="xhdpi" src="resources/android/icon/android.png" />
         <icon density="xxhdpi" src="resources/android/icon/android.png" />
         <icon density="xxxhdpi" src="resources/android/icon/android.png" />
+
         <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png" />
         <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png" />
         <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png" />
@@ -40,6 +41,7 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
         <resource-file src="resources/google-services.json" target="google-services.json" />
+        <resource-file src="resources/icon_push.png" target="res/drawable/icon_push.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />

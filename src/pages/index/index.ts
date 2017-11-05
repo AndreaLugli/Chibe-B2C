@@ -43,7 +43,9 @@ export class IndexPage {
 
     const options: PushOptions = {
          android: {
-             senderID: '551471137799'
+             senderID: '551471137799',
+             icon : "icon_push",
+   	         iconColor: "#e90031",
          },
          ios: {
              alert: 'true',
