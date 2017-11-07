@@ -24,17 +24,21 @@
             <img class="round-logo" [src]="foto ? 'foto' :'http://via.placeholder.com/100x100'">
           </ion-col>
           <ion-col col-4 class="text-vert">
-            <strong>Tribu: {{tribu}}</strong>
+            <strong *ngIf="tribu">Tribu: {{tribu}}</strong>
           </ion-col>
-          <ion-col col-4 class="text-vert">
-            <small text-center>Campo di battaglia</small>
+          <ion-col col-1>
+          </ion-col>
+          <ion-col col-4>
             <ion-row>
+              <ion-col col-12 class="no-padding-top-bottom">
+                <small text-center>Campo di battaglia</small>
+              </ion-col>
+              <ion-col col-6>
+                  <img class="round-logo-2" src="{{tribu_1}}">
+              </ion-col>
               <ion-col col-6>
                   <img class="round-logo-2" src="http://via.placeholder.com/100x100">
               </ion-col>
-                <ion-col col-6>
-                    <img class="round-logo-2" src="http://via.placeholder.com/100x100">
-                </ion-col>
             </ion-row>
           </ion-col>
         </ion-row>

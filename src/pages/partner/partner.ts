@@ -21,6 +21,9 @@ export class PartnerPage {
   tribu: any;
   percentuale: any;
 
+  tribu_1: any;
+  tribu_2: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.id_partner = navParams.get('id_partner');
 
@@ -41,8 +44,10 @@ export class PartnerPage {
         this.indirizzo = data.indirizzo;
         this.tribu = data.tribu;
         this.percentuale = data.percentuale;
-
         this.loading.dismiss();
+
+        this.tribu_1 = this.get_picture(data.tribu_1);
+
       },
       error => {
         this.showPopup("Attenzione", error);
@@ -59,4 +64,26 @@ export class PartnerPage {
     });
     alert.present(prompt);
   }
+
+  get_picture(tribu) {
+    if(tribu == "volpi") {
+      return 'assets/animali/volpi.png';
+    }
+    else if(tribu == "puma") {
+      return 'assets/animali/puma.png';
+    }
+    else if(tribu == "lupi") {
+      return 'assets/animali/lupo.png';
+    }
+    else if(tribu == "aquile") {
+      return 'assets/animali/aquila.png';
+    }
+    else if(tribu == "orsi") {
+      return 'assets/animali/orso.png';
+    }
+    else {
+      return 'http://via.placeholder.com/100x100';
+    }
+  }
+
 }

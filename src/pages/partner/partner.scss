@@ -30,7 +30,7 @@ page-partner {
   .round-logo-2 {
     border-radius: 50%;
     width: 30px !important;
-    height: 30px !important;    
+    height: 30px !important;
   }
 
   .text-vert {
@@ -48,6 +48,11 @@ page-partner {
   }
   .partner-card .grid {
     padding: 0px;
+  }
+
+  .no-padding-top-bottom {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
 }

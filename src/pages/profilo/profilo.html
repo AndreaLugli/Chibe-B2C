@@ -57,8 +57,19 @@
       <ion-col col-12>
         <h5>Lista dei desideri</h5>
         Controlla la lista dei desideri seguiti
-        <br>
-        <button ion-button round margin-top (click)="listaDesideri()" class="BOTTONE-AZZURRO-BLU">Vedi la lista</button>
+        <ion-list margin-top>
+          <button ion-item *ngFor="let gruppo of gruppi" (click)="getGruppo(gruppo)">
+            <h2>{{gruppo.nome}}</h2>
+            <p>Punti piuma raccolti: {{gruppo.punti}} / {{gruppo.punti_necessari}}</p>
+            <p>Componenti gruppo: {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}</p>
+            <div class="progress-bar blue stripes">
+                <span [style.width]="gruppo.percentuale">{{gruppo.percentuale}}</span>
+            </div>
+          </button>
+        </ion-list>
+        <div *ngIf="gruppi==0" text-center>
+          <h3>Nessun desiderio seguito</h3>
+        </div>
       </ion-col>
     </ion-row>
 

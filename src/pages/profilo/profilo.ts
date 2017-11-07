@@ -8,6 +8,7 @@ import { TribuSceltaPage } from '../tribuscelta/tribuscelta';
 import { ModificaProfiloPage } from '../modificaprofilo/modificaprofilo';
 import { DesideriPage } from '../desideri/desideri';
 import { ModificavatarPage } from '../modificavatar/modificavatar';
+import { GruppoPage } from '../gruppo/gruppo';
 
 
 @Component({
@@ -28,6 +29,8 @@ export class ProfiloPage {
   nome: any;
   cognome: any;
   sesso: any;
+
+  gruppi: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.title = "Profilo";
@@ -65,6 +68,17 @@ export class ProfiloPage {
         this.showPopup("Attenzione", error);
       }
     );
+
+    let desideriPersonaliURL = this.URLVars.desideriPersonaliURL();
+
+    this.http.get(desideriPersonaliURL).map(res => res.json()).subscribe(
+      data => {
+        this.gruppi = data;
+        console.log(this.gruppi)
+      }
+    );
+
+
   }
 
   scegliTribu() {
@@ -92,5 +106,8 @@ export class ProfiloPage {
     alert.present(prompt);
   }
 
+  getGruppo(gruppo) {
+    this.navCtrl.push(GruppoPage, {gruppo: gruppo, gruppo_id : gruppo.id});
+  }
 
 }

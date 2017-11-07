@@ -12,6 +12,9 @@
       <p>Punti piuma raccolti: {{gruppo.punti}} / {{gruppo.punti_necessari / 0.01}}</p>
       <p>Componenti gruppo: {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}</p>
     </button>
+    <div class="progress-bar blue stripes">
+        <span style="width: 40%"></span>
+    </div>    
   </ion-list>
   <div *ngIf="gruppi==0" text-center>
     <h3>Nessun desiderio seguito</h3>
