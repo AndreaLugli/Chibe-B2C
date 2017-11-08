@@ -33,6 +33,9 @@ export class ProfiloPage {
   gruppi: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+  }
+
+  ionViewWillEnter() {
     this.title = "Profilo";
 
     this.loading = this.loadingCtrl.create({

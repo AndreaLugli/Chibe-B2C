@@ -24,7 +24,9 @@
       <ion-grid>
         <ion-row>
           <ion-col col-2>
-            <img class="amico_avatar" [src]="amico.avatar ? 'amico.avatar' :'http://via.placeholder.com/150x150'">
+            <img class="amico_avatar" src="http://app.chibeapp.com{{amico.avatar}}" *ngIf="amico.avatar">
+            <img class="amico_avatar" src="http://via.placeholder.com/150x150" *ngIf="!amico.avatar">
+            <!--<img class="amico_avatar" src="amico.avatar ? 'amico.avatar' :'http://via.placeholder.com/150x150'">-->
           </ion-col>
           <ion-col col-10>
             <h2><strong>{{amico.username}}</strong></h2>

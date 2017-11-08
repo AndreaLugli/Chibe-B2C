@@ -4,7 +4,7 @@ import { Http, URLSearchParams } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
-import { IndexPage } from '../index/index';
+import { ProfiloPage } from '../profilo/profilo';
 
 @Component({
   selector: 'page-modificaprofilo',
@@ -47,7 +47,7 @@ export class ModificaProfiloPage {
 
   goToIndex() {
     this.viewCtrl.dismiss();
-    this.appCtrl.getRootNav().push(IndexPage);
+    this.appCtrl.getRootNav().push(ProfiloPage);
   }
 
   showPopup(title, text) {
@@ -64,7 +64,7 @@ export class ModificaProfiloPage {
       title: title,
       subTitle: text,
       buttons: [{
-        text: 'Torna alla Home',
+        text: 'Torna al profilo',
         handler: data => {
           this.goToIndex()
         }

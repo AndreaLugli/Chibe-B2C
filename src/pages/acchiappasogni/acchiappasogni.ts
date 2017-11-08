@@ -54,7 +54,7 @@ export class AcchiappasogniPage {
   }
 
   comunicaDesiderio() {
-    this.showPopup("Non trovi il desiderio?", "Stai cercando qualcosa in particolare? Comunicacelo a chibe@chibeapp.com");
+    this.showPopup("Non trovi il desiderio?", "<a target='_blank' href='https://api.whatsapp.com/send?phone=393333333333&text=I%27m%20interested%20in%20your%20car%20for%20sale'>Comunicacelo</a>");
   }
 
 }
