@@ -17,6 +17,7 @@ export class GruppoPage {
   gruppo_id: any;
   miei_punti: any;
   punti_piuma: any;
+  codice_str: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController)  {
     this.gruppo = navParams.get('gruppo');
@@ -34,6 +35,10 @@ export class GruppoPage {
         this.loading.dismiss();
         this.gruppo = data;
         this.miei_punti = data.miei_punti;
+
+        this.codice_str = this.gruppo.codice_ordine;
+        this.codice_str = [this.codice_str.slice(0, 3), " ", this.codice_str.slice(3)].join('');
+        this.codice_str = [this.codice_str.slice(0, 7), " ", this.codice_str.slice(7)].join('');
       }
     );
   }
@@ -61,6 +66,23 @@ export class GruppoPage {
         }
       );
     }
+  }
+
+  riscatta_premio() {
+    this.loading = this.loadingCtrl.create();
+    this.loading.present();
+    let riscattaDesiderioURL = this.URLVars.riscattaDesiderioURL(this.gruppo_id);
+    let body = new URLSearchParams();
+    this.http.post(riscattaDesiderioURL, body).subscribe(
+      data => {
+        this.loading.dismiss();
+        this.ionViewWillEnter()
+      },
+      err => {
+        this.loading.dismiss();
+        alert(err);
+      }
+    );
   }
 
 }

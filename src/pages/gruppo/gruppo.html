@@ -7,32 +7,71 @@
 
 <ion-content padding>
   <h1>{{gruppo.nome}}</h1>
-  <p>Punti piuma raccolti: {{gruppo.punti}} / {{gruppo.punti_necessari / 0.01}}</p>
+  <p>Punti piuma raccolti: {{gruppo.punti}} / {{gruppo.punti_necessari}}</p>
   <p>Componenti gruppo: {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}</p>
 
+  <div *ngIf="!gruppo.conquistato">
+    <div *ngIf="gruppo.utenti.length<gruppo.num_gruppo" text-center>
+      <h3>Attenzione!</h3>
+      Per poter inviare punti devi raggiungere il numero minimo ({{gruppo.num_gruppo}}) di membri nel gruppo.
 
-  <div *ngIf="gruppo.utenti.length<gruppo.num_gruppo" text-center>
-    <h3>Attenzione!</h3>
-    Per poter inviare punti devi raggiungere il numero minimo ({{gruppo.num_gruppo}}) di membri nel gruppo.
+      <div *ngIf="gruppo.admin" padding-top>
+        <button ion-button block (click)="aggiungiMembro()">Aggiungi membro</button>
+      </div>
 
-    <div *ngIf="gruppo.admin" padding-top>
-      <button ion-button block (click)="aggiungiMembro()">Aggiungi membro</button>
+      <div *ngIf="!gruppo.admin">
+        Chiedi all'amministratore del gruppo di aggiungere i membri mancanti
+      </div>
     </div>
 
-    <div *ngIf="!gruppo.admin">
-      Chiedi all'amministratore del gruppo di aggiungere i membri mancanti
+    <div *ngIf="gruppo.utenti.length>=gruppo.num_gruppo" text-center>
+        <h3>Aggiungi punti al premio</h3>
+        <p>Hai a disposizione {{miei_punti}} punti piuma</p>
+        <ion-item>
+          <ion-input type="number" placeholder="Punti piuma" [value]="punti_piuma" [(ngModel)]="punti_piuma"></ion-input>
+        </ion-item>
+        <p text-center>
+          <button ion-button block (click)="invia_punti()">Invia punti</button>
+        </p>
     </div>
   </div>
 
-  <div *ngIf="gruppo.utenti.length>=gruppo.num_gruppo" text-center>
-      <h3>Aggiungi punti al premio</h3>
-      <p>Hai a disposizione {{miei_punti}} punti piuma</p>
-      <ion-item>
-        <ion-input type="number" placeholder="Punti piuma" [value]="punti_piuma" [(ngModel)]="punti_piuma"></ion-input>
-      </ion-item>
-      <p text-center>
-        <button ion-button block (click)="invia_punti()">Invia punti</button>
-      </p>    
+  <div *ngIf="gruppo.conquistato" text-center>
+    <h3>Grande! Il premio è stato conquistato!</h3>
+
+    <div *ngIf="!gruppo.ordine_riscattato">
+      <div *ngIf="!gruppo.admin">
+        Chiedi all'amministratore del gruppo di riscattare il premio
+      </div>
+
+      <div *ngIf="gruppo.admin">
+        Ora puoi riscattare il premio
+        <button ion-button block (click)="riscatta_premio()">Riscatta il premio</button>
+      </div>
+    </div>
+
+    <div *ngIf="gruppo.ordine_riscattato">
+      <div *ngIf="gruppo.ritirato">
+          Il premio è stato ritirato con successo.
+      </div>
+
+      <div *ngIf="!gruppo.ritirato">
+        <div *ngIf="!gruppo.admin">
+          L'amministratore del gruppo ha ordinato con successo il premio. Ora deve ritirarlo.
+        </div>
+        <div *ngIf="gruppo.admin">
+          <p>Hai ordinato il premio. Ecco il tuo QR code di ricevuta</p>
+          <qr-code [value]="gruppo.codice_ordine" [size]="150" [background]="background" [foreground]="foreground"></qr-code>
+          <h5>{{codice_str}}</h5>
+          <p>Puoi ritirare il desiderio in uno di questi locali mostrando il codice QR</p>
+          <ul text-left>
+            <li *ngFor="let partner of gruppo.partners"><strong>{{partner.ragione_sociale}}</strong> - {{partner.indirizzo}}</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </div>
+
 
 </ion-content>

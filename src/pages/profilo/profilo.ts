@@ -77,7 +77,6 @@ export class ProfiloPage {
     this.http.get(desideriPersonaliURL).map(res => res.json()).subscribe(
       data => {
         this.gruppi = data;
-        console.log(this.gruppi)
       }
     );
 

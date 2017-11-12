@@ -15,10 +15,18 @@ import { ProvinciaPage } from '../provincia/provincia';
 export class DatiFbPage {
   loading: Loading;
   cellulare: any;
+  username: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) { }
+  error_text: any;
+  isHidden: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) {
+    this.isHidden = true;
+  }
 
   stepUnoFB() {
+    this.isHidden = true;
+    
     this.loading = this.loadingCtrl.create({
       dismissOnPageChange: true
     });
@@ -28,6 +36,7 @@ export class DatiFbPage {
 
     let body = new URLSearchParams();
     body.append('cellulare', this.cellulare);
+    body.append('username', this.username);
 
     this.http.post(utenteStep1FBURL, body).subscribe(
       success => {
@@ -36,7 +45,15 @@ export class DatiFbPage {
       },
       error => {
         this.loading.dismiss();
-        this.showPopup("Attenzione", error._body);
+        let error_body;
+        if(error._body) {
+          error_body = error._body;
+        }
+        else {
+          error_body = error;
+        }
+        this.isHidden = false;
+        this.error_text = error_body;
       }
     );
   }

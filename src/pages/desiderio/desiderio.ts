@@ -32,7 +32,6 @@ export class DesiderioPage {
     this.http.get(getDesiderioURL).map(res => res.json()).subscribe(
       data => {
         this.loading.dismiss();
-        console.log(data);
         this.desiderio = data;
       },
       error => {
@@ -59,7 +58,6 @@ export class DesiderioPage {
         this.showPopup("Attenzione", error._body);
       }
     )
-
 
   }
 
