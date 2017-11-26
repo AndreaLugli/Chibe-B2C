@@ -48,10 +48,11 @@ export class ProfiloPage {
 
     this.http.get(utenteInfoURL).map(res => res.json()).subscribe(
       data => {
+
         this.loading.dismiss();
         this.descrizione = data.descrizione;
         this.username = data.username;
-        this.tribu = data.tribu;
+        //this.tribu = data.tribu;
         this.pp = data.punti;
         this.utente = data;
         this.modifica_tribu = data.modifica_tribu;
@@ -65,6 +66,11 @@ export class ProfiloPage {
         else {
           this.avatar = "http://via.placeholder.com/150x150";
         }
+
+        if(data.tribu) {
+          this.tribu = "/assets/profilo/" + data.tribu + ".png";
+        }
+
       },
       error => {
         this.loading.dismiss();

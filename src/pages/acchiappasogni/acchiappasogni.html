@@ -15,7 +15,7 @@
     <ion-card-content class="ion-card-body">
       {{desiderio.descrizione_breve}}
       <p>Num. persone richieste: {{desiderio.num_gruppo}}</p>
-      Valore: {{desiderio.punti_piuma}} punti piuma
+      Valore: {{desiderio.punti_piuma|number|pointReplacer}} punti piuma
     </ion-card-content>
   </ion-card>
 

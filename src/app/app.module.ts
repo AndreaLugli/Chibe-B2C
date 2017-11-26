@@ -41,6 +41,7 @@ import { ModificavatarPage } from '../pages/modificavatar/modificavatar';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
+import { PointReplacerPipe } from '../pipes/point-replacer.pipe';
 
 import { Camera } from '@ionic-native/camera';
 import { Crop } from '@ionic-native/crop';
@@ -89,7 +90,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     TutorialPage,
     DatiFbPage,
     InvitaAmicoPage,
-    ModificavatarPage
+    ModificavatarPage,
+    PointReplacerPipe
   ],
   imports: [
     BrowserModule,
@@ -152,7 +154,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     Facebook,
     GooglePlus,
     SocialSharing,
-    Brightness
+    Brightness,
+    PointReplacerPipe
   ]
 })
 export class AppModule {}
