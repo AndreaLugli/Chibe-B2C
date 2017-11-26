@@ -8,6 +8,34 @@
 </ion-header>
 
 <ion-content padding text-center>
+  <ion-grid id="talismano_bg">
+    <ion-row>
+      <ion-col col-12>
+        <qr-code [value]="codice" [size]="150" [background]="background" [foreground]="foreground"></qr-code>
+      </ion-col>
+    </ion-row>
+    <br><br><br><br>
+    <ion-row margin-top>
+      <ion-col>
+      </ion-col>
+      <ion-col col-auto>
+        <h5 class="round-qr">
+            Codice<br>
+            {{codice_str}}
+        </h5>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+<!--
+  <img src="/assets/talismano.jpg">
+-->
+  <!--
   <qr-code [value]="codice" [size]="150" [background]="background" [foreground]="foreground"></qr-code>
 
   <ion-grid margin-top>
@@ -24,7 +52,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
+  -->
 
 
 
