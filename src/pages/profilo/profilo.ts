@@ -22,6 +22,7 @@ export class ProfiloPage {
   avatar: any;
   username: any;
   tribu: any;
+  tribu_str: any;
   pp: any;
   utente: any;
   modifica_tribu: any;
@@ -68,7 +69,8 @@ export class ProfiloPage {
         }
 
         if(data.tribu) {
-          this.tribu = "/assets/profilo/" + data.tribu + ".png";
+          this.tribu_str = "../assets/profilo/" + data.tribu + ".png";
+          this.tribu = data.tribu;
         }
 
       },

@@ -15,6 +15,7 @@ import { App, ViewController } from 'ionic-angular';
 export class ConfermaTribuPage {
   loading: Loading;
   tribu: any;
+  tribu_str: any;
   data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController, public viewCtrl: ViewController, public appCtrl: App) {
@@ -29,6 +30,9 @@ export class ConfermaTribuPage {
     let year = nextMonth.getFullYear();
 
     this.data = day + "/" + monthIndex + "/" + year;
+
+    this.tribu_str = "assets/profilo/" + this.tribu + ".png";
+
   }
 
   confermaTribu() {
