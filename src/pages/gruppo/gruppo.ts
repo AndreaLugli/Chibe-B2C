@@ -37,8 +37,10 @@ export class GruppoPage {
         this.miei_punti = data.miei_punti;
 
         this.codice_str = this.gruppo.codice_ordine;
-        this.codice_str = [this.codice_str.slice(0, 3), " ", this.codice_str.slice(3)].join('');
-        this.codice_str = [this.codice_str.slice(0, 7), " ", this.codice_str.slice(7)].join('');
+        if (this.codice_str > 0) {
+          this.codice_str = [this.codice_str.slice(0, 3), " ", this.codice_str.slice(3)].join('');
+          this.codice_str = [this.codice_str.slice(0, 7), " ", this.codice_str.slice(7)].join('');
+        }
       }
     );
   }

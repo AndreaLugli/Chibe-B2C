@@ -6,18 +6,49 @@
 
 <ion-content padding>
   <h2>Utenti nel gruppo</h2>
+  <!--
   <ion-list>
     <ion-item *ngFor="let utente of utenti_gruppo">
       <h2>{{utente.username}} <span *ngIf="utente.id==io">(tu)</span></h2>
       <p>{{utente.first_name}} {{utente.last_name}}</p>
     </ion-item>
   </ion-list>
+  -->
+  <ion-grid>
+    <ion-row *ngFor="let utente of utenti_gruppo">
+      <ion-col col-2>
+        <img class="amico_avatar" src="http://app.chibeapp.com{{utente.avatar}}" *ngIf="utente.avatar">
+        <img class="amico_avatar" src="http://via.placeholder.com/150x150" *ngIf="!utente.avatar">
+      </ion-col>
+      <ion-col col-10>
+        <h2><strong>{{utente.username}}</strong></h2>
+        <p>{{utente.first_name}} {{utente.last_name}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <h2>Amici NON nel gruppo</h2>
   <ion-list>
+    <!--
     <ion-item *ngFor="let amico of amici">
       <h2>{{amico.username}}</h2>
       <p>{{amico.first_name}} {{amico.last_name}}</p>
+      <ion-icon item-end name="add" (click)="addAmicoGruppo(amico)"></ion-icon>
+    </ion-item>
+  -->
+    <ion-item *ngFor="let amico of amici">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <img class="amico_avatar" src="http://app.chibeapp.com{{amico.avatar}}" *ngIf="amico.avatar">
+            <img class="amico_avatar" src="http://via.placeholder.com/150x150" *ngIf="!amico.avatar">
+          </ion-col>
+          <ion-col col-10>
+            <h2><strong>{{amico.username}}</strong></h2>
+            <p>{{amico.first_name}} {{amico.last_name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
       <ion-icon item-end name="add" (click)="addAmicoGruppo(amico)"></ion-icon>
     </ion-item>
   </ion-list>
