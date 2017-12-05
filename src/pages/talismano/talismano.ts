@@ -18,8 +18,14 @@ export class TalismanoPage {
   background: any;
   foreground: any;
   title: any;
+  screen_width: any;
+  screen_height: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController, private brightness: Brightness) {
+
+    this.screen_width = ((window.screen.width/2) - 75 - 10) + "px";
+    this.screen_height = ((window.screen.width/2) - 75 + 10) + "px";
+
     this.background = "white";
     this.foreground = "black";
     this.title = "Talismano";
