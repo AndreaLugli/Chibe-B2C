@@ -70,7 +70,22 @@ export class ProfiloPage {
 
         if(data.tribu) {
           this.tribu_str = "../assets/profilo/" + data.tribu + ".png";
-          this.tribu = data.tribu;
+          //this.tribu = data.tribu;
+          if (data.tribu == "orsi") {
+            this.tribu = "🐻";
+          }
+          else if(data.tribu == "aquile") {
+            this.tribu = "🦅"
+          }
+          else if(data.tribu == "lupi") {
+            this.tribu = "🐺";
+          }
+          else if(data.tribu == "puma") {
+            this.tribu = "🐱";
+          }
+          else if(data.tribu == "volpi") {
+            this.tribu = "🦊";
+          }
         }
 
       },
