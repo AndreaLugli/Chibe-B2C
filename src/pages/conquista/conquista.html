@@ -48,7 +48,9 @@
   -->
 
   <h1 *ngIf="showAlert" text-center>Nessun risultato trovato</h1>
-  <button ion-button block *ngIf="showAlert" text-center (click)="reinizia()">Reinizia ricerca</button>
+  <p text-center>
+    <button ion-button class="BOTTONE-AZZURRO-BLU" *ngIf="showAlert" text-center (click)="reinizia()">Reinizia ricerca</button>
+  </p>
 
   <ion-card *ngFor="let partner of partners" (click)="info_parner(partner.id)" class="custom-ion-card">
     <ion-item class="ion-card-item">

@@ -6,29 +6,26 @@
     <ion-title>{{title}}</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content>
-  <ion-card *ngFor="let desiderio of desideri" (click)="openDesiderio(desiderio.id)" class="custom-ion-card">
-    <ion-item class="ion-card-item">
-      <h2>{{desiderio.nome}}</h2>
-    </ion-item>
-    <ion-card-content class="ion-card-body">
-      {{desiderio.descrizione_breve}}
-      <p>Num. persone richieste: {{desiderio.num_gruppo}}</p>
-      Valore: {{desiderio.punti_piuma|number|pointReplacer}} punti piuma
-    </ion-card-content>
-  </ion-card>
-
+  <div *ngFor="let desiderio of desideri">
+    <ion-card (click)="openDesiderio(desiderio.id)" class="custom-ion-card">
+      <ion-item class="ion-card-item">
+        <h2>{{desiderio.nome}}</h2>
+      </ion-item>
+      <ion-card-content class="ion-card-body">
+        {{desiderio.descrizione_breve}}
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
+
+
+
+
 
 <ion-footer>
   <ion-toolbar>
     <ion-buttons text-center>
-      <!--
-      <button ion-button icon-right color="royal" (click)="comunicaDesiderio()">
-        Non trovi il desiderio che vuoi?
-      </button>
-      -->
       <a target='_blank' href='https://api.whatsapp.com/send?phone=393394198803&text=Ciao!%20Non%20trovo%20il%20desiderio%20che%20vorrei%20:)%20Il%20desiderio%20è...'>Non trovi il desiderio che vuoi?</a>
     </ion-buttons>
   </ion-toolbar>
