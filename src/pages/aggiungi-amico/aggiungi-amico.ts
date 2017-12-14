@@ -18,29 +18,35 @@ export class AggiungiAmicoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {}
 
   searchAmico(e) {
-    this.loading = this.loadingCtrl.create({
-      content: "Ricerca..."
-    });
 
-    this.loading.present();
+    if (e.length > 3) {
+      this.loading = this.loadingCtrl.create({
+        content: "Ricerca..."
+      });
 
-    let searchAmicoURL = this.URLVars.searchAmicoURL();
+      this.loading.present();
 
-    let params = {
-      amico: e
-    };
+      let searchAmicoURL = this.URLVars.searchAmicoURL();
 
-    this.http.get(searchAmicoURL, { params: params }).map(res => res.json()).subscribe(
-      data => {
-        console.log(data);
-        this.amici = data;
-        this.loading.dismiss();
-      },
-      error => {
-        this.loading.dismiss();
-        this.showPopup("Attenzione", error);
-      }
-    );
+      let params = {
+        amico: e
+      };
+
+      this.http.get(searchAmicoURL, { params: params }).map(res => res.json()).subscribe(
+        data => {
+          console.log(data);
+          this.amici = data;
+          this.loading.dismiss();
+        },
+        error => {
+          this.loading.dismiss();
+          this.showPopup("Attenzione", error);
+        }
+      );
+    }
+    else {
+      this.showPopup("Ops!", "Per cercare gli altri chibers devi inserire almeno 3 caratteri!");
+    }
   }
 
   addAmico(e, amico_id) {

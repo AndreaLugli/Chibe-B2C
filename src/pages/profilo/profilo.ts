@@ -73,18 +73,23 @@ export class ProfiloPage {
           //this.tribu = data.tribu;
           if (data.tribu == "orsi") {
             this.tribu = "🐻";
+            this.tribu = "/assets/animali/orso.png"
           }
           else if(data.tribu == "aquile") {
-            this.tribu = "🦅"
+            this.tribu = "🦅";
+            this.tribu = "/assets/animali/aquila.png"
           }
           else if(data.tribu == "lupi") {
             this.tribu = "🐺";
+            this.tribu = "/assets/animali/lupo.png"
           }
           else if(data.tribu == "puma") {
             this.tribu = "🐱";
+            this.tribu = "/assets/animali/puma.png"
           }
           else if(data.tribu == "volpi") {
             this.tribu = "🦊";
+            this.tribu = "/assets/animali/volpe.png"
           }
         }
 

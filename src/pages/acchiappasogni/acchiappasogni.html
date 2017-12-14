@@ -6,6 +6,8 @@
     <ion-title>{{title}}</ion-title>
   </ion-navbar>
 </ion-header>
+
+<!--
 <ion-content>
   <div *ngFor="let desiderio of desideri">
     <ion-card (click)="openDesiderio(desiderio.id)" class="custom-ion-card">
@@ -18,7 +20,27 @@
     </ion-card>
   </div>
 </ion-content>
+-->
 
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let desiderio of desideri">
+      <ion-col col-3>
+        <img src="http://app.chibeapp.com/media/{{desiderio.immagine}}">
+      </ion-col>
+      <ion-col col-9>
+        <ion-card (click)="openDesiderio(desiderio.id)" class="custom-ion-card">
+          <ion-item class="ion-card-item">
+            <h2>{{desiderio.nome}}</h2>
+          </ion-item>
+          <ion-card-content class="ion-card-body">
+            {{desiderio.descrizione_breve}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
 
 
 
