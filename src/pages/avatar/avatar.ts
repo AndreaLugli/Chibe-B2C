@@ -23,7 +23,7 @@ export class AvatarPage {
   fileTransfer: FileTransferObject = this.transfer.create();
 
   constructor(public platform: Platform, public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http, private camera: Camera, private crop: Crop, private transfer: FileTransfer) {
-    this.path = "http://via.placeholder.com/500x500";
+    this.path = "assets/misc/default.png";
     this.isDisabled = true;
   }
 

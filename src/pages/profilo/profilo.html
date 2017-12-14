@@ -25,6 +25,7 @@
     <ion-row>
       <ion-col col-12 text-center>
         <h4>{{nome}} {{cognome}}</h4>
+        <span>{{username}}</span><br>
         <span *ngIf="!descrizione" (click)="modificaProfilo()">Aggiungi biografia</span>
         <span>{{descrizione}}</span>
       </ion-col>

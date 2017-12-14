@@ -32,6 +32,8 @@ export class GruppoPage {
 
     this.http.get(getGruppoURL).map(res => res.json()).subscribe(
       data => {
+        console.log(data)
+
         this.loading.dismiss();
         this.gruppo = data;
         this.miei_punti = data.miei_punti;

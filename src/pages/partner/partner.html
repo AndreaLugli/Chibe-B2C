@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-card class="partner-card">
-    <img src="http://app.chibeapp.com/media/{{foto}}">
+    <img src="http://app.chibeapp.com/media/{{banner}}">
     <ion-item class="partner-card-item">
       <h2>{{ragione_sociale}}</h2>
     </ion-item>
@@ -21,26 +21,26 @@
       <ion-grid>
         <ion-row>
           <ion-col col-3>
-            <img class="round-logo" [src]="foto ? 'foto' :'http://via.placeholder.com/100x100'">
+            <img class="round-logo" src="{{tribu_pic}}">
           </ion-col>
           <ion-col col-4 class="text-vert">
             <strong *ngIf="tribu">Tribù: {{tribu}}</strong>
           </ion-col>
-          <ion-col col-1>
-          </ion-col>
           <ion-col col-4>
-            <ion-row>
-              <ion-col col-12 class="no-padding-top-bottom">
-                <small text-center>Campo di battaglia</small>
-              </ion-col>
-              <ion-col col-6>
+            <ion-row text-center>
+              <ion-col col-6 text-center>
                   <img class="round-logo-2" src="{{tribu_1}}">
               </ion-col>
-              <ion-col col-6>
-                  <img class="round-logo-2" src="http://via.placeholder.com/100x100">
+              <ion-col col-6 text-center>
+                  <img class="round-logo-2" src="{{tribu_2}}">
               </ion-col>
             </ion-row>
+            <ion-row text-center>
+              <ion-col style="font-size: 10px;">Campo di battaglia</ion-col>
+            </ion-row>
           </ion-col>
+
+
         </ion-row>
       </ion-grid>
     </ion-card-content>

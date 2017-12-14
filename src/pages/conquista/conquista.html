@@ -43,10 +43,6 @@
     <ion-option value="TEC">Tech</ion-option>
   </ion-select>
 
-  <!--
-  <img class="logo_partner" [src]="partner.foto ? 'partner.foto' :'http://via.placeholder.com/150x150'">
-  -->
-
   <h1 *ngIf="showAlert" text-center>Nessun risultato trovato</h1>
   <p text-center>
     <button ion-button class="BOTTONE-AZZURRO-BLU" *ngIf="showAlert" text-center (click)="reinizia()">Reinizia ricerca</button>
@@ -55,7 +51,7 @@
   <ion-card *ngFor="let partner of partners" (click)="info_parner(partner.id)" class="custom-ion-card">
     <ion-item class="ion-card-item">
       <ion-avatar item-end>
-        <img src="http://via.placeholder.com/50x50">
+        <img src="http://app.chibeapp.com/media/{{partner.logo}}">
       </ion-avatar>
       <h2>{{partner.ragione_sociale}}</h2>
     </ion-item>

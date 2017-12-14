@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { IndexPage } from '../pages/index/index';
 
+
+
 @Component({
   templateUrl: 'app.html'
 })

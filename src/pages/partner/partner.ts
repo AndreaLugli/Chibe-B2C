@@ -14,11 +14,12 @@ export class PartnerPage {
   id_partner: any;
 
   ragione_sociale: any;
-  foto: any;
+  banner: any;
   descrizione: any;
   telefono: any;
   indirizzo: any;
   tribu: any;
+  tribu_pic:any;
   percentuale: any;
 
   tribu_1: any;
@@ -37,8 +38,9 @@ export class PartnerPage {
 
     this.http.get(getPartner).map(res => res.json()).subscribe(
       data => {
+
         this.ragione_sociale = data.ragione_sociale;
-        this.foto = data.foto;
+        this.banner = data.banner;
         this.descrizione = data.descrizione;
         this.telefono = data.telefono;
         this.indirizzo = data.indirizzo;
@@ -47,6 +49,27 @@ export class PartnerPage {
         this.loading.dismiss();
 
         this.tribu_1 = this.get_picture(data.tribu_1);
+        this.tribu_2 = this.get_picture(data.tribu_2);
+
+        if (data.tribu == "orsi") {
+          this.tribu_pic = "assets/animali/orso.png"
+        }
+        else if(data.tribu == "aquile") {
+          this.tribu_pic = "assets/animali/aquila.png"
+        }
+        else if(data.tribu == "lupi") {
+          this.tribu_pic = "assets/animali/lupo.png"
+        }
+        else if(data.tribu == "puma") {
+          this.tribu_pic = "assets/animali/puma.png"
+        }
+        else if(data.tribu == "volpi") {
+          this.tribu_pic = "assets/animali/volpe.png"
+        }
+        else {
+          this.tribu_pic = "http://via.placeholder.com/100x100";
+        }
+
 
       },
       error => {
