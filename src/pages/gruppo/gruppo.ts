@@ -50,23 +50,29 @@ export class GruppoPage {
   }
 
   invia_punti() {
-    if(this.punti_piuma > this.miei_punti) {
-      alert("Non hai abbastanza punti");
+
+    if(this.punti_piuma > 0) {
+      if(this.punti_piuma > this.miei_punti) {
+        alert("Non hai abbastanza punti");
+      }
+      else {
+        this.loading = this.loadingCtrl.create();
+        this.loading.present();
+
+        let getGruppoURL = this.URLVars.getGruppoURL(this.gruppo_id);
+        let body = new URLSearchParams();
+        body.append('punti_piuma', this.punti_piuma);
+
+        this.http.post(getGruppoURL, body).subscribe(
+          data => {
+            this.loading.dismiss();
+            this.navCtrl.pop();
+          }
+        );
+      }
     }
     else {
-      this.loading = this.loadingCtrl.create();
-      this.loading.present();
-
-      let getGruppoURL = this.URLVars.getGruppoURL(this.gruppo_id);
-      let body = new URLSearchParams();
-      body.append('punti_piuma', this.punti_piuma);
-
-      this.http.post(getGruppoURL, body).subscribe(
-        data => {
-          this.loading.dismiss();
-          this.navCtrl.pop();
-        }
-      );
+      alert("Inserire un valore positivo");
     }
   }
 

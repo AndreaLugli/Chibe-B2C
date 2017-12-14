@@ -36,7 +36,7 @@
 
     <div *ngIf="gruppo.utenti.length>=gruppo.num_gruppo" text-center margin-top>
         <h3>Aggiungi punti al premio</h3>
-        <p>Hai a disposizione {{miei_punti}} punti piuma</p>
+        <p>Hai a disposizione {{miei_punti|number|pointReplacer}} punti piuma</p>
         <ion-item>
           <ion-input type="number" placeholder="Punti piuma" [value]="punti_piuma" [(ngModel)]="punti_piuma"></ion-input>
         </ion-item>
