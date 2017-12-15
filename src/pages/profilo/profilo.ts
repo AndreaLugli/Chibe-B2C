@@ -32,6 +32,7 @@ export class ProfiloPage {
   sesso: any;
 
   gruppi: any;
+  cover: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
   }
@@ -50,10 +51,11 @@ export class ProfiloPage {
     this.http.get(utenteInfoURL).map(res => res.json()).subscribe(
       data => {
 
+        console.log(data)
+
         this.loading.dismiss();
         this.descrizione = data.descrizione;
         this.username = data.username;
-        //this.tribu = data.tribu;
         this.pp = data.punti;
         this.utente = data;
         this.modifica_tribu = data.modifica_tribu;
@@ -68,28 +70,32 @@ export class ProfiloPage {
           this.avatar = "assets/misc/default.png";
         }
 
+        /* COVER DI DEFAULT */
+        this.cover = "assets/cover/default.png";
+
         if(data.tribu) {
+          let sesso_path = "assets/cover/" + this.sesso + "/";
+
           this.tribu_str = "../assets/profilo/" + data.tribu + ".png";
-          //this.tribu = data.tribu;
           if (data.tribu == "orsi") {
-            this.tribu = "🐻";
-            this.tribu = "assets/animali/orso.png"
+            this.tribu = "assets/animali/orso.png";
+            this.cover = sesso_path + "orsi.png";
           }
           else if(data.tribu == "aquile") {
-            this.tribu = "🦅";
-            this.tribu = "assets/animali/aquila.png"
+            this.tribu = "assets/animali/aquila.png";
+            this.cover = sesso_path + "aquile.png";
           }
           else if(data.tribu == "lupi") {
-            this.tribu = "🐺";
-            this.tribu = "assets/animali/lupo.png"
+            this.tribu = "assets/animali/lupo.png";
+            this.cover = sesso_path + "lupi.png";
           }
           else if(data.tribu == "puma") {
-            this.tribu = "🐱";
-            this.tribu = "assets/animali/puma.png"
+            this.tribu = "assets/animali/puma.png";
+            this.cover = sesso_path + "puma.png";
           }
           else if(data.tribu == "volpi") {
-            this.tribu = "🦊";
-            this.tribu = "assets/animali/volpe.png"
+            this.tribu = "assets/animali/volpe.png";
+            this.cover = sesso_path + "volpi.png";
           }
         }
 

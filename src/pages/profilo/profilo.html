@@ -17,10 +17,10 @@
 
     <ion-row class="profilo-copertina">
       <ion-col col-12 text-center>
+        <img src="{{cover}}" class="cover_img">
         <img class="avatar" [src]="avatar" (click)="modificaAvatar()">
       </ion-col>
     </ion-row>
-
 
     <ion-row>
       <ion-col col-12 text-center>
@@ -33,7 +33,6 @@
 
     <ion-row margin-top>
       <ion-col col-5 text-left>
-        <!--<h6 *ngIf="tribu">{{tribu}}</h6>-->
         <img src="{{tribu}}" style="height: 30px">
       </ion-col>
       <ion-col col-7 text-right>
