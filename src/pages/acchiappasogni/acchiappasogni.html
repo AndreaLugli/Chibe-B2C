@@ -7,65 +7,14 @@
   </ion-navbar>
 </ion-header>
 
-
-<ion-content>
-  <div *ngFor="let desiderio of desideri">
-    <ion-card (click)="openDesiderio(desiderio.id)" class="custom-ion-card">
-      <ion-item class="ion-card-item">
-        <h2>{{desiderio.nome}}</h2>
-      </ion-item>
-      <ion-card-content class="ion-card-body">
-        {{desiderio.descrizione_breve}}
-      </ion-card-content>
-    </ion-card>
-  </div>
-</ion-content>
-
-<!--
-<ion-content>
-  <ion-grid>
-    <ion-row *ngFor="let desiderio of desideri">
-      <ion-col col-3>
-        <img src="http://app.chibeapp.com/media/{{desiderio.immagine}}">
-      </ion-col>
-      <ion-col col-9>
-        <ion-card (click)="openDesiderio(desiderio.id)" class="custom-ion-card">
-          <ion-item class="ion-card-item">
-            <h2>{{desiderio.nome}}</h2>
-          </ion-item>
-          <ion-card-content class="ion-card-body">
-            {{desiderio.descrizione_breve}}
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
--->
-<!--
-<ion-content>
-  <ion-card *ngFor="let desiderio of desideri">
-    <img src="http://via.placeholder.com/400x100"/>
-    <ion-item class="ion-card-item">
-      <h2>{{desiderio.nome}}</h2>
-    </ion-item>
-    <ion-card-content class="ion-card-body">
-      {{desiderio.descrizione_breve}}
-    </ion-card-content>
-  </ion-card>
-</ion-content>
--->
-<!--
 <ion-content class="card-background-page">
-
-  <ion-card *ngFor="let desiderio of desideri">
-    <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-saopaolo.png"/>
+  <ion-card *ngFor="let desiderio of desideri" (click)="openDesiderio(desiderio.id)">
+    <img src="http://app.chibeapp.com/media/{{big_picture}}" onError="this.src='assets/acchiappasquared.png'"/>
     <div class="card-title">{{desiderio.nome}}</div>
     <div class="card-subtitle">{{desiderio.descrizione_breve}}</div>
   </ion-card>
-
 </ion-content>
--->
+
 <ion-footer>
   <ion-toolbar>
     <ion-buttons text-center>
