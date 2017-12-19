@@ -51,7 +51,7 @@
   <ion-card *ngFor="let partner of partners" (click)="info_parner(partner.id)" class="custom-ion-card">
     <ion-item class="ion-card-item">
       <ion-avatar item-end>
-        <img src="http://app.chibeapp.com/media/{{partner.logo}}">
+        <img src="http://app.chibeapp.com/media/{{partner.logo}}" onError="this.src='assets/conquistasquared.png'">
       </ion-avatar>
       <h2>{{partner.ragione_sociale}}</h2>
     </ion-item>

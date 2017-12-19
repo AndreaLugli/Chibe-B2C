@@ -67,9 +67,8 @@ export class PartnerPage {
           this.tribu_pic = "assets/animali/volpe.png"
         }
         else {
-          this.tribu_pic = "http://via.placeholder.com/100x100";
+          this.tribu_pic = "assets/tribudefault.png";
         }
-
 
       },
       error => {
@@ -105,7 +104,7 @@ export class PartnerPage {
       return 'assets/animali/orso.png';
     }
     else {
-      return 'http://via.placeholder.com/100x100';
+      return 'assets/tribudefault.png';
     }
   }
 
