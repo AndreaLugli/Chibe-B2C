@@ -9,7 +9,7 @@
 
 <ion-content class="card-background-page">
   <ion-card *ngFor="let desiderio of desideri" (click)="openDesiderio(desiderio.id)">
-    <img src="http://app.chibeapp.com/media/{{big_picture}}" onError="this.src='assets/acchiappasquared.png'"/>
+    <img src="http://app.chibeapp.com/media/{{desiderio.big_picture}}" onError="this.src='assets/acchiappasquared.png'"/>
     <div class="card-title">{{desiderio.nome}}</div>
     <div class="card-subtitle">{{desiderio.descrizione_breve}}</div>
   </ion-card>

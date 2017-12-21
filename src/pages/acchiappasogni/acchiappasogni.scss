@@ -6,6 +6,12 @@ page-acchiappasogni {
   ion-card {
     position: relative;
     text-align: center;
+    background-color: black;
+    border-radius: 15px;
+  }
+
+  img {
+    opacity: 0.7;
   }
 
   .card-title {
@@ -15,6 +21,7 @@ page-acchiappasogni {
     width: 100%;
     font-weight: bold;
     color: #fff;
+    text-shadow: 2px 2px 4px #000000;
   }
 
   .card-subtitle {
@@ -23,6 +30,7 @@ page-acchiappasogni {
     top: 52%;
     width: 100%;
     color: #fff;
+    text-shadow: 2px 2px 4px #000000;
   }
 
 }

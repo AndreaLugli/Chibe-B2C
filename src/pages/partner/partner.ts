@@ -25,6 +25,9 @@ export class PartnerPage {
   tribu_1: any;
   tribu_2: any;
 
+  tribu_1_src: any;
+  tribu_2_src: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.id_partner = navParams.get('id_partner');
 
@@ -48,8 +51,11 @@ export class PartnerPage {
         this.percentuale = data.percentuale;
         this.loading.dismiss();
 
-        this.tribu_1 = this.get_picture(data.tribu_1);
-        this.tribu_2 = this.get_picture(data.tribu_2);
+        this.tribu_1 = data.tribu_1;
+        this.tribu_2 = data.tribu_2;
+
+        this.tribu_1_src = this.get_picture(data.tribu_1);
+        this.tribu_2_src = this.get_picture(data.tribu_2);
 
         if (data.tribu == "orsi") {
           this.tribu_pic = "assets/animali/orso.png"

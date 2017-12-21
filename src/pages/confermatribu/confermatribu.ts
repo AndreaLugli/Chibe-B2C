@@ -56,11 +56,13 @@ export class ConfermaTribuPage {
         this.showPopup("Attenzione", error._body);
       }
     )
+
   }
 
   goToIndex() {
     this.viewCtrl.dismiss();
-    this.appCtrl.getRootNav().push(IndexPage);
+    //this.appCtrl.getRootNav().push(IndexPage);
+    this.appCtrl.getRootNav().push(IndexPage, { tabIndex: 3});
   }
 
   showPopup(title, text) {

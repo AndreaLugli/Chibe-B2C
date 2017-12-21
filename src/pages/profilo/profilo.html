@@ -32,11 +32,12 @@
     </ion-row>
 
     <ion-row margin-top>
-      <ion-col col-5 text-left>
+      <ion-col col-5 text-left *ngIf="tribu">
         <img src="{{tribu}}" style="height: 30px">
       </ion-col>
+      <ion-col col-5 *ngIf="!tribu"></ion-col>
       <ion-col col-7 text-right>
-        <h5>{{pp|number|pointReplacer}} punti piuma</h5>
+        <h5 style="margin-top: 4px;">{{pp|number|pointReplacer}} punti piuma</h5>
       </ion-col>
     </ion-row>
     <hr>
