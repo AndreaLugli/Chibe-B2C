@@ -31,6 +31,10 @@ export class ConquistaPage {
   viciniSelected: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+    this.cerca_tutto();
+  }
+
+  cerca_tutto() {
     this.setFalseClass();
 
     this.title = "Conquista";
@@ -41,7 +45,7 @@ export class ConquistaPage {
 
     this.loading.present();
 
-    this.geolocation.getCurrentPosition().then((resp) => {
+    this.geolocation.getCurrentPosition({timeout: 10000}).then((resp) => {
       this.loading.dismiss();
       this.latitude = resp.coords.latitude;
       this.longitude = resp.coords.longitude;
@@ -53,8 +57,8 @@ export class ConquistaPage {
     }).catch((error) => {
       console.log('Error getting location', error);
       this.loading.dismiss();
+      alert("Sembra che il tuo GPS non sia attivo. Riprova");
     });
-
   }
 
   searchPartner(filtro, page) {
@@ -142,8 +146,13 @@ export class ConquistaPage {
   }
 
   carica_altro() {
-    this.page = this.page + 1;
-    this.searchPartner(this.action, this.page);
+    if(this.latitude) {
+      this.page = this.page + 1;
+      this.searchPartner(this.action, this.page);
+    }
+    else {
+      this.cerca_tutto();
+    }
   }
   reinizia() {
     this.page = 1;
