@@ -10,8 +10,6 @@ import { HomePage } from '../pages/home/home';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { IndexPage } from '../pages/index/index';
 
-
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,8 +17,8 @@ import { IndexPage } from '../pages/index/index';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  //rootPage:any = TutorialPage;
-  rootPage:any = IndexPage;
+  rootPage:any = TutorialPage;
+  //rootPage:any = IndexPage;
 
   constructor(public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http) {
     platform.ready().then(() => {
