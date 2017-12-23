@@ -32,7 +32,7 @@ export class AvatarPage {
 
     this.loading.present();
 
-    if(this.path != "http://via.placeholder.com/500x500") {
+    if(this.path != "assets/misc/default.png") {
       let uploadPicURL = this.URLVars.uploadPicURL();
 
       let options: FileUploadOptions = {
