@@ -65,7 +65,7 @@
         <ion-list margin-top>
           <button ion-item *ngFor="let gruppo of gruppi" (click)="getGruppo(gruppo)">
             <h2>{{gruppo.nome}}</h2>
-            <p>Punti piuma raccolti: {{gruppo.punti|number|pointReplacer}} / {{gruppo.punti_necessari|number|pointReplacer}}</p>
+            <p>Punti Piuma Raccolti: {{gruppo.punti|number|pointReplacer}} / {{gruppo.punti_necessari|number|pointReplacer}}</p>
             <p>Componenti gruppo: {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}</p>
             <div class="progress-bar blue stripes">
                 <span [style.width]="gruppo.percentuale">{{gruppo.percentuale}}</span>
