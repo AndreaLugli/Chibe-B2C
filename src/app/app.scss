@@ -165,5 +165,9 @@ ion-app, ion-app.md, ion-app.ios {
 
 .footer-md::before {
   background-image: none;
-  border-top: 1px solid #DFDBE8;  
+  border-top: 1px solid #DFDBE8;
+}
+
+.header-md::after {
+    background-color: white;
 }
