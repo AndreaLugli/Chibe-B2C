@@ -37,7 +37,7 @@
       </ion-col>
       <ion-col col-5 *ngIf="!tribu"></ion-col>
       <ion-col col-7 text-right>
-        <h5 style="margin-top: 4px;">{{pp|number|pointReplacer}} punti piuma</h5>
+        <h5 style="margin-top: 4px;">{{pp|number|pointReplacer}} Punti Piuma</h5>
       </ion-col>
     </ion-row>
     <hr>
@@ -60,8 +60,8 @@
 
     <ion-row text-center>
       <ion-col col-12>
-        <h5>Lista dei desideri</h5>
-        Controlla la lista dei desideri seguiti
+        <h5>Lista dei Desideri</h5>
+        Controlla la lista dei Desideri seguiti
         <ion-list margin-top>
           <button ion-item *ngFor="let gruppo of gruppi" (click)="getGruppo(gruppo)">
             <h2>{{gruppo.nome}}</h2>
@@ -73,7 +73,7 @@
           </button>
         </ion-list>
         <div *ngIf="gruppi==0" text-center>
-          <h3>Nessun desiderio seguito</h3>
+          <h3>Nessun Desiderio seguito</h3>
         </div>
       </ion-col>
     </ion-row>

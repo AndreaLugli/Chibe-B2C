@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Loading, LoadingController, Platform } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
@@ -34,7 +34,7 @@ export class ProfiloPage {
   gruppi: any;
   cover: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+  constructor(public platform: Platform, public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
   }
 
   ionViewWillEnter() {
@@ -72,6 +72,8 @@ export class ProfiloPage {
 
         /* COVER DI DEFAULT */
         this.cover = "assets/cover/default.png";
+
+        this.tribu = "assets/tribudefault.png"
 
         if(data.tribu) {
           let sesso_path = "assets/cover/" + this.sesso + "/";
@@ -144,6 +146,26 @@ export class ProfiloPage {
 
   getGruppo(gruppo) {
     this.navCtrl.push(GruppoPage, {gruppo: gruppo, gruppo_id : gruppo.id});
+  }
+
+  ionViewDidEnter() {
+    this.initializeBackButtonCustomHandler();
+  }
+
+  public initializeBackButtonCustomHandler(): void {
+      this.platform.registerBackButtonAction(() => {
+          this.customHandleBackButton();
+      }, 10);
+  }
+
+  private customHandleBackButton(): void {
+      let view_name = this.navCtrl.getActive().name;
+      if(view_name == "ProfiloPage") {
+        console.log("Nooo");
+      }
+      else {
+        this.navCtrl.pop();
+      }
   }
 
 }

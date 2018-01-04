@@ -14,12 +14,13 @@ import { InvitaAmicoPage } from '../invita-amico/invita-amico';
 export class AggiungiAmicoPage {
   loading: Loading;
   amici: any;
+  showAlert: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {}
 
   searchAmico(e) {
 
-    if (e.length > 3) {
+    if (e.length > 2) {
       this.loading = this.loadingCtrl.create({
         content: "Ricerca..."
       });
@@ -34,8 +35,14 @@ export class AggiungiAmicoPage {
 
       this.http.get(searchAmicoURL, { params: params }).map(res => res.json()).subscribe(
         data => {
-          console.log(data);
-          this.amici = data;
+          if(data.length) {
+            this.amici = data;
+            this.showAlert = false;
+          }
+          else {
+            this.showAlert = true;
+          }
+
           this.loading.dismiss();
         },
         error => {

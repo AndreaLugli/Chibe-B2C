@@ -13,9 +13,9 @@
     <ion-card-content>
       <div padding>
         {{desiderio.descrizione_lunga}}<br>
-        Num. persone richieste: {{desiderio.num_gruppo}}<br>
-        Valore: {{desiderio.punti_piuma|number|pointReplacer}} punti piuma<br>
-        <button block ion-button class="BOTTONE-AZZURRO-BLU" margin-top (click)="seguiDesiderio()">Segui il desiderio</button>
+        <strong>Num. persone richieste</strong>: {{desiderio.num_gruppo}}<br>
+        <strong>Valore</strong>: {{desiderio.punti_piuma|number|pointReplacer}} Punti Piuma<br>
+        <button block ion-button class="BOTTONE-AZZURRO-BLU" margin-top (click)="seguiDesiderio()">Segui il Desiderio</button>
       </div>
     </ion-card-content>
   </ion-card>

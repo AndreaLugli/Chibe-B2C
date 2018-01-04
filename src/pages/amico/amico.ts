@@ -17,6 +17,7 @@ export class AmicoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.amico = navParams.get('amico');
+    console.log(this.amico)
 
     this.loading = this.loadingCtrl.create();
     this.loading.present();

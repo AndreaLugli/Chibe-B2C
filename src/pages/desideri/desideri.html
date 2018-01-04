@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Lista dei desideri</ion-title>
+    <ion-title>Lista dei Desideri</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -9,14 +9,14 @@
   <ion-list margin-top>
     <button ion-item *ngFor="let gruppo of gruppi" (click)="getGruppo(gruppo)">
       <h2>{{gruppo.nome}}</h2>
-      <p>Punti piuma raccolti: {{gruppo.punti}} / {{gruppo.punti_necessari / 0.01}}</p>
+      <p>Punti Piuma raccolti: {{gruppo.punti}} / {{gruppo.punti_necessari / 0.01}}</p>
       <p>Componenti gruppo: {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}</p>
     </button>
     <div class="progress-bar blue stripes">
         <span style="width: 40%"></span>
-    </div>    
+    </div>
   </ion-list>
   <div *ngIf="gruppi==0" text-center>
-    <h3>Nessun desiderio seguito</h3>
+    <h3>Nessun Desiderio seguito</h3>
   </div>
 </ion-content>

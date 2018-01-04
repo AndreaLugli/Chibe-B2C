@@ -6,12 +6,14 @@
 
 
 <ion-content padding>
+  <!--
   <ion-card class="custom-ion-card" margin-bottom>
+    <img src="http://app.chibeapp.com/media/{{gruppo.big_picture}}" onError="this.src='assets/acchiappasquared.png'"/>
     <ion-item class="ion-card-item">
       <h2>{{gruppo.nome}}</h2>
     </ion-item>
     <ion-card-content class="ion-card-body">
-      <strong>Punti piuma raccolti:</strong> {{gruppo.punti|number|pointReplacer}} / {{gruppo.punti_necessari|number|pointReplacer}}
+      <strong>Punti Piuma raccolti:</strong> {{gruppo.punti|number|pointReplacer}} / {{gruppo.punti_necessari|number|pointReplacer}}
       <p><strong>Componenti gruppo:</strong> {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}</p>
       <p>{{gruppo.descrizione}}</p>
       <div class="progress-bar blue stripes">
@@ -19,12 +21,30 @@
       </div>
     </ion-card-content>
   </ion-card>
+-->
+
+<ion-card class="partner-card">
+  <img src="http://app.chibeapp.com/media/{{gruppo.immagine}}" onError="this.src='assets/acchiappadefaultbanner.png'">
+  <ion-item class="partner-card-item">
+    <h2>{{gruppo.nome}}</h2>
+  </ion-item>
+  <ion-card-content>
+    <div padding>
+      {{gruppo.descrizione}}<br>
+      <strong>Componenti gruppo:</strong>: {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}<br>
+      <strong>Punti Piuma raccolti:</strong> {{gruppo.punti|number|pointReplacer}} / {{gruppo.punti_necessari|number|pointReplacer}}
+      <div class="progress-bar blue stripes">
+          <span [style.width]="gruppo.percentuale">{{gruppo.percentuale}}</span>
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>
 
 
   <div *ngIf="!gruppo.conquistato" margin-top>
     <div *ngIf="gruppo.utenti.length<gruppo.num_gruppo" text-center margin-top>
       <h3>Attenzione!</h3>
-      Per poter inviare punti devi raggiungere il numero minimo ({{gruppo.num_gruppo}}) di membri nel gruppo.
+      Per poter inviare Punti devi raggiungere il numero minimo ({{gruppo.num_gruppo}}) di membri nel gruppo.
 
       <div *ngIf="gruppo.admin" padding-top>
         <button ion-button (click)="aggiungiMembro()" class="BOTTONE-AZZURRO-BLU">Aggiungi membro</button>
@@ -36,45 +56,45 @@
     </div>
 
     <div *ngIf="gruppo.utenti.length>=gruppo.num_gruppo" text-center margin-top>
-        <h3>Aggiungi punti al desiderio</h3>
-        <p>Hai a disposizione {{miei_punti|number|pointReplacer}} punti piuma</p>
+        <h3>Aggiungi Punti al Desiderio</h3>
+        <p>Hai a disposizione {{miei_punti|number|pointReplacer}} Punti Piuma</p>
         <ion-item>
           <ion-input type="number" placeholder="Punti piuma" [value]="punti_piuma" [(ngModel)]="punti_piuma"></ion-input>
         </ion-item>
         <p text-center>
-          <button ion-button class="BOTTONE-AZZURRO-BLU" (click)="invia_punti()">Invia punti</button>
+          <button ion-button class="BOTTONE-AZZURRO-BLU" (click)="invia_punti()">Invia Punti</button>
         </p>
     </div>
   </div>
 
   <div *ngIf="gruppo.conquistato" text-center margin-top>
-    <h3>Grande! Il desiderio è stato conquistato!</h3>
+    <h3>Grande! Il Desiderio è stato conquistato!</h3>
 
     <div *ngIf="!gruppo.ordine_riscattato">
       <div *ngIf="!gruppo.admin">
-        Chiedi all'amministratore del gruppo di riscattare il desiderio
+        Chiedi all'amministratore del gruppo di riscattare il Desiderio
       </div>
 
       <div *ngIf="gruppo.admin">
-        Ora puoi riscattare il desiderio<br>
-        <button ion-button class="BOTTONE-AZZURRO-BLU" (click)="riscatta_premio()">Riscatta il desiderio</button>
+        Ora puoi riscattare il Desiderio<br>
+        <button ion-button class="BOTTONE-AZZURRO-BLU" (click)="riscatta_premio()">Riscatta il Desiderio</button>
       </div>
     </div>
 
     <div *ngIf="gruppo.ordine_riscattato">
       <div *ngIf="gruppo.ritirato">
-          Il desiderio è stato ritirato con successo.
+          Il Desiderio è stato ritirato con successo.
       </div>
 
       <div *ngIf="!gruppo.ritirato">
         <div *ngIf="!gruppo.admin">
-          L'amministratore del gruppo ha ordinato con successo il desiderio. Ora deve ritirarlo.
+          L'amministratore del gruppo ha ordinato con successo il Desiderio. Ora deve ritirarlo.
         </div>
         <div *ngIf="gruppo.admin">
-          <p>Hai ordinato il desiderio. Ecco il tuo QR code di ricevuta</p>
+          <p>Hai ordinato il Desiderio. Ecco il tuo QR code di ricevuta</p>
           <qr-code [value]="gruppo.codice_ordine" [size]="150" [background]="background" [foreground]="foreground"></qr-code>
           <h5>{{codice_str}}</h5>
-          <p>Puoi ritirare il desiderio in uno di questi locali mostrando il codice QR</p>
+          <p>Puoi ritirare il Desiderio in uno di questi locali mostrando il codice QR</p>
           <ul text-left>
             <li *ngFor="let partner of gruppo.partners"><strong>{{partner.ragione_sociale}}</strong> - {{partner.indirizzo}}</li>
           </ul>

@@ -27,9 +27,9 @@
             <img class="amico_avatar" src="http://app.chibeapp.com{{amico.avatar}}" *ngIf="amico.avatar">
             <img class="amico_avatar" src="http://via.placeholder.com/150x150" *ngIf="!amico.avatar">
           </ion-col>
-          <ion-col col-10>
+          <ion-col col-10 style="margin-top: 4px;">
             <h2><strong>{{amico.username}}</strong></h2>
-            <p>Punti piuma: {{amico.punti|number|pointReplacer}}</p>
+            <p>Punti Piuma: {{amico.punti|number|pointReplacer}}</p>
           </ion-col>
         </ion-row>
       </ion-grid>

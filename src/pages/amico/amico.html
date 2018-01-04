@@ -10,16 +10,27 @@
 </ion-header>
 
 <ion-content padding>
-  <h1>{{amico.username}}</h1>
-  <p>{{amico.first_name}} {{amico.last_name}}</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2 style="margin-top:5px;">
+        <img class="amico_avatar" src="http://app.chibeapp.com{{amico.avatar}}" *ngIf="amico.avatar">
+        <img class="amico_avatar" src="http://via.placeholder.com/150x150" *ngIf="!amico.avatar">
+      </ion-col>
+      <ion-col>
+        <h1>{{amico.username}}</h1>
+        <p>{{amico.first_name}} {{amico.last_name}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <hr>
-  <h5>Regala i tuoi punti piuma</h5>
-  <p>Invia punti piuma al tuo amico {{amico.username}}. Hai a disposizione <strong>{{punti_personali|number|pointReplacer}}</strong> punti</p>
+  <h5>Regala i tuoi Punti Piuma</h5>
+  <p>Invia Punti Piuma al tuo amico {{amico.username}}. Hai a disposizione <strong>{{punti_personali|number|pointReplacer}}</strong> punti</p>
   <ion-item>
     <ion-input type="number" placeholder="Punti piuma" [value]="punti_piuma" [(ngModel)]="punti_piuma"></ion-input>
   </ion-item>
   <p text-center>
-    <button ion-button (click)="invia_punti()" class="BOTTONE-AZZURRO-BLU">Invia punti</button>
+    <button ion-button (click)="invia_punti()" class="BOTTONE-AZZURRO-BLU">Invia Punti</button>
   </p>
+
 
 </ion-content>

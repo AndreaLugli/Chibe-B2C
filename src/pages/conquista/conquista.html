@@ -48,24 +48,12 @@
     <button ion-button class="BOTTONE-AZZURRO-BLU" *ngIf="showAlert" text-center (click)="reinizia()">Reinizia ricerca</button>
   </p>
 
-  <!--
-  <ion-card *ngFor="let partner of partners" (click)="info_parner(partner.id)" class="custom-ion-card">
-    <ion-item class="ion-card-item">
-      <ion-avatar item-end>
-        <img src="http://app.chibeapp.com/media/{{partner.logo}}" onError="this.src='assets/conquistasquared.png'">
-      </ion-avatar>
-      <h2>{{partner.ragione_sociale}}</h2>
-    </ion-item>
-    <ion-card-content class="ion-card-body">
-      {{partner.descrizione}}
-    </ion-card-content>
-  </ion-card>
-  -->
   <div class="card-background-page">
     <ion-card *ngFor="let partner of partners" (click)="info_parner(partner.id)">
       <img src="http://app.chibeapp.com/media/{{partner.logo}}" onError="this.src='assets/conquistasquared.png'"/>
       <div class="card-title">{{partner.ragione_sociale}}</div>
       <div class="card-subtitle">{{partner.descrizione}}</div>
+      <div class="card-tribu" *ngIf="partner.tribu"><img src="assets/animali/{{partner.tribu}}.png"></div>
     </ion-card>
   </div>
 

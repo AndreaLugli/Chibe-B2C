@@ -51,7 +51,8 @@ export class DesiderioPage {
     this.http.post(getDesiderioURL, body).map(res => res.json()).subscribe(
       gruppo => {
         this.loading.dismiss();
-        this.navCtrl.push(GruppoPage, {gruppo: gruppo, gruppo_id : gruppo.id});
+        //this.navCtrl.push(GruppoPage, {gruppo: gruppo, gruppo_id : gruppo.id});
+        this.appCtrl.getRootNav().push(IndexPage, { tabIndex: 3});
       },
       error => {
         this.loading.dismiss();
