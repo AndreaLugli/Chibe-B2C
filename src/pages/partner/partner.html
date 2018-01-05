@@ -24,23 +24,15 @@
         <ion-col col-3>
           <img class="round-logo" src="{{tribu_pic}}">
         </ion-col>
-        <ion-col col-3 class="text-vert">
+        <ion-col class="text-vert">
           <strong *ngIf="tribu" style="font-size: 1.5rem;">Tribù: <span style="text-transform: capitalize;">{{tribu}}</span></strong>
         </ion-col>
-        <ion-col col-5>
+        <ion-col >
           <ion-row>
-            <ion-col col-12 text-center>
-              <small>Campo di battaglia</small>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-6 text-center>
-                <img class="round-logo-2" src="{{tribu_1_src}}" style="display:inline;">
-                {{tribu_1}}
-            </ion-col>
-            <ion-col col-6 text-center>
-                <img class="round-logo-2" src="{{tribu_2_src}}" style="display:inline;">
-                {{tribu_2}}
+            <ion-col col-12>
+              <small><strong>Campo di battaglia</strong></small><br>
+              <img class="round-logo-2" src="{{tribu_1_src}}" style="display:inline;">
+              <img class="round-logo-2" src="{{tribu_2_src}}" style="display:inline;">
             </ion-col>
           </ion-row>
         </ion-col>
