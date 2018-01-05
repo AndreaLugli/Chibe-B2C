@@ -30,8 +30,11 @@ export class ConquistaPage {
   promoSelected: any;
   viciniSelected: any;
 
+  no_result:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.cerca_tutto();
+    this.no_result = false;
   }
 
   conquista_button(action) {
@@ -108,6 +111,7 @@ export class ConquistaPage {
   }
 
   searchPartner(filtro, page) {
+    this.no_result = false;
     let getPartners = this.URLVars.getPartners();
 
     let params = {
@@ -120,11 +124,18 @@ export class ConquistaPage {
     this.http.get(getPartners, { params: params }).map(res => res.json()).subscribe(
       data => {
         if(this.partners) {
-          let tmp_p = this.partners;
-          data.forEach(function(item, index) {
-            tmp_p.push(item);
-          });
-          this.partners = tmp_p;
+
+          if(data.length) {
+            let tmp_p = this.partners;
+            data.forEach(function(item, index) {
+              tmp_p.push(item);
+            });
+            this.partners = tmp_p;
+          }
+          else {
+            this.no_result = true;
+          }
+
         } else {
           this.partners = data;
         }
@@ -147,132 +158,5 @@ export class ConquistaPage {
     this.page = this.page + 1;
     this.searchPartner(this.action, this.page);
   }
-
-/*
-  cerca_tutto() {
-    this.setFalseClass();
-
-    this.title = "Conquista";
-
-    this.loading = this.loadingCtrl.create({
-      content: "Caricamento..."
-    });
-
-    this.loading.present();
-
-    this.geolocation.getCurrentPosition({timeout: 10000}).then((resp) => {
-      this.loading.dismiss();
-      this.latitude = resp.coords.latitude;
-      this.longitude = resp.coords.longitude;
-      this.page = 1;
-      this.action = "vicini";
-      this.searchPartner(this.action, this.page);
-      this.viciniSelected = true;
-
-    }).catch((error) => {
-      console.log('Error getting location', error);
-      this.loading.dismiss();
-      alert("Sembra che il tuo GPS non sia attivo. Riprova");
-    });
-  }
-
-  searchPartner(filtro, page) {
-    let getPartners = this.URLVars.getPartners();
-
-    let params = {
-      latitude: this.latitude,
-      longitude: this.longitude,
-      order: filtro,
-      page: page
-    };
-
-    this.http.get(getPartners, { params: params }).map(res => res.json()).subscribe(
-      data => {
-        this.partners = data;
-        this.partners_original = data;
-
-        if(data.length) {
-          this.showAlert = false;
-        }
-        else {
-          this.showAlert = true;
-        }
-
-      },
-      error => {
-        this.showPopup("Attenzione", error);
-      }
-    );
-  }
-
-  info_parner(id_partner) {
-    this.navCtrl.push(PartnerPage, {id_partner: id_partner});
-  }
-
-  showPopup(title, text) {
-    let alert = this.alertCtrl.create({
-      title: title,
-      subTitle: text,
-      buttons: ['OK']
-    });
-    alert.present(prompt);
-  }
-
-  setFalseClass() {
-    this.tribuSelected = false;
-    this.combattutiSelected = false;
-    this.newsSelected = false;
-    this.promoSelected = false;
-    this.viciniSelected = false;
-  }
-
-  conquista_button(action) {
-    this.setFalseClass();
-
-    if(action == "tribu") {
-      this.tribuSelected = true;
-    }
-    else if(action == "combattuti") {
-      this.combattutiSelected = true;
-    }
-    else if(action == "news") {
-      this.newsSelected = true;
-    }
-    else if(action == "promo") {
-      this.promoSelected = true;
-    }
-    else if(action == "vicini") {
-      this.viciniSelected = true;
-
-    }
-    this.action = action;
-    this.searchPartner(this.action, this.page);
-  }
-
-  onSelectChange(selectedValue: any) {
-    if(selectedValue == "ZERO") {
-      this.partners = this.partners_original;
-    }
-    else {
-      this.partners = this.partners.filter((item) => {
-          return item.categoria_partner.indexOf(selectedValue) > -1;
-      });
-    }
-  }
-
-  carica_altro() {
-    if(this.latitude) {
-      this.page = this.page + 1;
-      this.searchPartner(this.action, this.page);
-    }
-    else {
-      this.cerca_tutto();
-    }
-  }
-  reinizia() {
-    this.page = 1;
-    this.searchPartner(this.action, this.page);
-  }
-*/
 
 }

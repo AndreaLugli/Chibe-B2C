@@ -5,6 +5,7 @@ import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
 import { ProfiloPage } from '../profilo/profilo';
+import { IndexPage } from '../index/index';
 
 @Component({
   selector: 'page-modificaprofilo',
@@ -46,8 +47,9 @@ export class ModificaProfiloPage {
   }
 
   goToIndex() {
-    this.viewCtrl.dismiss();
-    this.appCtrl.getRootNav().push(ProfiloPage);
+    //this.viewCtrl.dismiss();
+    //this.appCtrl.getRootNav().push(ProfiloPage);
+    this.appCtrl.getRootNav().push(IndexPage, { tabIndex: 3});
   }
 
   showPopup(title, text) {

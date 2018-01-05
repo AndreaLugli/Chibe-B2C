@@ -57,6 +57,8 @@
     </ion-card>
   </div>
 
+  <h3 *ngIf="no_result" text-center>Non sono stati trovati altri risultati</h3>
+
   <ion-card *ngIf="!showAlert" class="custom-ion-card" (click)="carica_altro()">
     <ion-item class="ion-card-item">
       <h2>Carica altri risultati</h2>
