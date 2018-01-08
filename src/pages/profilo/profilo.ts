@@ -148,24 +148,4 @@ export class ProfiloPage {
     this.navCtrl.push(GruppoPage, {gruppo: gruppo, gruppo_id : gruppo.id});
   }
 
-  ionViewDidEnter() {
-    this.initializeBackButtonCustomHandler();
-  }
-
-  public initializeBackButtonCustomHandler(): void {
-      this.platform.registerBackButtonAction(() => {
-          this.customHandleBackButton();
-      }, 10);
-  }
-
-  private customHandleBackButton(): void {
-      let view_name = this.navCtrl.getActive().name;
-      if(view_name == "ProfiloPage") {
-        console.log("Nooo");
-      }
-      else {
-        this.navCtrl.pop();
-      }
-  }
-
 }

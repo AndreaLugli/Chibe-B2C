@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, MenuController } from 'ionic-angular';
+import { Nav, Platform, MenuController, App } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -20,10 +20,24 @@ export class MyApp {
   rootPage:any = TutorialPage;
   //rootPage:any = IndexPage;
 
-  constructor(public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http) {
+  constructor(public app: App, public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
+
+      platform.registerBackButtonAction(() => {
+
+          let nav = app.getActiveNavs()[0];
+          let activeView = nav.getActive();
+
+          if(activeView.name === "ProfiloPage") {
+              console.log("Ciaone");
+          }
+          else {
+            nav.pop();
+          }
+      });
+
     });
   }
 
@@ -69,5 +83,7 @@ export class MyApp {
     this.menuCtrl.close();
     this.nav.setRoot(IndexPage, { tabIndex: 4});
   }
+
+
 
 }
