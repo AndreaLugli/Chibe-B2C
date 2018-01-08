@@ -50,7 +50,24 @@ export class AmicoPage {
         this.http.post(invitaPuntiURL, body).subscribe(
           data => {
             this.loading.dismiss();
-            this.navCtrl.pop();
+            //this.navCtrl.pop();
+
+            let sub_title = "Hai inviato con successo " +this.punti_piuma+ " punti piuma a " +this.amico.username+ "!";
+
+            let alert = this.alertCtrl.create({
+              title: "Perfetto!",
+              subTitle: sub_title,
+              buttons: [{
+                text: 'Torna indietro',
+                handler: data => {
+                  //this.goToIndex()
+                  this.navCtrl.pop();
+                }
+              }]
+            });
+            alert.present(prompt);
+
+
           }
         );
 
