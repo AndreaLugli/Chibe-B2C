@@ -171,3 +171,7 @@ ion-app, ion-app.md, ion-app.ios {
 .header-md::after, .footer-md::before {
     background-color: white;
 }
+
+.platform-ios .toolbar-title-md {
+	margin-top:20px;
+}
