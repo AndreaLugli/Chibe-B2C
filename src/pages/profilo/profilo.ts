@@ -73,7 +73,7 @@ export class ProfiloPage {
         /* COVER DI DEFAULT */
         this.cover = "assets/cover/default.png";
 
-        this.tribu = "assets/tribudefault.png"
+        //this.tribu = "assets/tribudefault.png"
 
         if(data.tribu) {
           let sesso_path = "assets/cover/" + this.sesso + "/";
