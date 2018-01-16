@@ -5,6 +5,7 @@ import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
 import { Geolocation } from '@ionic-native/geolocation';
+import { Diagnostic } from '@ionic-native/diagnostic';
 import { PartnerPage } from '../partner/partner';
 
 @Component({
@@ -31,8 +32,9 @@ export class ConquistaPage {
   viciniSelected: any;
 
   no_result:any;
+  gps_attivo:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+  constructor(private diagnostic: Diagnostic, public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.cerca_tutto();
     this.no_result = false;
   }
@@ -84,6 +86,23 @@ export class ConquistaPage {
   }
 
   cerca_tutto() {
+    this.diagnostic.isLocationEnabled().then(
+      (isAvailable) => {
+        if(isAvailable) {
+          this.gps_attivo = true;
+          this.cerca_tutto_reale();
+        }
+        else {
+          this.gps_attivo = false;
+          alert("Attiva il GPS per continuare");
+        }
+      }
+    ).catch(
+      (e) => console.error(e)
+    );
+  }
+
+  cerca_tutto_reale() {
     this.setFalseClass();
 
     this.title = "Conquista";
@@ -94,7 +113,7 @@ export class ConquistaPage {
 
     this.loading.present();
 
-    this.geolocation.getCurrentPosition({timeout: 10000}).then((resp) => {
+    this.geolocation.getCurrentPosition().then((resp) => {
       this.loading.dismiss();
       this.latitude = resp.coords.latitude;
       this.longitude = resp.coords.longitude;
@@ -104,9 +123,7 @@ export class ConquistaPage {
       this.viciniSelected = true;
 
     }).catch((error) => {
-      console.log('Error getting location', error);
       this.loading.dismiss();
-      alert("Sembra che il tuo GPS non sia attivo. Riprova");
     });
   }
 

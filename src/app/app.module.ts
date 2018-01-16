@@ -53,6 +53,7 @@ import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Brightness } from '@ionic-native/brightness';
+import { Diagnostic } from '@ionic-native/diagnostic';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
@@ -155,7 +156,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     GooglePlus,
     SocialSharing,
     Brightness,
-    PointReplacerPipe
+    PointReplacerPipe,
+    Diagnostic
   ]
 })
 export class AppModule {}

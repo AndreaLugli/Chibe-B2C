@@ -27,32 +27,12 @@
     <preference name="orientation" value="portrait" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <!--
-            ldpi    : 36x36 px
-            mdpi    : 48x48 px
-            hdpi    : 72x72 px
-            xhdpi   : 96x96 px
-            xxhdpi  : 144x144 px
-            xxxhdpi : 192x192 px
-        -->
-
-        <icon src="resources/android/icon/ldpi.png" density="ldpi" />
-        <icon src="resources/android/icon/mdpi.png" density="mdpi" />
-        <icon src="resources/android/icon/hdpi.png" density="hdpi" />
-        <icon src="resources/android/icon/xhdpi.png" density="xhdpi" />
-        <icon src="resources/android/icon/xxhdpi.png" density="xxhdpi" />
-        <icon src="resources/android/icon/xxxhdpi.png" density="xxxhdpi" />
-
-        <!--
-        <icon density="ldpi" src="resources/android/icon/android.png" />
-        <icon density="mdpi" src="resources/android/icon/android.png" />
-        <icon density="hdpi" src="resources/android/icon/android.png" />
-        <icon density="xhdpi" src="resources/android/icon/android.png" />
-        <icon density="xxhdpi" src="resources/android/icon/android.png" />
-        <icon density="xxxhdpi" src="resources/android/icon/android.png" />
-        -->
-
-
+        <icon density="ldpi" src="resources/android/icon/ldpi.png" />
+        <icon density="mdpi" src="resources/android/icon/mdpi.png" />
+        <icon density="hdpi" src="resources/android/icon/hdpi.png" />
+        <icon density="xhdpi" src="resources/android/icon/xhdpi.png" />
+        <icon density="xxhdpi" src="resources/android/icon/xxhdpi.png" />
+        <icon density="xxxhdpi" src="resources/android/icon/xxxhdpi.png" />
         <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png" />
         <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png" />
         <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png" />
@@ -118,4 +98,5 @@
     <preference name="pgb-builder-version" value="2" />
     <plugin name="cordova-plugin-brightness" spec="^0.1.5" />
     <engine name="android" spec="~6.2.3" />
+    <plugin name="cordova.plugins.diagnostic" spec="^3.9.1" />
 </widget>
