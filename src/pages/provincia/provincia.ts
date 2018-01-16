@@ -79,7 +79,7 @@ export class ProvinciaPage {
 
   completaStepTre() {
 
-    if(this.provincia && this.scuola && this.privacy) {
+    if(this.provincia && this.scuola && this.privacy && this.sesso) {
 
       /*
       this.loading = this.loadingCtrl.create({
@@ -128,6 +128,9 @@ export class ProvinciaPage {
       }
       else if(!this.compleanno) {
         this.showPopup("Attenzione", "Inserire la data di nascita");
+      }
+      else if(!this.sesso) {
+        this.showPopup("Attenzione", "Selezionare il sesso");
       }
     }
   }

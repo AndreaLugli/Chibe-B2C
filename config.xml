@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="it.socialcities.chibeb2c" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="it.socialcities.chibeb2c" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Chibe</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
@@ -25,15 +25,33 @@
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="0" />
     <preference name="orientation" value="portrait" />
-
     <platform name="android">
         <allow-intent href="market:*" />
+        <!--
+            ldpi    : 36x36 px
+            mdpi    : 48x48 px
+            hdpi    : 72x72 px
+            xhdpi   : 96x96 px
+            xxhdpi  : 144x144 px
+            xxxhdpi : 192x192 px
+        -->
+
+        <icon src="resources/android/icon/ldpi.png" density="ldpi" />
+        <icon src="resources/android/icon/mdpi.png" density="mdpi" />
+        <icon src="resources/android/icon/hdpi.png" density="hdpi" />
+        <icon src="resources/android/icon/xhdpi.png" density="xhdpi" />
+        <icon src="resources/android/icon/xxhdpi.png" density="xxhdpi" />
+        <icon src="resources/android/icon/xxxhdpi.png" density="xxxhdpi" />
+
+        <!--
         <icon density="ldpi" src="resources/android/icon/android.png" />
         <icon density="mdpi" src="resources/android/icon/android.png" />
         <icon density="hdpi" src="resources/android/icon/android.png" />
         <icon density="xhdpi" src="resources/android/icon/android.png" />
         <icon density="xxhdpi" src="resources/android/icon/android.png" />
         <icon density="xxxhdpi" src="resources/android/icon/android.png" />
+        -->
+
 
         <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png" />
         <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png" />
@@ -47,31 +65,19 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-
-        <!-- iOS 8.0+ -->
-        <!-- iPhone 6 Plus  -->
-        <icon src="resources/ios/icon/icon-60@3x.png" width="180" height="180" />
-        <!-- iOS 7.0+ -->
-        <!-- iPhone / iPod Touch  -->
-        <icon src="resources/ios/icon/icon-60.png" width="60" height="60" />
-        <icon src="resources/ios/icon/icon-60@2x.png" width="120" height="120" />
-        <!-- iPad -->
-        <icon src="resources/ios/icon/icon-76.png" width="76" height="76" />
-        <icon src="resources/ios/icon/icon-76@2x.png" width="152" height="152" />
-        <!-- Spotlight Icon -->
-        <icon src="resources/ios/icon/icon-40.png" width="40" height="40" />
-        <icon src="resources/ios/icon/icon-40@2x.png" width="80" height="80" />
-        <!-- iOS 6.1 -->
-        <!-- iPhone / iPod Touch -->
-        <icon src="resources/ios/icon/icon.png" width="57" height="57" />
-        <icon src="resources/ios/icon/icon@2x.png" width="114" height="114" />
-        <!-- iPhone Spotlight and Settings Icon -->
-        <icon src="resources/ios/icon/icon-small.png" width="29" height="29" />
-        <icon src="resources/ios/icon/icon-small@2x.png" width="58" height="58" />
-        <!-- iPad Spotlight and Settings Icon -->
-        <icon src="resources/ios/icon/icon-50.png" width="50" height="50" />
-        <icon src="resources/ios/icon/icon-50@2x.png" width="100" height="100" />
-
+        <icon height="180" src="resources/ios/icon/icon-60@3x.png" width="180" />
+        <icon height="60" src="resources/ios/icon/icon-60.png" width="60" />
+        <icon height="120" src="resources/ios/icon/icon-60@2x.png" width="120" />
+        <icon height="76" src="resources/ios/icon/icon-76.png" width="76" />
+        <icon height="152" src="resources/ios/icon/icon-76@2x.png" width="152" />
+        <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
+        <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80" />
+        <icon height="57" src="resources/ios/icon/icon.png" width="57" />
+        <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
+        <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />
+        <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />
+        <icon height="50" src="resources/ios/icon/icon-50.png" width="50" />
+        <icon height="100" src="resources/ios/icon/icon-50@2x.png" width="100" />
         <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />
         <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />
         <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />
@@ -86,36 +92,24 @@
     <plugin name="cordova-plugin-console" spec="1.0.5" />
     <plugin name="cordova-plugin-statusbar" spec="2.2.2" />
     <plugin name="cordova-plugin-device" spec="1.1.4" />
-    <!--
-    <plugin name="cordova-plugin-camera" spec="^2.4.1" />
-    -->
-    <plugin name="cordova-plugin-camera" spec="^2.4.1" >
-      <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow the app to use your camera" />
-      <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow the app to access your photos" />
+    <plugin name="cordova-plugin-camera" spec="^2.4.1">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow the app to use your camera" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow the app to access your photos" />
     </plugin>
-
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.4.3">
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow the app to access your photos" />
     </plugin>
-
-    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="overwrite">
+    <edit-config file="*-Info.plist" mode="overwrite" target="NSPhotoLibraryUsageDescription">
         <string>Used to allow the user to select media to upload to us</string>
     </edit-config>
-
     <plugin name="cordova-plugin-crop" spec="^0.4.0" />
     <plugin name="cordova-plugin-file-transfer" spec="1.5.1" />
-    <!--<plugin name="phonegap-plugin-barcodescanner" spec="^6.0.8" />-->
     <plugin name="cordova-plugin-geolocation" spec="^2.4.3" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-facebook4" spec="1.7.4">
         <variable name="APP_ID" value="1610936385616742" />
         <variable name="APP_NAME" value="Chibe" />
     </plugin>
-<!--
-    <plugin name="cordova-plugin-googleplus" source="npm">
-        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.700637450112-5s6tg2b0k35kq724evhdrvqpgm3n8vuq" />
-    </plugin>
--->
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.0" />
     <plugin name="phonegap-plugin-push" spec="1.10.5">
         <variable name="SENDER_ID" value="551471137799" />
@@ -123,4 +117,5 @@
     <preference name="phonegap-version" value="cli-7.0.1" />
     <preference name="pgb-builder-version" value="2" />
     <plugin name="cordova-plugin-brightness" spec="^0.1.5" />
+    <engine name="android" spec="~6.2.3" />
 </widget>
