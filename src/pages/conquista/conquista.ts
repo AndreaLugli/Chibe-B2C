@@ -176,4 +176,15 @@ export class ConquistaPage {
     this.searchPartner(this.action, this.page);
   }
 
+  onSelectChange(selectedValue: any) {
+    if(selectedValue == "ZERO") {
+      this.partners = this.partners_original;
+    }
+    else {
+      this.partners = this.partners.filter((item) => {
+          return item.categoria_partner.indexOf(selectedValue) > -1;
+      });
+    }
+  }
+
 }
