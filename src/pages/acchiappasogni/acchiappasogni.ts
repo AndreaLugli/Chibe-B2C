@@ -4,7 +4,8 @@ import { Http } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
-import { DesiderioPage } from '../desiderio/desiderio'
+import { DesiderioPage } from '../desiderio/desiderio';
+import { NontroviPage } from '../nontrovi/nontrovi';
 
 @Component({
   selector: 'page-acchiappasogni',
@@ -42,6 +43,10 @@ export class AcchiappasogniPage {
 
   openDesiderio(id_desiderio) {
     this.navCtrl.push(DesiderioPage, {id_desiderio:id_desiderio});
+  }
+
+  openNontrovi() {
+    this.navCtrl.push(NontroviPage);
   }
 
   showPopup(title, text) {

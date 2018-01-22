@@ -38,6 +38,7 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { DatiFbPage } from '../pages/dati-fb/dati-fb';
 import { InvitaAmicoPage } from '../pages/invita-amico/invita-amico';
 import { ModificavatarPage } from '../pages/modificavatar/modificavatar';
+import { NontroviPage } from '../pages/nontrovi/nontrovi';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -92,6 +93,7 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     DatiFbPage,
     InvitaAmicoPage,
     ModificavatarPage,
+    NontroviPage,
     PointReplacerPipe
   ],
   imports: [
@@ -139,7 +141,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     TutorialPage,
     DatiFbPage,
     InvitaAmicoPage,
-    ModificavatarPage
+    ModificavatarPage,
+    NontroviPage
   ],
   providers: [
     StatusBar,

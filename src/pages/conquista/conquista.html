@@ -52,7 +52,7 @@
     <ion-card *ngFor="let partner of partners" (click)="info_parner(partner.id)">
       <img src="http://app.chibeapp.com/media/{{partner.logo}}" onError="this.src='assets/conquistasquared.png'"/>
       <div class="card-title">{{partner.ragione_sociale}}</div>
-      <div class="card-subtitle">{{partner.descrizione}}</div>
+      <div class="card-subtitle">&nbsp;</div>
       <div class="card-tribu" *ngIf="partner.tribu"><img src="assets/animali/{{partner.tribu}}.png"></div>
     </ion-card>
   </div>
