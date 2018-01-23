@@ -115,8 +115,10 @@ export class ConquistaPage {
 
     this.geolocation.getCurrentPosition().then((resp) => {
       this.loading.dismiss();
+
       this.latitude = resp.coords.latitude;
       this.longitude = resp.coords.longitude;
+
       this.page = 1;
       this.action = "vicini";
       this.searchPartner(this.action, this.page);
