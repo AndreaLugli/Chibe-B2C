@@ -63,9 +63,8 @@
         </ion-item>
         <p text-center>
           <button ion-button class="BOTTONE-AZZURRO-BLU" (click)="invia_punti()">Aggiungi Punti</button>
-          <br>
-          <a href="">Smetti di seguire</a>
         </p>
+        <a href="#" *ngIf="gruppo.punti==0" (click)="smetti_seguire()">Smetti di seguire</a>
     </div>
   </div>
 

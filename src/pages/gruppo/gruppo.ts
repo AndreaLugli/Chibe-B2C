@@ -95,4 +95,21 @@ export class GruppoPage {
     );
   }
 
+  smetti_seguire() {
+    this.loading = this.loadingCtrl.create();
+    this.loading.present();
+    let smettiSeguireURL = this.URLVars.smettiSeguireURL(this.gruppo_id);
+    let body = new URLSearchParams();
+    this.http.post(smettiSeguireURL, body).subscribe(
+      data => {
+        this.loading.dismiss();
+        this.navCtrl.pop();
+      },
+      err => {
+        this.loading.dismiss();
+        this.navCtrl.pop();
+      }
+    );
+  }
+
 }

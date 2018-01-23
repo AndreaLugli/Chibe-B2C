@@ -117,6 +117,10 @@ export class URLVars {
     return this.getGruppoURL(id) + "riscatta/";
   }
 
+  smettiSeguireURL(id) {
+      return this.getGruppoURL(id) + "rimuovi/";
+  }
+
   logoutURL() {
     return this.getBaseURL() + "/utente/logout/";
   }
@@ -148,5 +152,7 @@ export class URLVars {
   urlInvite(code) {
     return this.getBaseURL() + "/invito/" + code + "/";
   }
+
+
 
 }
