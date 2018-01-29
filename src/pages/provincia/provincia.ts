@@ -79,7 +79,7 @@ export class ProvinciaPage {
 
   completaStepTre() {
 
-    if(this.provincia && this.scuola && this.privacy && this.sesso) {
+    if(this.provincia && this.scuola && this.privacy) {
 
       /*
       this.loading = this.loadingCtrl.create({
@@ -126,12 +126,14 @@ export class ProvinciaPage {
       else if(!this.privacy) {
         this.showPopup("Attenzione", "Accettare la privacy policy e i termini di servizio per continuare");
       }
+      /*
       else if(!this.compleanno) {
         this.showPopup("Attenzione", "Inserire la data di nascita");
       }
       else if(!this.sesso) {
         this.showPopup("Attenzione", "Selezionare il sesso");
       }
+      */
     }
   }
 

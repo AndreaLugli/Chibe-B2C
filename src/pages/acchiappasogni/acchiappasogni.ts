@@ -39,6 +39,8 @@ export class AcchiappasogniPage {
         this.showPopup("Attenzione", error);
       }
     );
+
+
   }
 
   openDesiderio(id_desiderio) {
@@ -61,5 +63,7 @@ export class AcchiappasogniPage {
   comunicaDesiderio() {
     this.showPopup("Non trovi il desiderio?", "<a target='_blank' href='https://api.whatsapp.com/send?phone=393394198803'>Comunicacelo</a>");
   }
+
+
 
 }

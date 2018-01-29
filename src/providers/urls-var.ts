@@ -93,6 +93,10 @@ export class URLVars {
     return this.getBaseURL() + "/desideri/";
   }
 
+  desideriURL2() {
+    return this.getBaseURL() + "/desideri/new/";
+  }
+
   getDesiderioURL(id) {
     return this.desideriURL() + id + "/";
   }

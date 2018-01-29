@@ -25,14 +25,14 @@
         <ion-input type="text" placeholder="Inserisci la classe" name="classe" disabled="{{isEnabledScuola}}" [value]="classe" [(ngModel)]="classe"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Sesso</ion-label>
+        <ion-label style="color: #cccccc">Sesso</ion-label>
         <ion-select [(ngModel)]="sesso" name="sesso">
           <ion-option value="M">Maschio</ion-option>
           <ion-option value="F">Femmina</ion-option>
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label>Data di nascita</ion-label>
+        <ion-label style="color: #cccccc">Data di nascita</ion-label>
         <ion-datetime displayFormat="DD/MM/YYYY" name="compleanno" [(ngModel)]="compleanno"></ion-datetime>
       </ion-item>
       <p margin-top>Accetto la <a href="http://www.chibeapp.com/privacy/">privacy policy</a>, i <a href="http://www.chibeapp.com/termini-e-condizioni/">termini e condizioni</a> e <a href="http://www.chibeapp.com/note-legali/">le note legali</a></p>
