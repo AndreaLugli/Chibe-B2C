@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-
+<!--
 <ion-content class="card-background-page">
   <ion-card *ngFor="let desiderio of desideri" (click)="openDesiderio(desiderio.id)">
     <img src="http://app.chibeapp.com/media/{{desiderio.big_picture}}" onError="this.src='assets/acchiappasquared.png'"/>
@@ -15,11 +15,11 @@
     <div class="card-subtitle">{{desiderio.descrizione_breve}}</div>
   </ion-card>
 </ion-content>
+-->
 
-<!--
 <ion-content>
   <div *ngFor="let desiderio of desideri" margin-top>
-    <h1>{{desiderio.categoria}}</h1>
+    <h1 style="color: #211B4E; font-size: 2rem; font-weight: 500;">{{desiderio.categoria}}</h1>
     <ion-slides pager="false" slidesPerView="3" spaceBetween="16">
       <ion-slide *ngFor="let pic of desiderio.desideri">
         <img (click)="openDesiderio(pic.id)" src="http://app.chibeapp.com/media/{{pic.big_picture}}" onError="this.src='assets/acchiappasquared.png'"/>
@@ -27,7 +27,6 @@
     </ion-slides>
   </div>
 </ion-content>
--->
 
 <ion-footer>
   <ion-toolbar>

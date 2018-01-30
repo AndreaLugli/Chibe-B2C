@@ -26,7 +26,7 @@ export class AcchiappasogniPage {
 
     this.loading.present();
 
-    let desideriURL = this.URLVars.desideriURL();
+    let desideriURL = this.URLVars.desideriURL2();
 
     this.http.get(desideriURL).map(res => res.json()).subscribe(
       data => {
