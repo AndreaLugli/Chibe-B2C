@@ -21,8 +21,6 @@ export class MyApp {
   rootPage:any = TutorialPage;
   //rootPage:any = IndexPage;
 
-
-
   constructor(public app: App, public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http) {
     platform.ready().then(() => {
       statusBar.styleDefault();

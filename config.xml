@@ -46,19 +46,40 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+
+        <!-- iPhone 6 Plus  -->
         <icon height="180" src="resources/ios/icon/icon-60@3x.png" width="180" />
+
+        <!-- iOS 7.0+ -->
+        <!-- iPhone / iPod Touch  -->
         <icon height="60" src="resources/ios/icon/icon-60.png" width="60" />
         <icon height="120" src="resources/ios/icon/icon-60@2x.png" width="120" />
+
+        <!-- iPad -->
         <icon height="76" src="resources/ios/icon/icon-76.png" width="76" />
         <icon height="152" src="resources/ios/icon/icon-76@2x.png" width="152" />
+
+        <!-- iOS 6.1 -->
+        <!-- Spotlight Icon -->
         <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
         <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80" />
+
+        <!-- iPhone / iPod Touch -->
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
+
+        <!-- iPad -->
+        <icon src="resources/ios/icon/icon-72.png" width="72" height="72" />
+        <icon src="resources/ios/icon/icon-72@2x.png" width="144" height="144" />
+
+        <!-- iPhone Spotlight and Settings Icon -->
         <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />
         <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />
+
+        <!-- iPad Spotlight and Settings Icon -->
         <icon height="50" src="resources/ios/icon/icon-50.png" width="50" />
         <icon height="100" src="resources/ios/icon/icon-50@2x.png" width="100" />
+
         <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />
         <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />
         <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />
@@ -83,6 +104,14 @@
     <edit-config file="*-Info.plist" mode="overwrite" target="NSPhotoLibraryUsageDescription">
         <string>Used to allow the user to select media to upload to us</string>
     </edit-config>
+
+    <edit-config file="*-Info.plist" mode="overwrite" target="NSLocationWhenInUseUsageDescription">
+        <string>L'app utilizza la tua posizione per trovare i partner più vicini a te</string>
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="overwrite" target="NSLocationAlwaysUsageDescription">
+        <string>L'app utilizza la tua posizione per trovare i partner più vicini a te</string>
+    </edit-config>
+
     <plugin name="cordova-plugin-crop" spec="^0.4.0" />
     <plugin name="cordova-plugin-file-transfer" spec="1.5.1" />
     <plugin name="cordova-plugin-geolocation" spec="^2.4.3" />
