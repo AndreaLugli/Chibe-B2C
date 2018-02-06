@@ -6,40 +6,22 @@
 
 
 <ion-content padding>
-  <!--
-  <ion-card class="custom-ion-card" margin-bottom>
-    <img src="http://app.chibeapp.com/media/{{gruppo.big_picture}}" onError="this.src='assets/acchiappasquared.png'"/>
-    <ion-item class="ion-card-item">
+  <ion-card class="partner-card">
+    <img src="http://app.chibeapp.com/media/{{gruppo.immagine}}" onError="this.src='assets/acchiappadefaultbanner.png'">
+    <ion-item class="partner-card-item">
       <h2>{{gruppo.nome}}</h2>
     </ion-item>
-    <ion-card-content class="ion-card-body">
-      <strong>Punti Piuma raccolti:</strong> {{gruppo.punti|number|pointReplacer}} / {{gruppo.punti_necessari|number|pointReplacer}}
-      <p><strong>Componenti gruppo:</strong> {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}</p>
-      <p>{{gruppo.descrizione}}</p>
-      <div class="progress-bar blue stripes">
-          <span [style.width]="gruppo.percentuale">{{gruppo.percentuale}}</span>
+    <ion-card-content>
+      <div padding>
+        {{gruppo.descrizione}}<br>
+        <strong>Componenti gruppo:</strong>: {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}<br>
+        <strong>Punti Piuma raccolti:</strong> {{gruppo.punti|number|pointReplacer}} / {{gruppo.punti_necessari|number|pointReplacer}}
+        <div class="progress-bar blue stripes">
+            <span [style.width]="gruppo.percentuale">{{gruppo.percentuale}}</span>
+        </div>
       </div>
     </ion-card-content>
   </ion-card>
--->
-
-<ion-card class="partner-card">
-  <img src="http://app.chibeapp.com/media/{{gruppo.immagine}}" onError="this.src='assets/acchiappadefaultbanner.png'">
-  <ion-item class="partner-card-item">
-    <h2>{{gruppo.nome}}</h2>
-  </ion-item>
-  <ion-card-content>
-    <div padding>
-      {{gruppo.descrizione}}<br>
-      <strong>Componenti gruppo:</strong>: {{gruppo.utenti.length}} / {{gruppo.num_gruppo}}<br>
-      <strong>Punti Piuma raccolti:</strong> {{gruppo.punti|number|pointReplacer}} / {{gruppo.punti_necessari|number|pointReplacer}}
-      <div class="progress-bar blue stripes">
-          <span [style.width]="gruppo.percentuale">{{gruppo.percentuale}}</span>
-      </div>
-    </div>
-  </ion-card-content>
-</ion-card>
-
 
   <div *ngIf="!gruppo.conquistato" margin-top>
     <div *ngIf="gruppo.utenti.length<gruppo.num_gruppo" text-center margin-top>
@@ -92,13 +74,43 @@
           L'amministratore del gruppo ha ordinato con successo il Desiderio. Ora deve ritirarlo.
         </div>
         <div *ngIf="gruppo.admin">
-          <p>Hai ordinato il Desiderio. Ecco il tuo QR code di ricevuta</p>
-          <qr-code [value]="gruppo.codice_ordine" [size]="150" [background]="background" [foreground]="foreground"></qr-code>
-          <h5>{{codice_str}}</h5>
-          <p>Puoi ritirare il Desiderio in uno di questi locali mostrando il codice QR</p>
-          <ul text-left>
-            <li *ngFor="let partner of gruppo.partners"><strong>{{partner.ragione_sociale}}</strong> - {{partner.indirizzo}}</li>
-          </ul>
+
+          <div *ngIf="!gruppo.partners.length">
+            Contattaci per riscattare il desiderio.<br>
+            <ion-grid margin-top>
+              <ion-row>
+                <ion-col col-4>
+                    <a href="http://m.me/ChibeApp">
+                      <ion-icon style="font-size: 4em;" name="logo-facebook"></ion-icon>
+                    </a>
+                </ion-col>
+
+                <ion-col col-4>
+                  <a href="https://api.whatsapp.com/send?phone=393394198803">
+                    <ion-icon style="font-size: 4em;" name="logo-whatsapp"></ion-icon>
+                  </a>
+                </ion-col>
+
+                <ion-col col-4>
+                  <a href="mailto:info@chibe.it">
+                    <ion-icon style="font-size: 4em;" name="mail"></ion-icon>
+                  </a>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </div>
+
+          <div *ngIf="gruppo.partners.length">
+            <p>Hai ordinato il Desiderio. Ecco il tuo QR code di ricevuta</p>
+            <qr-code [value]="gruppo.codice_ordine" [size]="150" [background]="background" [foreground]="foreground"></qr-code>
+            <h5>{{codice_str}}</h5>
+            <p>Puoi ritirare il Desiderio in uno di questi locali mostrando il codice QR</p>
+            <ul text-left>
+              <li *ngFor="let partner of gruppo.partners"><strong>{{partner.ragione_sociale}}</strong> - {{partner.indirizzo}}</li>
+            </ul>
+          </div>
+
         </div>
       </div>
 
