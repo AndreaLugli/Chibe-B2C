@@ -13,3 +13,8 @@
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: 50px;
 }
+
+
+ion-slide.swiper-slide {
+    align-items: flex-start;
+}
