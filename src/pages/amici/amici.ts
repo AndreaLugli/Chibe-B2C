@@ -40,7 +40,7 @@ export class AmiciPage {
       },
       error => {
         this.loading.dismiss();
-        this.showPopup("Attenzione", error);
+        //this.showPopup("Attenzione", error);
       }
     );
   }

@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { IndexPage } from '../pages/index/index';
 
+import { Events } from 'ionic-angular';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,7 +22,7 @@ export class MyApp {
   rootPage:any = TutorialPage;
   //rootPage:any = IndexPage;
 
-  constructor(public app: App, public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http) {
+  constructor(public app: App, public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http, public events: Events) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
@@ -38,7 +39,10 @@ export class MyApp {
             nav.pop();
           }
       });
+    });
 
+    events.subscribe('user:logout', () => {
+      this.rootPage = HomePage;
     });
   }
 

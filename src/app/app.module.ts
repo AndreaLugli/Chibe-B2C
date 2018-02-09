@@ -58,6 +58,9 @@ import { Diagnostic } from '@ionic-native/diagnostic';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
+import { Http, XHRBackend, RequestOptions } from '@angular/http';
+import { ExtendedHttpService } from '../providers/extended-http.service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -160,7 +163,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     SocialSharing,
     Brightness,
     PointReplacerPipe,
-    Diagnostic
+    Diagnostic,
+    {provide: Http, useClass: ExtendedHttpService },
   ]
 })
 export class AppModule {}
