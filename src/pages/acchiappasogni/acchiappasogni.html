@@ -3,19 +3,9 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{title}}</ion-title>
+    <ion-title>{{title}} <ion-icon name="ios-information-circle-outline" (click)="openModalInfo()"></ion-icon></ion-title>
   </ion-navbar>
 </ion-header>
-
-<!--
-<ion-content class="card-background-page">
-  <ion-card *ngFor="let desiderio of desideri" (click)="openDesiderio(desiderio.id)">
-    <img src="http://app.chibeapp.com/media/{{desiderio.big_picture}}" onError="this.src='assets/acchiappasquared.png'"/>
-    <div class="card-title">{{desiderio.nome}}</div>
-    <div class="card-subtitle">{{desiderio.descrizione_breve}}</div>
-  </ion-card>
-</ion-content>
--->
 
 <ion-content>
   <div *ngFor="let desiderio of desideri" margin-top>

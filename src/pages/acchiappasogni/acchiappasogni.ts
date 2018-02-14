@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Loading, LoadingController, ModalController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
 import { DesiderioPage } from '../desiderio/desiderio';
 import { NontroviPage } from '../nontrovi/nontrovi';
+import { ModalePage } from '../modale/modale';
 
 @Component({
   selector: 'page-acchiappasogni',
@@ -17,7 +18,7 @@ export class AcchiappasogniPage {
   desideri: any;
   title: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.title = "Acchiappasogni";
 
     this.loading = this.loadingCtrl.create({
@@ -62,6 +63,12 @@ export class AcchiappasogniPage {
 
   comunicaDesiderio() {
     this.showPopup("Non trovi il desiderio?", "<a target='_blank' href='https://api.whatsapp.com/send?phone=393394198803'>Comunicacelo</a>");
+  }
+
+
+  openModalInfo() {
+    let modal = this.modalCtrl.create(ModalePage, {'sorgente' : 'acchiappasogni', 'titolo' : this.title});
+    modal.present();
   }
 
 

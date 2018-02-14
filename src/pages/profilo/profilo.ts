@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, Loading, LoadingController, Platform } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Loading, LoadingController, Platform, ModalController} from 'ionic-angular';
 import { Http } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
@@ -9,7 +9,7 @@ import { ModificaProfiloPage } from '../modificaprofilo/modificaprofilo';
 import { DesideriPage } from '../desideri/desideri';
 import { ModificavatarPage } from '../modificavatar/modificavatar';
 import { GruppoPage } from '../gruppo/gruppo';
-
+import { ModalePage } from '../modale/modale';
 
 @Component({
   selector: 'page-profilo',
@@ -34,7 +34,7 @@ export class ProfiloPage {
   gruppi: any;
   cover: any;
 
-  constructor(public platform: Platform, public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+  constructor(public modalCtrl: ModalController, public platform: Platform, public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
   }
 
   ionViewWillEnter() {
@@ -146,6 +146,11 @@ export class ProfiloPage {
 
   getGruppo(gruppo) {
     this.navCtrl.push(GruppoPage, {gruppo: gruppo, gruppo_id : gruppo.id});
+  }
+
+  openModalInfo() {
+    let modal = this.modalCtrl.create(ModalePage, {'sorgente' : 'profilo', 'titolo' : this.title});
+    modal.present();
   }
 
 }

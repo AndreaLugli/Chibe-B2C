@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Loading, LoadingController, ModalController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import { PartnerPage } from '../partner/partner';
+import { ModalePage } from '../modale/modale';
 
 @Component({
   selector: 'page-conquista',
@@ -33,7 +34,7 @@ export class ConquistaPage {
   promoSelected: any;
   viciniSelected: any;
 
-  constructor(private diagnostic: Diagnostic, public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+  constructor(public modalCtrl: ModalController, private diagnostic: Diagnostic, public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.title = "Conquista";
     this.partners = [];
   }
@@ -185,6 +186,11 @@ export class ConquistaPage {
     this.newsSelected = false;
     this.promoSelected = false;
     this.viciniSelected = false;
+  }
+
+  openModalInfo() {
+    let modal = this.modalCtrl.create(ModalePage, {'sorgente' : 'conquista', 'titolo' : this.title});
+    modal.present();
   }
 
 }

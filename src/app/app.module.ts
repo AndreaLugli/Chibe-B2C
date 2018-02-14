@@ -39,6 +39,7 @@ import { DatiFbPage } from '../pages/dati-fb/dati-fb';
 import { InvitaAmicoPage } from '../pages/invita-amico/invita-amico';
 import { ModificavatarPage } from '../pages/modificavatar/modificavatar';
 import { NontroviPage } from '../pages/nontrovi/nontrovi';
+import { ModalePage } from '../pages/modale/modale';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { URLVars } from '../providers/urls-var';
@@ -97,7 +98,8 @@ import { ExtendedHttpService } from '../providers/extended-http.service';
     InvitaAmicoPage,
     ModificavatarPage,
     NontroviPage,
-    PointReplacerPipe
+    PointReplacerPipe,
+    ModalePage
   ],
   imports: [
     BrowserModule,
@@ -145,7 +147,8 @@ import { ExtendedHttpService } from '../providers/extended-http.service';
     DatiFbPage,
     InvitaAmicoPage,
     ModificavatarPage,
-    NontroviPage
+    NontroviPage,
+    ModalePage
   ],
   providers: [
     StatusBar,

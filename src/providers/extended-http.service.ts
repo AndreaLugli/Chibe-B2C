@@ -29,5 +29,5 @@ export class ExtendedHttpService extends Http {
       return Observable.throw(res);
     };
   }
-  
+
 }

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{titolo}}
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="android, windows, ios">Chiudere</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding text-center>
+  <img src="{{img_path}}">
+  <p [innerHTML]="testo"></p>
+
+  <button ion-button (click)="dismiss()" class="BOTTONE-AZZURRO-BLU">INIZIA</button>
+</ion-content>

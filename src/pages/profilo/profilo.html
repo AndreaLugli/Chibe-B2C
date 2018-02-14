@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{title}}</ion-title>
+    <ion-title>{{title}} <ion-icon name="ios-information-circle-outline" (click)="openModalInfo()"></ion-icon></ion-title>
     <ion-buttons end>
       <button ion-button icon-only color="royal" (click)="modificaProfilo()">
         <ion-icon name="create"></ion-icon>

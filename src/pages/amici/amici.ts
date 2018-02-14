@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, Loading, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Loading, LoadingController, ModalController } from 'ionic-angular';
 import { Http, URLSearchParams } from '@angular/http';
 import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
 import { AggiungiAmicoPage } from '../aggiungi-amico/aggiungi-amico';
 import { AmicoPage } from '../amico/amico';
+import { ModalePage } from '../modale/modale';
 
 @Component({
   selector: 'page-amici',
@@ -17,7 +18,7 @@ export class AmiciPage {
   lista_amici: any;
   title: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
 
   }
 
@@ -75,6 +76,11 @@ export class AmiciPage {
 
   go_cerca() {
     this.navCtrl.push(AggiungiAmicoPage);
+  }
+
+  openModalInfo() {
+    let modal = this.modalCtrl.create(ModalePage, {'sorgente' : 'chibers', 'titolo' : this.title});
+    modal.present();
   }
 
 }
