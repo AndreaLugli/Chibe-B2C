@@ -1,17 +1,14 @@
-import { Injectable, Injector } from '@angular/core';
-import { Request, XHRBackend, RequestOptions, Response, Http, RequestOptionsArgs, Headers } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Request, XHRBackend, RequestOptions, Response, Http, RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { Events } from 'ionic-angular';
-import { HomePage } from '../pages/home/home';
 
 @Injectable()
 export class ExtendedHttpService extends Http {
-  private router;
-  private authService;
 
-  constructor(backend: XHRBackend, defaultOptions: RequestOptions, private injector: Injector, public events: Events) {
+  constructor(backend: XHRBackend, defaultOptions: RequestOptions, public events: Events) {
     super(backend, defaultOptions);
   }
 

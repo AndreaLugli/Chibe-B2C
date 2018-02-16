@@ -56,10 +56,11 @@ import { GooglePlus } from '@ionic-native/google-plus';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Brightness } from '@ionic-native/brightness';
 import { Diagnostic } from '@ionic-native/diagnostic';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
-import { Http, XHRBackend, RequestOptions } from '@angular/http';
+import { Http } from '@angular/http';
 import { ExtendedHttpService } from '../providers/extended-http.service';
 
 @NgModule({
@@ -110,7 +111,8 @@ import { ExtendedHttpService } from '../providers/extended-http.service';
     ),
     HttpModule,
     QRCodeModule,
-    SuperTabsModule.forRoot()
+    SuperTabsModule.forRoot(),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

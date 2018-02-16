@@ -5,7 +5,9 @@ import { URLVars } from '../../providers/urls-var';
 import 'rxjs/add/operator/map';
 
 import { Brightness } from '@ionic-native/brightness';
+import { Storage } from '@ionic/storage';
 import { ModalePage } from '../modale/modale';
+
 
 @Component({
   selector: 'page-talismano',
@@ -22,7 +24,7 @@ export class TalismanoPage {
   screen_width: any;
   screen_height: any;
 
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController, private brightness: Brightness) {
+  constructor(private storage: Storage, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController, private brightness: Brightness) {
 
     this.screen_width = ((window.screen.width/2) - 75 - 10) + "px";
     this.screen_height = ((window.screen.width/2) - 75 + 10) + "px";
@@ -31,27 +33,35 @@ export class TalismanoPage {
     this.foreground = "black";
     this.title = "Talismano";
 
-    this.loading = this.loadingCtrl.create();
-    this.loading.present();
+     storage.get('codice').then((val) => {
+       if(val) {
+         this.codice_str = val;
+         this.codice_str = [this.codice_str.slice(0, 3), " ", this.codice_str.slice(3)].join('');
+         this.codice_str = [this.codice_str.slice(0, 7), " ", this.codice_str.slice(7)].join('');
+       }
+       else {
+         this.loading = this.loadingCtrl.create();
+         this.loading.present();
 
-    let getCodeURL = this.URLVars.getCodeURL();
+         let getCodeURL = this.URLVars.getCodeURL();
 
-    this.http.get(getCodeURL).subscribe(
-      data => {
-        this.loading.dismiss();
-        this.codice = data.text();
-        this.codice_str = this.codice;
-        this.codice_str = [this.codice_str.slice(0, 3), " ", this.codice_str.slice(3)].join('');
-        this.codice_str = [this.codice_str.slice(0, 7), " ", this.codice_str.slice(7)].join('');
-      },
-      error => {
-        this.loading.dismiss();
-        //this.showPopup("Attenzione", error);
-      }
-    );
+         this.http.get(getCodeURL).subscribe(
+           data => {
+             this.loading.dismiss();
+             this.codice = data.text();
+             storage.set('codice', this.codice);
+             this.codice_str = this.codice;
+             this.codice_str = [this.codice_str.slice(0, 3), " ", this.codice_str.slice(3)].join('');
+             this.codice_str = [this.codice_str.slice(0, 7), " ", this.codice_str.slice(7)].join('');
+           },
+           error => {
+             this.loading.dismiss();
+           }
+         );
+       }
+     });
 
     this.brightness.setBrightness(1);
-
   }
 
   showPopup(title, text) {
