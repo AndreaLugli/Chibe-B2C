@@ -62,7 +62,6 @@ export class IndexPage {
 
     pushObject.on('registration').subscribe(
      (registration: any) => {
-      console.log(registration);
       this.token = registration.registrationId;
 
       if (this.plt.is('ios')) {

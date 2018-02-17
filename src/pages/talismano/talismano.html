@@ -7,6 +7,7 @@
   </ion-navbar>
 </ion-header>
 
+<!--
 <ion-grid id="talismano_bg">
   <ion-row>
     <ion-col col-12>
@@ -28,3 +29,16 @@
     </ion-col>
   </ion-row>
 </ion-grid>
+-->
+
+<ion-content id="talismano_bg">
+  <div [style.margin-left]="screen_width"  [style.margin-top]="screen_height">
+    <qr-code [value]="codice" [size]="150" [background]="background" [foreground]="foreground"></qr-code>
+  </div>
+  <div [style.margin-top]="screen_height_2">
+    <h1 class="round-qr">
+        Codice<br>
+        {{codice_str}}
+    </h1>
+  </div>
+</ion-content>

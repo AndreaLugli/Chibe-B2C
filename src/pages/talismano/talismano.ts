@@ -23,11 +23,13 @@ export class TalismanoPage {
   title: any;
   screen_width: any;
   screen_height: any;
+  screen_height_2: any;
 
   constructor(private storage: Storage, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController, private brightness: Brightness) {
 
-    this.screen_width = ((window.screen.width/2) - 75 - 10) + "px";
-    this.screen_height = ((window.screen.width/2) - 75 + 10) + "px";
+    this.screen_width = ((window.screen.width/2) - 75 - 15) + "px";
+    this.screen_height = ((window.screen.width/2) - 75 - 55) + "px";
+    this.screen_height_2 = ((window.screen.width/2) - 60) + "px";
 
     this.background = "white";
     this.foreground = "black";

@@ -1,3 +1,4 @@
+/*
 page-talismano {
 
   #talismano_bg {
@@ -18,6 +19,27 @@ page-talismano {
   .round-qr {
     text-align: center;
   }
+}
+*/
 
+page-talismano {
 
+  #talismano_bg {
+      background-image: url("../assets/talismano.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 100%;
+      margin-top: 61px;
+  }
+
+  qr-code img {
+    border: 5px solid #DFDBE8;
+    border-radius: 5px;
+    padding: 10px;
+    background: white;
+  }
+
+  .round-qr {
+    text-align: center;
+  }
 }
