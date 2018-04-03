@@ -157,6 +157,13 @@ export class URLVars {
     return this.getBaseURL() + "/invito/" + code + "/";
   }
 
+  getSessionURL() {
+    return this.getBaseURL() + "/utente/get-session/";
+  }
+
+  setSessionURL() {
+    return this.getBaseURL() + "/utente/set-session/";    
+  }
 
 
 }

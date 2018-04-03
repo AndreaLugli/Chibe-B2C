@@ -8,6 +8,7 @@ import { DatipersonaliPage } from '../datipersonali/datipersonali';
 import { AvatarPage } from '../avatar/avatar';
 import { ProvinciaPage } from '../provincia/provincia';
 import { IndexPage } from '../index/index';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-login',
@@ -19,8 +20,9 @@ export class LoginPage {
   loginCredentials = { password: '', username: ''};
   error_text: any;
   isHidden: any;
+  headers: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) {
+  constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public loadingCtrl:LoadingController, public URLVars:URLVars, public http: Http) {
     this.isHidden = true;
   }
 
@@ -40,31 +42,35 @@ export class LoginPage {
     body.append('username', this.loginCredentials.username);
     body.append('password', this.loginCredentials.password);
 
-    this.http.post(utenteLogineURL, body).map(res => res.json()).subscribe(
-      success => {
-        this.loading.dismiss();
+    this.http.post(utenteLogineURL, body).map(res => {
+        this.headers = res.headers;
+        return res.json();
+      }).subscribe(
+        success => {
+          this.getSessionURL();
 
-        let output = success.output;
+          this.loading.dismiss();
 
-        if(output == 0) {
-          this.navCtrl.setRoot(IndexPage);
+          let output = success.output;
+
+          if(output == 0) {
+            this.navCtrl.setRoot(IndexPage);
+          }
+          else if (output == 1) {
+            this.navCtrl.setRoot(DatipersonaliPage);
+          }
+          else if (output == 2) {
+            this.navCtrl.setRoot(AvatarPage);
+          }
+          else if (output == 3) {
+            this.navCtrl.setRoot(ProvinciaPage);
+          }
+        },
+        error => {
+          this.loading.dismiss();
+          this.isHidden = false;
+          this.error_text = "Username o password errata";
         }
-        else if (output == 1) {
-          this.navCtrl.setRoot(DatipersonaliPage);
-        }
-        else if (output == 2) {
-          this.navCtrl.setRoot(AvatarPage);
-        }
-        else if (output == 3) {
-          this.navCtrl.setRoot(ProvinciaPage);
-        }
-      },
-      error => {
-        this.loading.dismiss();
-        //this.showPopup("Attenzione", "Username o password errata");
-        this.isHidden = false;
-        this.error_text = "Username o password errata";
-      }
     );
   }
 
@@ -75,6 +81,21 @@ export class LoginPage {
       buttons: ['OK']
     });
     alert.present(prompt);
+  }
+
+  getSessionURL() {
+    let getSessionURL = this.URLVars.getSessionURL();
+
+    this.http.get(getSessionURL).subscribe(
+      data => {
+        let session_key = data.text();
+        this.storage.set('session_key', session_key);
+      },
+      error => {
+        alert(error);
+      }
+    );
+
   }
 
 }

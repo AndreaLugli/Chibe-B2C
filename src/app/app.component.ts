@@ -9,7 +9,7 @@ import { Http } from '@angular/http';
 import { HomePage } from '../pages/home/home';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { IndexPage } from '../pages/index/index';
-
+import { Storage } from '@ionic/storage';
 import { Events } from 'ionic-angular';
 
 @Component({
@@ -22,7 +22,7 @@ export class MyApp {
   rootPage:any = TutorialPage;
   //rootPage:any = IndexPage;
 
-  constructor(public app: App, public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http, public events: Events) {
+  constructor(private storage: Storage, public app: App, public menuCtrl: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public URLVars:URLVars, public http: Http, public events: Events) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
@@ -44,6 +44,28 @@ export class MyApp {
     events.subscribe('user:logout', () => {
       this.rootPage = HomePage;
     });
+
+    events.subscribe('user:checkSession', () => {
+      this.storage.get('session_key').then((session_key) => {
+        if(session_key) {
+          let setSessionURL = this.URLVars.setSessionURL();
+          let body = new URLSearchParams();
+          body.append('session_key', session_key);
+          this.http.post(setSessionURL, body).subscribe(
+            success => {
+              console.log(success);
+            },
+            error => {
+              this.rootPage = HomePage;
+            }
+          );
+        }
+        else {
+          this.rootPage = HomePage;
+        }
+      });
+    });
+
   }
 
   logout() {

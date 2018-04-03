@@ -20,7 +20,7 @@ export class ExtendedHttpService extends Http {
     return (res: Response) => {
       if (res.status === 401 || res.status === 403) {
         if(res.text() == "not_logged") {
-          this.events.publish('user:logout');
+          this.events.publish('user:checkSession');
         }
       }
       return Observable.throw(res);
