@@ -28,6 +28,8 @@ export class PartnerPage {
   tribu_1_src: any;
   tribu_2_src: any;
 
+  tripadvisor: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.id_partner = navParams.get('id_partner');
 
@@ -76,6 +78,8 @@ export class PartnerPage {
           this.tribu_pic = "assets/tribudefault.png";
         }
 
+        this.tripadvisor = data.tripadvisor;
+
       },
       error => {
         this.showPopup("Attenzione", error);
@@ -112,6 +116,10 @@ export class PartnerPage {
     else {
       return 'assets/tribudefault.png';
     }
+  }
+
+  openLink() {
+    window.open(this.tripadvisor, '_system');
   }
 
 }

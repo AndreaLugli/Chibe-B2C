@@ -41,6 +41,17 @@ export class ConquistaPage {
 
   ionViewWillEnter() {
     this.checkLocationEnabled();
+
+    /*
+    this.gps_attivo = true;
+    this.location_autorizzata = true;
+
+    this.latitude = "-33.4386944";
+    this.longitude = "-70.6395246";
+    this.filtro = "vicini";
+    this.tipo = "ZERO";
+    this.search();
+    */
   }
 
   checkLocationEnabled() {

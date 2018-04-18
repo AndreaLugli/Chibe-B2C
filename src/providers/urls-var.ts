@@ -162,7 +162,7 @@ export class URLVars {
   }
 
   setSessionURL() {
-    return this.getBaseURL() + "/utente/set-session/";    
+    return this.getBaseURL() + "/utente/set-session/";
   }
 
 

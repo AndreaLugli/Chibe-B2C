@@ -16,7 +16,12 @@
         <h3>Tel. {{telefono}}</h3>
       </div>
       <hr>
-      <div padding>{{descrizione}}</div>
+      <div padding>
+        {{descrizione}}
+        <br>
+        <button class="BOTTONE-AZZURRO-BLU" *ngIf="tripadvisor" (click)="openLink()" ion-button>Vedi su Tripadvisor</button>
+      </div>
+
       <hr>
       <ion-grid>
 
