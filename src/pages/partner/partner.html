@@ -19,7 +19,9 @@
       <div padding>
         {{descrizione}}
         <br>
-        <button class="BOTTONE-AZZURRO-BLU" *ngIf="tripadvisor" (click)="openLink()" ion-button>Vedi su Tripadvisor</button>
+        <div text-center>
+          <button class="BOTTONE-AZZURRO-BLU" *ngIf="tripadvisor" (click)="openLink()" ion-button>Vedi su Tripadvisor</button>
+        </div>
       </div>
 
       <hr>

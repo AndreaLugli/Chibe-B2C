@@ -36,7 +36,7 @@ export class ConquistaPage {
 
   constructor(public modalCtrl: ModalController, private diagnostic: Diagnostic, public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public URLVars:URLVars, public http: Http, public loadingCtrl:LoadingController, private alertCtrl: AlertController) {
     this.title = "Conquista";
-    this.partners = [];
+    //this.partners = [];
   }
 
   ionViewWillEnter() {
