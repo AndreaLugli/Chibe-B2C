@@ -36,7 +36,7 @@ export class TalismanoPage {
     this.title = "Talismano";
 
      storage.get('codice').then((val) => {
-       if(val) {
+       if(val && val != "undefinied" && val != "") {
          this.codice_str = val;
          this.codice_str = [this.codice_str.slice(0, 3), " ", this.codice_str.slice(3)].join('');
          this.codice_str = [this.codice_str.slice(0, 7), " ", this.codice_str.slice(7)].join('');
