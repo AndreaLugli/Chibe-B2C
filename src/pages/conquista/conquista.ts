@@ -41,7 +41,6 @@ export class ConquistaPage {
 
   ionViewWillEnter() {
     this.checkLocationEnabled();
-
     /*
     this.gps_attivo = true;
     this.location_autorizzata = true;

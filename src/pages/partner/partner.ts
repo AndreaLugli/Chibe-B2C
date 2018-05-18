@@ -41,6 +41,10 @@ export class PartnerPage {
 
     let getPartner = this.URLVars.getPartner(this.id_partner);
 
+    let timeStamp = +new Date();
+
+    getPartner = getPartner + '?tsp=' + timeStamp;
+
     this.http.get(getPartner).map(res => res.json()).subscribe(
       data => {
 
