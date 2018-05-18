@@ -32,6 +32,13 @@ export class IndexPage {
   constructor(public navParams: NavParams, private push: Push, public plt: Platform, public URLVars:URLVars, public http: Http) {
     this.tabIndex = navParams.get('tabIndex');
 
+    if(this.tabIndex) {
+      console.log(this.tabIndex);
+    }
+    else {
+      this.tabIndex = 2;
+    }
+
     this.push.hasPermission()
       .then((res: any) => {
         if (res.isEnabled) {

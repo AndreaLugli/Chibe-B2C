@@ -62,8 +62,6 @@ export class TalismanoPage {
          );
        }
      });
-
-    this.brightness.setBrightness(1);
   }
 
   showPopup(title, text) {
